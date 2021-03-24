@@ -2,162 +2,162 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://nic1611.github.io/blog/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/"
+                href="https://nic1611.github.io/blog/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/"
+                href="https://nic1611.github.io/blog/"
                 />
   </url><url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://nic1611.github.io/blog/categories/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/categories/"
+                href="https://nic1611.github.io/blog/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/categories/"
+                href="https://nic1611.github.io/blog/categories/"
                 />
   </url><url>
-    <loc>https://example.com/post/2020-12-01-r-rmarkdown/</loc>
+    <loc>https://nic1611.github.io/blog/post/2020-12-01-r-rmarkdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/tags/plot/</loc>
+    <loc>https://nic1611.github.io/blog/tags/plot/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/categories/r/</loc>
+    <loc>https://nic1611.github.io/blog/categories/r/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/tags/r-markdown/</loc>
+    <loc>https://nic1611.github.io/blog/tags/r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/tags/regression/</loc>
+    <loc>https://nic1611.github.io/blog/tags/regression/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://nic1611.github.io/blog/tags/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/tags/"
+                href="https://nic1611.github.io/blog/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/tags/"
+                href="https://nic1611.github.io/blog/tags/"
                 />
   </url><url>
-    <loc>https://example.com/post/chapter-6/</loc>
+    <loc>https://nic1611.github.io/blog/post/chapter-6/</loc>
     <lastmod>2017-04-14T11:25:05-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/post/chapter-5/</loc>
+    <loc>https://nic1611.github.io/blog/post/chapter-5/</loc>
     <lastmod>2017-04-13T11:15:58-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/post/chapter-4/</loc>
+    <loc>https://nic1611.github.io/blog/post/chapter-4/</loc>
     <lastmod>2017-04-12T11:14:48-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/tags/scene/</loc>
+    <loc>https://nic1611.github.io/blog/tags/scene/</loc>
     <lastmod>2017-04-12T11:14:48-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/tags/scene/"
+                href="https://nic1611.github.io/blog/fr/tags/scene/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/tags/scene/"
+                href="https://nic1611.github.io/blog/tags/scene/"
                 />
   </url><url>
-    <loc>https://example.com/post/chapter-3/</loc>
+    <loc>https://nic1611.github.io/blog/post/chapter-3/</loc>
     <lastmod>2017-04-11T11:13:32-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/post/chapter-2/</loc>
+    <loc>https://nic1611.github.io/blog/post/chapter-2/</loc>
     <lastmod>2017-04-10T11:00:59-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/post/chapter-1/</loc>
+    <loc>https://nic1611.github.io/blog/post/chapter-1/</loc>
     <lastmod>2017-04-09T10:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/post/chapter-1/"
+                href="https://nic1611.github.io/blog/fr/post/chapter-1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/post/chapter-1/"
+                href="https://nic1611.github.io/blog/post/chapter-1/"
                 />
   </url><url>
-    <loc>https://example.com/post/</loc>
+    <loc>https://nic1611.github.io/blog/post/</loc>
     <lastmod>2017-03-02T12:00:00-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/post/"
+                href="https://nic1611.github.io/blog/fr/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/post/"
+                href="https://nic1611.github.io/blog/post/"
                 />
   </url><url>
-    <loc>https://example.com/about/</loc>
+    <loc>https://nic1611.github.io/blog/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://example.com/contact/</loc>
+    <loc>https://nic1611.github.io/blog/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/contact/"
+                href="https://nic1611.github.io/blog/fr/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/contact/"
+                href="https://nic1611.github.io/blog/contact/"
                 />
   </url>
 </urlset>
