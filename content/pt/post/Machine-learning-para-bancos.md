@@ -1,14 +1,12 @@
 ---
-date: "2021-03-23T10:58:08-04:00"
-description: Machine learning para bancos
-featured_image: /images/Pope-Edouard-de-Beaumont-1844.jpg
+date: "2021-03-23"
+description: "Personalizando as Taxas de Acordo para cada Cliente"
+featured_image: https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 tags:
 - machine learning
 title: 'Machine learning para bancos'
 ---
 
-
-# <font color='PURPLE'>Ciência dos Dados na Prática</font>
 
 # <font color='GREY'> Personalizando as Taxas de Acordo para cada Cliente</font>
 
@@ -50,7 +48,7 @@ A seleção de variáveis significativas ajudará a desenvolver um algoritmo de 
 
 
 
-#1° Problema de Negócio
+# 1° Problema de Negócio
 
 
 Ajudar as empresas de crédito a obter uma **estimativa imediata da taxa de juros fixa** com base nas informações dos clientes. Esse é o <"**deal**">
@@ -58,7 +56,7 @@ Ajudar as empresas de crédito a obter uma **estimativa imediata da taxa de juro
 Aqui, seu objetivo é usar um conjunto de dados de treinamento para **prever a categoria de taxa de empréstimo (1/2/3)** que será atribuída a cada empréstimo em nosso conjunto de teste.
 
 
-#2° Análise Exploratória dos Dados
+# 2° Análise Exploratória dos Dados
 
 
 
@@ -112,7 +110,7 @@ if not sys.warnoptions:
     Versão da Linguagem Python Usada Neste Jupyter Notebook: 3.7.10
 
 
-###Fonte de Dados:
+### Fonte de Dados:
 
 https://datahack.analyticsvidhya.com/contest/janatahack-machine-learning-for-banking/ 
 
@@ -321,7 +319,7 @@ df_train.info()
 
 
 ```python
-#Estatística dos Campos
+# Estatística dos Campos
 df_train.describe()
 ```
 
@@ -526,7 +524,7 @@ df_train['Purpose_Of_Loan'].value_counts()
 
 ```
 
-#3° Pré-Processamento dos Dados
+# 3° Pré-Processamento dos Dados
 
 
 ```python
@@ -619,7 +617,7 @@ X_train.shape, Y.shape, X_test.shape
 
 
 
-#4° Construíndo a Máquina Preditiva 
+# 4° Construíndo a Máquina Preditiva 
 
 
 ### Validação Cruzada ou Cross Validation
@@ -670,7 +668,7 @@ feat_imp.nlargest(30).plot(kind='barh', figsize=(8,10))
     
 
 
-#5° Avaliação da Máquina Preditiva
+# 5° Avaliação da Máquina Preditiva
 
 
 ```python
@@ -705,7 +703,7 @@ https://datahack.analyticsvidhya.com/contest/janatahack-machine-learning-for-ban
 
 
 
-#Fim
+# Fim
 
 ## Valeu!
 

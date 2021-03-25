@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>probabilidade on Q.G. do Tux</title>
+    <link>https://nic1611.github.io/blog/tags/probabilidade/</link>
+    <description>Recent content in probabilidade on Q.G. do Tux</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/probabilidade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teoria da probabilidade</title>
+      <link>https://nic1611.github.io/blog/post/teoria-probabilidade/</link>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/teoria-probabilidade/</guid>
+      <description>O que é e por que estudar probabilidades? O primeiro argumento vem do fato de que o mundo é muito mais “probabilístico” do que “determinístico”.
+Por exemplo: é muito mais plausível dizer que tem uma chance de 75% de chover hoje do que afirmar com toda a certeza que irá chover.
+Entender probabilidades é entender como o mundo funciona: isso nos ajuda nas tomadas de decisões!
+Mais fácil falar do que fazer&amp;hellip; Existem situações simples de prever.</description>
+    </item>
+    
+  </channel>
+</rss>
