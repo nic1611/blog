@@ -3,21 +3,17 @@ baseURL: https://nic1611.github.io/blog/
 languageCode: en-us
 theme: gohugo-theme-ananke
 resourceDir: /resources
-DefaultContentLanguage: en
+DefaultContentLanguage: pt
 SectionPagesMenu: main
 Paginate: 10
 googleAnalytics: ''
 enableRobotsTXT: yes
 publishDir: /docs/
 languages:
-  en:
-    contentDir: content/en
-    title: My blog
+  pt:
+    contentDir: content/pt
+    title: Q.G. do Tux
     weight: 1
-  fr:
-    contentDir: content/fr
-    title: Mon blogue
-    weight: 2
 sitemap:
   changefreq: monthly
   filename: sitemap.xml

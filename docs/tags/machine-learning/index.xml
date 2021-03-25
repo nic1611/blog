@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Q.G. do Tux</title>
-    <link>https://nic1611.github.io/blog/</link>
-    <description>Recent content on Q.G. do Tux</description>
+    <title>machine learning on Q.G. do Tux</title>
+    <link>https://nic1611.github.io/blog/tags/machine-learning/</link>
+    <description>Recent content in machine learning on Q.G. do Tux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 12:00:00 -0500</lastBuildDate><atom:link href="https://nic1611.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Machine learning para bancos</title>
       <link>https://nic1611.github.io/blog/post/machine-learning-para-bancos/</link>
