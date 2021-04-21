@@ -106,7 +106,7 @@ grafico_moedas
 
 
     
-![png](output_4_0.png)
+![png](IntroducaoVisualizacao/output_4_0.png)
     
 
 

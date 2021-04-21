@@ -12,7 +12,7 @@ publishDir: /docs/
 languages:
   pt:
     contentDir: content/pt
-    title: Q.G. do Tux
+    title: Q.G do Tux
     weight: 1
 sitemap:
   changefreq: monthly
