@@ -104,9 +104,7 @@ grafico_moedas <- ggplot(data = circulacao_dinheiro_detalhado) +
 grafico_moedas
 ```
 
-
-    
-[png](/images/IntroducaoVisualizacao/output_4_0.png)
+![png](output_4_0.png)
 
 
 
@@ -231,7 +229,7 @@ O gráfico acima possui ainda alguns problemas, tais como:A legenda do eixo x te
 
 As barras simbolizam apenas valores totais das médias. Mas queremos comparar tendências de valor de moeda (ou seja,Denominação). Temos que ajustar, certo?
 
-Vamos tentar melhorar visualmente o gráfico (para introduzir algumas funções de estilo - que serão melhores discutidas mais afrente)
+Vamos tentar melhorar visualmente o gráfico (para introduzir algumas funções de estilo - que serão melhores discutidas mais a frente)
 
 Então, faremos mais uma tentativa:
 
@@ -296,7 +294,7 @@ grafico_moedas_linha
     
 
 
-Legal, certo? Parar criar o gráfico acima, 2 argumentos foram específicados na função aes() que são importantes para gráficos delinhas:
+Legal, certo? Parar criar o gráfico acima, 2 argumentos foram específicados na função aes() que são importantes para gráficos de linhas:
 
 a. o group, que define qual a origem dos dados para fazer cada linha do gráfico (ou seja, cada grupo é uma linha e no nosso caso,cada linha representa uma Denominação diferente)
 

@@ -40,7 +40,7 @@
 <meta itemprop="name" content="Introdução a visualização de dados">
 <meta itemprop="description" content="Introdução a visualização de dados com R"><meta itemprop="datePublished" content="2021-04-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-04-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1857">
+<meta itemprop="wordCount" content="1858">
 <meta itemprop="keywords" content="visualização de dados," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Introdução a visualização de dados"/>
 <meta name="twitter:description" content="Introdução a visualização de dados com R"/>
@@ -251,7 +251,7 @@ cols(
     <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Ano, y <span style="color:#f92672">=</span> Quantidade))
 
 grafico_moedas
-</code></pre></div><p><a href="/images/IntroducaoVisualizacao/output_4_0.png">png</a></p>
+</code></pre></div><p><img src="output_4_0.png" alt="png"></p>
 <p>Este gráfico possui uma série de problemas. O mais sério deles é que: <strong>ele não responde a nossa questão!</strong> As barras não significamnada! Cadê as legendas? Grupos?</p>
 <p>Bom. Calma! Retomando:O segredo para se montar gráficos precisos é construir os dados tabulares que respondem a questãodefinida. Ou seja, definem-se quais são as colunas/atributos que esse conjunto de dados terá equestiona-se: as linhas desse conjunto de dados respondem à questão de fato? Se sim, estamos prontos para gerar gráficos precisos e ricos!</p>
 <p>A seguir, preparamos os nossos dados para responder a questão anterior:</p>
@@ -284,7 +284,7 @@ grafico_moedas
 <p>Melhorou, certo? Estamos quase lá!</p>
 <p>O gráfico acima possui ainda alguns problemas, tais como:A legenda do eixo x tem valores “quebrados”, como 2017.5. Faz sentido?</p>
 <p>As barras simbolizam apenas valores totais das médias. Mas queremos comparar tendências de valor de moeda (ou seja,Denominação). Temos que ajustar, certo?</p>
-<p>Vamos tentar melhorar visualmente o gráfico (para introduzir algumas funções de estilo - que serão melhores discutidas mais afrente)</p>
+<p>Vamos tentar melhorar visualmente o gráfico (para introduzir algumas funções de estilo - que serão melhores discutidas mais a frente)</p>
 <p>Então, faremos mais uma tentativa:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">grafico_moedas_barra <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> conjunto_de_analise) <span style="color:#f92672">+</span>   
     <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(), mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Ano), y <span style="color:#f92672">=</span> `Quantidade Média`, fill <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
@@ -326,7 +326,7 @@ grafico_moedas_barra
 
 grafico_moedas_linha
 </code></pre></div><p><img src="output_12_0.png" alt="png"></p>
-<p>Legal, certo? Parar criar o gráfico acima, 2 argumentos foram específicados na função aes() que são importantes para gráficos delinhas:</p>
+<p>Legal, certo? Parar criar o gráfico acima, 2 argumentos foram específicados na função aes() que são importantes para gráficos de linhas:</p>
 <p>a. o group, que define qual a origem dos dados para fazer cada linha do gráfico (ou seja, cada grupo é uma linha e no nosso caso,cada linha representa uma Denominação diferente)</p>
 <p>b. o colour, que define uma cor diferente para cada elemento distinto de Denominação</p>
 <p>Opcionalmente, poderíamos mudar o tipo da linha, usando o atributo linetype da função aes():</p>
