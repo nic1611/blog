@@ -106,8 +106,8 @@ grafico_moedas
 
 
     
-![png](IntroducaoVisualizacao/output_4_0.png)
-    
+[png](/images/IntroducaoVisualizacao/output_4_0.png)
+
 
 
 Este gráfico possui uma série de problemas. O mais sério deles é que: **ele não responde a nossa questão!** As barras não significamnada! Cadê as legendas? Grupos?
