@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Mar 2021 12:00:00 -0500</lastBuildDate><atom:link href="https://nic1611.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Visualização de dados com R</title>
+      <link>https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/</link>
+      <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/</guid>
+      <description>Visualização de dados O objetivo aqui é apresentar vários exemplos práticos de construção de gráficos comuns e o ferramental necessáriopara criar boas visualizações.Para isso, a partir dessa seção iremos usar o arquivo .csv sobre a circulação das moedas, considerando a execução do seguinte código abaixo:
+library(tidyverse) circulacao_dinheiro &amp;lt;- read_csv2(&amp;#34;./MeioCirculante_DadosAbertos.csv&amp;#34;, col_names = c(&amp;#34;Data&amp;#34;, &amp;#34;Família&amp;#34;, &amp;#34;Denominação&amp;#34;, &amp;#34;Quantidade&amp;#34;)) #lembre-se o segredo é sempre preparar os dados de maneira que o subconjunto selecionado responda apergunta disposta #os grupos que queremos no final é por MÊS e DENOMINAÇÃO junto com a quantidade MÉDIA em circulação#seguindo a especificação, podemos definir o seguinte tibble resultante: moedas_2019 &amp;lt;- mutate(circulacao_dinheiro, Dia = as.</description>
+    </item>
+    
+    <item>
       <title>Conexão ao PostgreSQL utilizando o R</title>
       <link>https://nic1611.github.io/blog/post/conex%C3%A3o-ao-postgresql-utilizando-o-r/</link>
       <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>

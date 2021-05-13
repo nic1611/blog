@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Visualização de dados com R | Q.G do Tux</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Visualizand dados com R, utilizando o pacote ggplot">
+    <meta name="generator" content="Hugo 0.82.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Visualização de dados com R" />
+<meta property="og:description" content="Visualizand dados com R, utilizando o pacote ggplot" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-13T00:00:00&#43;00:00" /><meta property="og:site_name" content="Q.G do Tux" />
+
+<meta itemprop="name" content="Visualização de dados com R">
+<meta itemprop="description" content="Visualizand dados com R, utilizando o pacote ggplot"><meta itemprop="datePublished" content="2021-05-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-05-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="6838">
+<meta itemprop="keywords" content="R,Visualização de dados," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Visualização de dados com R"/>
+<meta name="twitter:description" content="Visualizand dados com R, utilizando o pacote ggplot"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGF0YSUyMGFuYWx5c2lzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Q.G do Tux
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/post/" title="Artigos page">
+              Artigos
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Visualização de dados com R</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Visualizand dados com R, utilizando o pacote ggplot
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        ARTIGOS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/&amp;text=Visualiza%c3%a7%c3%a3o%20de%20dados%20com%20R" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/&amp;title=Visualiza%c3%a7%c3%a3o%20de%20dados%20com%20R" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Visualização de dados com R</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-05-13T00:00:00Z">May 13, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="visualização-de-dados">Visualização de dados</h1>
+<p>O objetivo aqui é apresentar vários exemplos práticos de construção de gráficos comuns e o ferramental necessáriopara criar boas visualizações.Para isso, a partir dessa seção iremos usar o arquivo .csv sobre a circulação das moedas, considerando a execução do seguinte código abaixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(tidyverse)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">circulacao_dinheiro <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_csv2</span>(<span style="color:#e6db74">&#34;./MeioCirculante_DadosAbertos.csv&#34;</span>, col_names <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Data&#34;</span>, <span style="color:#e6db74">&#34;Família&#34;</span>, <span style="color:#e6db74">&#34;Denominação&#34;</span>, <span style="color:#e6db74">&#34;Quantidade&#34;</span>))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">#lembre-se o segredo é sempre preparar os dados de maneira que o subconjunto selecionado responda apergunta disposta</span>
+<span style="color:#75715e">#os grupos que queremos no final é por MÊS e DENOMINAÇÃO junto com a quantidade MÉDIA em circulação#seguindo a especificação, podemos definir o seguinte tibble resultante:</span>
+
+moedas_2019 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mutate</span>(circulacao_dinheiro,                       
+                      Dia <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%d&#34;</span>)),                      
+                      Mês <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%m&#34;</span>))) <span style="color:#f92672">%&gt;%</span> 
+    <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%Y&#34;</span>)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">2019</span> <span style="color:#f92672">&amp;</span> Denominação <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;0.01&#34;</span>, <span style="color:#e6db74">&#34;0.05&#34;</span>, <span style="color:#e6db74">&#34;0.10&#34;</span>, <span style="color:#e6db74">&#34;0.25&#34;</span>, <span style="color:#e6db74">&#34;0.50&#34;</span>, <span style="color:#e6db74">&#34;1.00&#34;</span>)) <span style="color:#f92672">%&gt;%</span>   
+    <span style="color:#a6e22e">select</span>(Dia, Mês, Denominação, Quantidade) <span style="color:#f92672">%&gt;%</span>  
+    <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(Mês), <span style="color:#a6e22e">desc</span>(Dia)) <span style="color:#f92672">%&gt;%</span> 
+    <span style="color:#a6e22e">group_by</span>(Mês, Denominação) <span style="color:#f92672">%&gt;%</span> 
+    <span style="color:#a6e22e">summarise</span>(Média <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(Quantidade, na.rm <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>))
+
+<span style="color:#75715e">## `summarise()` regrouping output by &#39;Mês&#39; (override with `.groups` argument)</span>
+<span style="color:#75715e">##nos exemplos a seguir, iremos fazer uso da variável moedas_2019. Portanto, tenha certeza que vocêtenha executado a instrução anterior</span>
+
+<span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação))
+</code></pre></div><pre><code>`summarise()` has grouped output by 'Mês'. You can override using the `.groups` argument.
+</code></pre>
+<p><img src="output_2_1.png" alt="png"></p>
+<p>Com esse gráfico como base, segue algumas funções comuns usadas para melhorar a formatação geral de um gráfico gerado peloggplot2.</p>
+<p>Nota importante</p>
+<p>Note que cada linha possui uma cor diferente. Cada linha de cor diferente é criada pois foi informado 2 parâmetros estéticos (aes()): ogrupo (group) e a cor (colour). Para valor distinto da coluna Denominação, é criado um grupo (ou seja, uma linha) onde uma corúnica é atribuída (se quiséssemos definir um tipo de linha diferente, usaríamos o linetype).</p>
+<p>Assim, podemos observar que para cada tipo de gráfico, existe um conjunto particular de “estética” que podemos aplicar e até mesmousar na redefinição de nomes de legendas.</p>
+<h1 id="título-do-gráfico">Título do gráfico</h1>
+<p>A função ggtitle() adiciona um título (e opcionalmente um subtítulo) para um gráfico e a sua execução deve ser “somada” ou
+“adicionada” a um objeto ggplot.</p>
+<p>Podemos adicionar o seguinte título no nosso gráfico, conforme segue:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">ggtitle</span>(<span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>)
+</code></pre></div><p><img src="output_5_0.png" alt="png"></p>
+<p>O parâmetro subtitle é opcional.</p>
+<h1 id="ajustanto-os-títulos-de-eixos">Ajustanto os títulos de eixos</h1>
+<p>As funções xlab() e ylab() alteram os títulos dos eixos x e y respectivamente e devem ser “adicionadas” ao objeto ggplot.</p>
+<p>Note que se não usarmos essas funções, o ggplot() pega os nomes do x e y na função aes().</p>
+<p>Em nosso exemplo, podemos realizar as seguintes alterações:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">ggtitle</span>(<span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Mês&#34;</span>) <span style="color:#f92672">+</span> 
+    <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Quantidade Média&#34;</span>)
+</code></pre></div><p><img src="output_7_0.png" alt="png"></p>
+<h1 id="alterando-vários-elementos-de-um-gráfico">Alterando vários elementos de um gráfico</h1>
+<p>A função lab() consegue alterar, além dos títulos do gráfico e dos eixos, o título da legenda e adicionar uma nota de rodapé no gráfico.</p>
+<p>Um exemplo completo de utilização dessa função é mostrada a seguir, o qual continua a melhoria em nosso gráfico original:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>)
+</code></pre></div><p><img src="output_9_0.png" alt="png"></p>
+<p>O parâmetro que é importante destacar é o colour. Perceba que este é um parâmetro estético que foi usado para definir as cores daslinhas. Uma vez que essas cores são usadas na legenda do gráfico, ao atribuirmos um valor para o parâmetro colour, nós estamosdefinindo o nome da legenda para as cores! Então, para mudar o título de algum fator estético que foi usado na criação do gráfico, usa-se o nome de seu parâmetro na função labs().</p>
+<h1 id="alterando-o-estilo-tema-de-um-gráfico">Alterando o estilo (tema) de um gráfico</h1>
+<p>A função theme() é bastante abrangente para modificar a aparência de componentes de um gráfico (ela não modifica os dados). Por exemplo, podemos modificar o tamanho da fonte, cor do fundo, as linhas do grid do gráfico, e entre outros elementos de aparência.</p>
+<p>Aqui daremos apenas alguns exemplos, conforme segue.</p>
+<p><strong>Manipulando a aparência da legenda:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">theme</span>(legend.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(face <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bold&#34;</span>),        
+          legend.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>))
+</code></pre></div><p><img src="output_11_0.png" alt="png"></p>
+<p>Repare no uso da função element_text() a qual define a formatação do texto, elementos como face, size e colour.</p>
+<p>Manipulando a aparência do título do gráfico e dos eixos x e y:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">theme</span>(plot.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(face <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bold&#34;</span>),        
+          axis.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>))
+</code></pre></div><p><img src="output_13_0.png" alt="png"></p>
+<p><strong>Manipulando o painel de plotagem do gráfico:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">theme</span>(panel.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_rect</span>(fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>))
+</code></pre></div><p><img src="output_15_0.png" alt="png"></p>
+<p>Existem alguns temas já predefinidos, tais como a seguir.</p>
+<p><strong>O tema preto e branco:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span> 
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">theme_bw</span>()
+</code></pre></div><p><img src="output_17_0.png" alt="png"></p>
+<p><strong>O tema escala de cinza:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">theme_grey</span>()
+</code></pre></div><p><img src="output_19_0.png" alt="png"></p>
+<p><strong>O tema escuro:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">theme_dark</span>()
+</code></pre></div><p><img src="output_21_0.png" alt="png"></p>
+<p>O tema escuro:Uma vez que a função theme() é muito abrangente, recomenda-se uma leitura breve de sua documentação
+(<a href="https://ggplot2.tidyverse.org/reference/theme.html)">https://ggplot2.tidyverse.org/reference/theme.html)</a>.</p>
+<p>Seja criativo na definição de novos temas!</p>
+<h1 id="formatação-de-itens-nos-eixos-x-e-y">Formatação de itens nos eixos x e y</h1>
+<p>Podemos ainda definir como os ticks de cada eixo podem ser definidos (ou seja, cada elemento usado nos eixos), tais como seuespaçamento ou o número de elementos. Para isso, usamos as funções iniciadas como scale_x e scale_y para formatar os eixos x ey, respectivamente.</p>
+<p>Para dados contínuos em algum eixo, usa-se a função scale_*_continuous() (onde * é trocado por x ou y para indicar a algum eixoespecífico). Já para dados discretos em algum eixo, usa-se a função scale_*_discrete().No nosso caso, temos a definição de dados de forma contínua para o eixo y (em geral, eixos com valores numéricos são contínuos - claro,existem excessões!).</p>
+<p>Para o eixo x, são definidos valores discretos (pois, temos 12 meses somente).</p>
+<p>Nesse sentido, iremos usar as funções scale_x_discrete() e scale_y_continuous() para realizar as seguintes alterações:</p>
+<ol>
+<li>Vamos definir que queremos somente que seja mostrado alguns meses específicos e de forma textual.</li>
+<li>Vamos definir que 8 valores sejam usados no eixo y.</li>
+<li>Vamos formatar os números do eixo y</li>
+</ol>
+<p>Conseguimos fazer essas três formatações da seguinte forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, group <span style="color:#f92672">=</span> Denominação, colour <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Brasil - 2019&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Portal Brasileiro de Dados Abertos&#34;</span>, tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Criado por CECDADOS&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Valor daMoeda&#34;</span>) <span style="color:#f92672">+</span>  <span style="color:#a6e22e">scale_x_discrete</span>(breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">12</span>), labels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Janeiro&#34;</span>, <span style="color:#e6db74">&#34;Março&#34;</span>, <span style="color:#e6db74">&#34;Junho&#34;</span>, <span style="color:#e6db74">&#34;Setembro&#34;</span>,<span style="color:#e6db74">&#34;Dezembro&#34;</span>)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">scale_y_continuous</span>(n.breaks <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>, labels <span style="color:#f92672">=</span> scales<span style="color:#f92672">::</span><span style="color:#a6e22e">number_format</span>(big.mark <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.&#34;</span>, decimal.mark <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>))
+</code></pre></div><p><img src="output_24_0.png" alt="png"></p>
+<p>Sobre o scale_x_discrete() - primeiro definimos um subconjunto de valores que serão mostrados(breaks = c(1, 3, 6, 9, 12)) e DEPOIS quais são seus textos (seguindo a mesma ordem do vetor em breaks) pela definição doparâmetro labels. Note que somente os ticks são omitidos, os dados não foram modificados (perceba pela curva da moeda 0.01 queos dados permanecem os mesmos).</p>
+<p>Sobre o scale_y_continuous() - primeiro foi definido o número de elementos no eixo y com o parâmetro n.breaks. Em seguida,foi definido que os textos usados no eixo y serão formatados. Para isso, foi usado a função scales::number_format() que é dopacote scales (já dentro do tidyverse) - ela é bastante útil para manipular números (se o nosso eixo fosse decimal, poderíamosrestringir o número de casas decimais com o parâmetro accuracy)!</p>
+<p>Repare que o uso das funções scale_*_ são poderosas e é bastante recomendado a leitura da documentação para um estudo maisaprofundado, mesmo que esse material já tenha abordado alguns elementos mais comuns de manipulação:</p>
+<ul>
+<li>scale_*_continuous() (<a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">https://ggplot2.tidyverse.org/reference/scale_continuous.html</a>)</li>
+<li>scale_*_discrete() (<a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">https://ggplot2.tidyverse.org/reference/scale_discrete.html</a>)</li>
+</ul>
+<p>Nota sobre formatação de gráficosO pacote ggplot2 disponibiliza outras várias funções que nos auxiliam na formatação de um gráfico. O objetivo desse material éabordar os pontos mais comuns. Assim, um estudo mais aprofundado nesse sentido pode ser realizado ao acessar o materialcomplementar que foi citado ao longo deste material e o livro sobre ggplot</p>
+<h1 id="gráfico-de-linha">Gráfico de linha</h1>
+<p>Um gráfico de linhas foi usado nos exemplos mostrados de formatação do gráfico. Vamos entender melhor a função geom_line()nesta seção, estudando de forma mais detalhada as suas opções estéticas (parâmetros passados na função aes()).</p>
+<p>As opções estéticas aceitas pela função geom_line() são as seguintes (em geral, elas recebem uma coluna do nossotibble/data.frame de entrada - indicado na função ggplot()):</p>
+<ul>
+<li>x - aqui é obrigatório qual é o valor do eixo x (um tick é feito para cada valor distinto na coluna mencionada)</li>
+<li>y - aqui é obrigatório qual é o valor do eixo y (um tick é feito para cada valor distinto na coluna mencionada)</li>
+<li>alpha - opcional, para definir um valor de transparência na cor</li>
+<li>colour - opcional, para definir uma cor (um esquema de cor será usado pelo R). O próprio ggplot2 definirá a cor para cada valordistinto da coluna mencionada.</li>
+<li>group - requerido quando queremos fazer várias linhas em um mesmo gráfico pois define que cada valor distinto da coluna mencionada é um grupo (ou seja, linha) e os pontos devem ser ligados da esqueda para direita para cada valor específico (útilcomo série temporal, como estamos usando)</li>
+<li>linetype - opcional, para definir um tipo de linha (um esquema de tipo de linha será usado pelo R). O próprio ggplot2 definirá o tipo de linha para cada valor distinto da coluna mencionada.</li>
+<li>size - opcional, para definir uma espessura de linha (um esquema de tamanho será usado pelo R). O próprio ggplot2 definirá aespessura da linha para cada valor da coluna mencionada.</li>
+</ul>
+<p>Vamos entender na prática o significado de cada parâmetro supramencionado! Para ficar “menos” código nos exemplos, somente algunsargumentos da função labs() são definidos.Exemplo de variação na transparência da cor (alpha + colour + group)</p>
+<p>Note que temos que usar o parâmetro group pois queremos mostrar uma linha para cada Denominação possível de moeda!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  group <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#no nosso caso, queremos que cada linha represente cada valor distinto de Denominação. Nesse caso, precisamos definir o group!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#vamos manter uma cor distinta para cada linha                </span>
+                  alpha <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#para cada linha, vamos definir um valor alpha                 </span>
+                 )) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><pre><code>Warning message:
+“Using alpha for a discrete variable is not advised.”
+</code></pre>
+<p><img src="output_26_1.png" alt="png"></p>
+<p>No código acima existe um aviso recomendando que o uso do alpha para valores discretos não é recomendável. De fato, no nossoexemplo, não faz muito sentido. Ele somente mudou um pouquinho as cores.</p>
+<p><strong>Exemplo de variação na espessura da linha (group + colour + size)</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  group <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#no nosso caso, queremos que cada linha represente cada valor distinto de Denominação. Nesse caso, precisamos definir o group!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#vamos manter uma cor distinta para cada linha                </span>
+                  size <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#cara linha terá um valor de espessura distinta de acordo com ovalor de Denominação                </span>
+                 )) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><pre><code>Warning message:
+“Using size for a discrete variable is not advised.”
+</code></pre>
+<p><img src="output_28_1.png" alt="png"></p>
+<p>Note que conforme o valor da moeda varia, uma espessura diferente é definida. Cuidado com relação ao uso do size, que no nossocaso, fez com que a linha da moeda 0.01 ficasse sobreposta. Assim como para o alpha, o ggplot também nos avisa que definir aespessura dessa forma não é recomendável. Veremos que podemos definir, de forma homogênea, todas as espessuras das linhas.</p>
+<p><strong>Exemplo de variação no tipo da linha (group + linetype + colour)</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                                            group <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#no nosso caso, queremos que cada linha represente cada valor distinto de Denominação. Nesse caso, precisamos definir o group!                </span>
+                                            colour <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#vamos manter uma cor distinta para cada linha                </span>
+                                            linetype <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#cada linha terá um tipo distinto de traço                </span>
+                                           )) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_30_0.png" alt="png"></p>
+<p><strong>Definindo parâmetros de estética de forma global</strong></p>
+<p>Os parâmetros alpha, colour, linetype e size podem ser definidos diretamente na função geom_line(). Nesse caso, a opçãoserá FIXA em todo o gráfico e não terá o comportamento de atribuir uma característica única para cada valor distinto da coluna que foiatribuída. Tenha cuidado com isso!</p>
+<p>Por exemplo, vamos mudar a transparência de todas as linhas de maneira homogênea:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  group <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#no nosso caso, queremos que cada linha represente cada valor distinto de Denominação. Nesse caso, precisamos definir o group!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#vamos manter uma cor distinta para cada linha                </span>
+                 ),            
+              alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span><span style="color:#75715e">#aqui estamos definindo um valor de transparência de maneira global e FORA do aes()            </span>
+             ) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_32_0.png" alt="png"></p>
+<p>Outro exemplo, vamos mudar a espessura da linha de maneira homogênea:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  group <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#no nosso caso, queremos que cada linha represente cada valor distinto de Denominação. Nesse caso, precisamos definir o group!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#vamos manter uma cor distinta para cada linha                </span>
+                 ),            
+              size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>            
+             ) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_34_0.png" alt="png"></p>
+<p>Por último, vamos mudar o tipo da linha de maneira homogênea (os tipos existentes são “blank”, “solid”, “dashed”, “dotted”, “dotdash”,“longdash”, “twodash”)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  group <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#no nosso caso, queremos que cada linha represente cada valor distinto de Denominação. Nesse caso, precisamos definir o group!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#vamos manter uma cor distinta para cada linha                </span>
+                 ),            
+              linetype <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dashed&#34;</span>            
+             ) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_36_0.png" alt="png"></p>
+<p><strong>Nota importante</strong></p>
+<p>Existe a função geom_path() que também conecta pontos dispersos no espaço, fazendo gráficos de linhas. Mas estes são mais direcionados para construir de fato caminhos (pois considera a ordenação dos pontos na base de dados) e não para séries temporais(que foi mais o foco do nosso estudo).</p>
+<h1 id="gráfico-de-pontos-dispersão-de-pontos">Gráfico de pontos (dispersão de pontos)</h1>
+<p>A função geom_point() é usada para criar um gráfico de dispersão de pontos (scatterplots). A estética desse tipo de gráfico aceita osseguintes parâmetros (no aes() ou fora dele, de maneira global):</p>
+<ul>
+<li>x - aqui é obrigatório qual é o valor do eixo x (um tick é feito para cada valor distinto na coluna mencionada)</li>
+<li>y - aqui é obrigatório qual é o valor do eixo y (um tick é feito para cada valor distinto na coluna mencionada)</li>
+<li>alpha - opcional, para definir um valor de transparência na cor dos pontos</li>
+<li>colour - opcional, para definir uma cor da linha externa do ponto (um esquema de cor será usado pelo R). O próprio ggplot2 definirá a cor para cada valor distinto da coluna mencionada. Cada valor distinto terá um conjunto de pontos associado a ele.</li>
+<li>group - opcional, para definir que cada valor distinto da coluna mencionada é um grupo de pontos (não é tão necessário como nouso das linhas, por isso aqui não será usado esse parâmetro)</li>
+<li>fill - opcional, para definir a cor interna do ponto (um esquema de cor será usado pelo R). O próprio ggplot2 definirá a cor paracada valor distinto da coluna mencionada.</li>
+<li>size - opcional, para definir o tamanho do ponto (um esquema de tamanho será usado pelo R). O próprio ggplot2 definirá otamanho do ponto para cada valor da coluna mencionada.</li>
+<li>shape - opcional, para definir o tipo do formato do ponto, para valor distinto da coluna mencionada.</li>
+<li>stroke - opcional, para definir a espessura da linha de cotorno do ponto.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                   group <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#no nosso caso, queremos que cada grupo de ponto represente cada valor distinto de Denominação. Nesse caso, precisamos definir o group!                </span>
+                   colour <span style="color:#f92672">=</span> Denominação, <span style="color:#75715e">#vamos manter uma cor distinta para cada grupo de pontos                </span>
+                  )) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_38_0.png" alt="png"></p>
+<p>No exemplo acima, percebemos que os pontos das linhas que foram traçadas anteriormente foram definidos. Então, parece que essetipo de gráfico pode ser também combinado com um gráfico de linhas (iremos abordar esse tipo de combinação a seguir).</p>
+<p>O gráfico de disperção de pontos é interessante para avaliar a correlação entre duas variáveis, podendo ou não ter grupos específicos.Para enriquecer o exemplo de gráfico de ponto, nos próximos exemplos, iremos utilizar uma base de dados gerada artificalmente conforme segue (note que possivelmente você poderá ter diferentes dados para o tibble dados_artificais em sua execuçãodevido às características das funções de geração aleatórias do</p>
+<ul>
+<li>rnorm()(<a href="https://www.rdocumentation.org/packages/compositions/versions/1.40-5/topics/rnorm">https://www.rdocumentation.org/packages/compositions/versions/1.40-5/topics/rnorm</a>) 
+e</li>
+<li>sample()(<a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/sample)):">https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/sample)):</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">dados_artificiais <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tibble</span>(<span style="color:#e6db74">&#34;CONSUMO&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">rnorm</span>(<span style="color:#ae81ff">5000</span>, mean <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>, sd <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)),<span style="color:#e6db74">&#34;PRODUÇÃO&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">rnorm</span>(<span style="color:#ae81ff">5000</span>, mean <span style="color:#f92672">=</span> <span style="color:#ae81ff">55</span>, sd <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>)),<span style="color:#e6db74">&#34;CATEGORIA&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>), <span style="color:#ae81ff">5000</span>, replace <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>))
+</code></pre></div><p>Vamos analisar a correlação entre as colunas CONSUMO e PRODUÇÃO utilizando um gráfico de pontos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, y <span style="color:#f92672">=</span> PRODUÇÃO))
+</code></pre></div><p><img src="output_42_0.png" alt="png"></p>
+<p>Podemos fazer uma seguinte análise: os pontos muito distantes tem uma produção/consumo muito elevada ou muito baixa (talvez demaneira desproporcional). Entretanto, temos uma dificuldade em saber essa relação de produção/consumo para cada categoria deproduto.</p>
+<p>Logo, podemos usar algum parâmetro de estética para definirmos a formatação desses grupos. Alguns exemplos seguem abaixo:</p>
+<p><strong>Diferenciando elementos por cor:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, y <span style="color:#f92672">=</span> PRODUÇÃO, colour <span style="color:#f92672">=</span> CATEGORIA))
+</code></pre></div><p><img src="output_44_0.png" alt="png"></p>
+<p><strong>Diferenciando elementos pelo tamanho:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, y <span style="color:#f92672">=</span> PRODUÇÃO, size <span style="color:#f92672">=</span> CATEGORIA))
+</code></pre></div><pre><code>Warning message:
+“Using size for a discrete variable is not advised.”
+</code></pre>
+<p><img src="output_46_1.png" alt="png"></p>
+<p>Assim como no gráfico de linhas, um mesmo aviso será mostrado. Então a dica é usar o size para diferenciar valores de uma “terceiradimensão” do gráfico, para formar gráficos de bolhas.</p>
+<p><strong>Diferenciando elementos pela forma do ponto:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, y <span style="color:#f92672">=</span> PRODUÇÃO, shape <span style="color:#f92672">=</span> CATEGORIA))
+</code></pre></div><p><img src="output_48_0.png" alt="png"></p>
+<p>Assim como no gráfico de linhas, podemos combinar as características estéticas, por exemplo:</p>
+<p><strong>Diferenciando elementos pela forma do ponto e cor:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, y <span style="color:#f92672">=</span> PRODUÇÃO, shape <span style="color:#f92672">=</span> CATEGORIA, colour <span style="color:#f92672">=</span> CATEGORIA))
+</code></pre></div><p><img src="output_50_0.png" alt="png"></p>
+<p>Por fim, também podemos definir a estética de maneira homogênea ao aplicar um parãmetro de maneira global (ou seja, fora doaes()). Por exemplo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, y <span style="color:#f92672">=</span> PRODUÇÃO, colour <span style="color:#f92672">=</span> CATEGORIA), fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, stroke <span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>)
+</code></pre></div><p><img src="output_52_0.png" alt="png"></p>
+<p>Nesse caso combinamos várias características:</p>
+<ul>
+<li>stroke serviu para modificar a largura da borda de cada ponto</li>
+<li>shape serviu para especificarmos um tipo de forma de ponto onde é possível definir cores separadas para a borda e para o seu interior</li>
+<li>fill serviu para especificamos que a cor de dentro dos pontos seja branca (para todas as categorias)</li>
+<li>colour (dentro do aes()) serviu para definir uma cor de borda diferente para cada categoria</li>
+</ul>
+<h1 id="gráfico-de-barras">Gráfico de barras</h1>
+<p>Em nosso material introdutório sobre ggplot2, vimos o uso da função geom_bar() para geração de gráfico de barras (que possuemvalores discretos no eixo x; para valores contínuos, veja a função geom_histogram() na próxima seção). Esta função, por padrão,utiliza a contagem de observações em uma coluna para realizar o gráfico. Muitas vezes não é bem isso que queremos. Queremos que aaltura da barra seja igual a um valor de alguma coluna do tibble informado no ggplot. Nesse caso, usamos o parâmetrostat = &ldquo;identify&rdquo; para expressar justamente esse comportamento.</p>
+<p>Para minimizar esforço de escrita de stat = &ldquo;identify&rdquo;, existe a função geom_col() que já considera que a altura das barras é aidentidade de valores de alguma coluna do tibble de entrada.</p>
+<p>Conseguimos manipular os seguintes parâmetros estéticos em um gráfico de barras:</p>
+<ul>
+<li>x - aqui é obrigatório qual é o valor do eixo x (um tick é feito para cada valor distinto na coluna mencionada)</li>
+<li>y - aqui é obrigatório qual é o valor do eixo y (um tick é feito para cada valor distinto na coluna mencionada)</li>
+<li>alpha - opcional, para definir um valor de transparência na cor das barras</li>
+<li>colour - opcional, para definir uma cor da linha externa das barras (um esquema de cor será usado pelo R). O próprio ggplot2 definirá a cor para cada valor distinto da coluna mencionada.</li>
+<li>group - opcional, define que cada valor distinto da coluna mencionada é um grupo de barras (não é tão necessário como no usodas linhas, por isso aqui não será usado esse parâmetro)</li>
+<li>fill - opcional, para definir a cor interna da barra (um esquema de cor será usado pelo R). O próprio ggplot2 definirá a cor paracada valor distinto da coluna mencionada.</li>
+<li>size - opcional, define o tamanho da barra (o maior impacto será na legenda).</li>
+<li>linetype - opcional, para definir o tipo de linha para desenhar as barras.Alguns exemplos de gráfico de barras são mostrados a seguir.</li>
+</ul>
+<p><strong>Criando um gráfico de barras simples e de maneira empilhada, onde cada grupo é diferenciado por meio da cor interna da barra:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                 fill <span style="color:#f92672">=</span> Denominação) <span style="color:#75715e">#vamos manter uma cor distinta para cada barra                </span>
+            ) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_54_0.png" alt="png"></p>
+<p>A forma empilhada pode ser útil para algumas aplicações.</p>
+<p>Para deixar uma barra do lado da outra em cada item do eixo x (ou seja, Mês), devemos incluir o parâmetro</p>
+<p>position = position_dodge():</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                 fill <span style="color:#f92672">=</span> Denominação), <span style="color:#75715e">#vamos manter uma cor distinta para cada barra                </span>
+             position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>()) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_56_0.png" alt="png"></p>
+<p>Como a variação de outros parâmetros são identificados aos gráficos de linha e barra, vamos mostrar alguns exemplos de manipulaçãode maneira homogênea. Isto é, mudanças de maneira global.</p>
+<p><strong>Modificando o tamanho das barras (principalmente na legenda no caso):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                 fill <span style="color:#f92672">=</span> Denominação),                 
+             position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(), size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_58_0.png" alt="png"></p>
+<p><strong>Modificando o estilo de linha de todas as barras - neste caso, precisamos combinar 2 parâmetros: linetype e colour:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                 fill <span style="color:#f92672">=</span> Denominação),                 
+             position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(), linetype <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;solid&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_60_0.png" alt="png"></p>
+<p>Pegando o exemplo anterior como base, o parâmetro size irá impactar no tamanho das linhas usadas para demarcar as barras e nãomais o tamanho das barras na legenda:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                 fill <span style="color:#f92672">=</span> Denominação),                 
+             position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(), linetype <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;solid&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_62_0.png" alt="png"></p>
+<h1 id="histogramas">Histogramas</h1>
+<p>Na seção anterior vimos que um gráfico de colunas é bastante útil quando o eixo x é composto por valores discretos. No nosso exemplo,o eixo x era composto pelos meses de um ano.</p>
+<p>O gráfico de histograma gerado pela função geom_histogram() nos ajuda a compreender a distribuição de valores de uma variávelcontínua simples ao dividir o eixo x em “caixas” (bins) e contando o número de observações em cada caixa (bin).</p>
+<p>A função geom_histogram() possui os mesmos parâmetros estéticos da função geom_bar() que por sua vez possui os mesmos parâmetros estéticos da função geom_col(). Entretanto, a grande diferença é que somente especificamos o valor para somente um eixo(o mais comum é o eixo x)! Portanto, vamos direto a alguns exemplos!</p>
+<p>Na primeira parte da exemplificação, iremos utilizar a base de dados da circulação de dinheiro representado pelotibble moedas_2019_bruto. O principal argumento acerca disso é que o tibble moedas_2019, o qual vínhamos usando atéentão, contém dados agrupados. O tibble moedas_2019_bruto é definido conforme segue:Sobre a base de dados original de moedas_2019, criar 2 novas colunas: Dia e Mês. Então, capturar asobservações que sejam do ano de 2019 e das moedas com denominações iguais a 0.01, 0.05, 0.10, 0.25,0.50 e 1.00. Queremos que o conjunto de dados seja ordenado pelas datas mais recentes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">moedas_2019_bruto <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mutate</span>(circulacao_dinheiro,                       
+                            Dia <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%d&#34;</span>)),                      
+                            Mês <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%m&#34;</span>))) <span style="color:#f92672">%&gt;%</span> 
+    <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%Y&#34;</span>)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">2019</span> <span style="color:#f92672">&amp;</span> Denominação <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;0.01&#34;</span>, <span style="color:#e6db74">&#34;0.05&#34;</span>, <span style="color:#e6db74">&#34;0.10&#34;</span>, <span style="color:#e6db74">&#34;0.25&#34;</span>, <span style="color:#e6db74">&#34;0.50&#34;</span>, <span style="color:#e6db74">&#34;1.00&#34;</span>)) <span style="color:#f92672">%&gt;%</span>   
+    <span style="color:#a6e22e">select</span>(Dia, Mês, Denominação, Quantidade)
+</code></pre></div><p><strong>Histograma da variável Quantidade do tibble moedas_2019_bruto:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019_bruto) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Quantidade)) <span style="color:#f92672">+</span> <span style="color:#75715e">#lembre-se, somente 1 eixo no histograma e ele é um valor contínuo para entendermos a sua distribuição  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade em Circulação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Contagem&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Histograma - Moedas em Circulação&#34;</span>)
+</code></pre></div><pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<p><img src="output_66_1.png" alt="png"></p>
+<p>Podemos notar nesse histograma uma grande variação de quantidade de moedas em circulação, muitas delas inclusive, que possuemum número bem próximo a zero (o bin no 0). Entretanto, não sabemos exatamente a Denominação dessas moedas. Para isso, podemos definir um parâmetro estético a ser usado para cada tipo de Denominação, como a seguir:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019_bruto) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Quantidade, fill <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span> <span style="color:#75715e">#lembre-se, somente 1 eixo no histograma e ele é um valor contínuo para entendermos a sua distribuição  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade em Circulação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Contagem&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Histograma - Moedas em Circulação&#34;</span>)
+</code></pre></div><pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<p><img src="output_68_1.png" alt="png"></p>
+<p>Podemos notar que muitas moedas de 1 real tem pouca circulação. Mas será que é algo próximo a 0, realmente? O ggplot nos alertaque podemos melhorar o “comprimento” das barras usadas com o parâmetro binwidth (vamos mostrar mais exemplos sobre isso aseguir). Para este exemplo, vamos modificar o parâmetro bins, especificando exatamente a quantidade de barras que queremos.</p>
+<p>Vamos fazer um teste!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019_bruto) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Quantidade, fill <span style="color:#f92672">=</span> Denominação), bins <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">+</span> <span style="color:#75715e">#lembre-se, somente 1 eixo no histograma e ele é um valor contínuo para entendermos a sua distribuição  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade em Circulação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Contagem&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Histograma - Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_70_0.png" alt="png"></p>
+<p>Entretanto, ainda não melhorou muito a nossa análise, certo? Isso tem a ver com o tamanho do domínio do eixo x. Ele está entre 0 e 6.000.000.000. Realmente, uma escala bem grande! Vamos dar um “zoom” para analisar o histograma de moedas com baixa quantidadeem circulação. Vamos determinar um valor máximo de 100.000:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">moedas_2019_bruto_menores <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">filter</span>(moedas_2019_bruto, Quantidade <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100000</span>)
+
+<span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019_bruto_menores) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Quantidade, fill <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span> <span style="color:#75715e">#lembre-se, somente 1 eixo no histograma e ele é um valor contínuo par entendermos a sua distribuição  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade em Circulação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Contagem&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Histograma - Moedas em Circulação&#34;</span>)
+</code></pre></div><pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<p><img src="output_72_1.png" alt="png"></p>
+<p>De fato, melhorou, certo? conseguimos entender melhor a distruibição de valores da moeda de 1.00. Então a dica é:</p>
+<p>cuidado com a escala dos eixos! padrões podem estar escondidos por causa de uma falta de “zoom”</p>
+<p>Você pode estar se perguntando: cadê a barra para a denominação 0.50? Ela está ali! porém muito, muito pequena&hellip; a base de dados filtrada possui apenas 2 observações cuja Denominação é igual a 0.50. Por isso que o valor para 0.50 mal aparece no histograma!</p>
+<p>Para vermos outros exemplos de histograma, vamos utilizar a base artificial gerada para os gráficos de pontos (portanto, se certifiqueque você esteja com ela carregada na memória do RStudio para executar os seguintes comandos):Exemplo de histograma com a variável CONSUMO, mostrando de maneira total a contagem de cada “bin”:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO))
+</code></pre></div><pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<p><img src="output_74_1.png" alt="png"></p>
+<p>Note que podemos observar que a coluna CONSUMO possui uma distribuição “normal”, o que faz todo sentido pois tínhamos usado afunção rnorm() para gerar seus valores.</p>
+<p>Repare que o ggplot2 irá emitir um aviso de que ele gerou exatamente 30 “caixinhas” (bins) - ou seja, barras, e que pode-se mudaresse parâmetro usando a opção bins. O parâmetro binwidth irá mudar a largura dos bins e consequentemente o número de binsusados para montar o historgrama.</p>
+<p>Um valor muito alto para binwidth irá fazer um histograma muito resumido que raramente iremos conseguir entender a distribuiçãodos dados:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO), binwidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>)
+</code></pre></div><p><img src="output_76_0.png" alt="png"></p>
+<p>Por outro lado, um valor muito baixo de binwidth irá aumentar o número de bins e detalhar ainda mais o tipo de distribuição dos dados:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO), binwidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>)
+</code></pre></div><p><img src="output_78_0.png" alt="png"></p>
+<p>Podemos ainda destacar as categorias, da mesma forma que no gráfico de barras:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, colour <span style="color:#f92672">=</span> CATEGORIA))
+</code></pre></div><pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<p><img src="output_80_1.png" alt="png"></p>
+<p>Podemos ainda definir o position = position_dodge() para formar barras individuais de histograma para cada categoria (pois o gráfico anterior stava na forma empilhada):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> dados_artificiais) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> CONSUMO, colour <span style="color:#f92672">=</span> CATEGORIA), position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>())
+</code></pre></div><pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<p><img src="output_82_1.png" alt="png"></p>
+<h1 id="gráficos-múltiplos">Gráficos múltiplos</h1>
+<p>Até o momento vimos somente 1 tipo de gráfico em uma mesma figura (“plot”). Agora iremos ver como combinar vários gráficos em umsó “plot”.</p>
+<h1 id="combinando-diferentes-tipos-de-gráficos">Combinando diferentes tipos de gráficos</h1>
+<p>A primeira forma de combinação é “adicionar” tipos diferentes de gráficos na mesma área. Ou seja, adicionando novas camadas ao ggplot, onde uma camada é um tipo de gráfico diferentedesenhado por uma função iniciada em geom_. Em outras palavras, cada vez que chamamos uma função do tipo geom_, um novográfico é simplesmente “colocado por cima” do conteúdo atual do ggplot. Isso é bastante importante para impor a ordem dascamadas de gráficos.</p>
+<p>Vamos recapitular esses conceitos com alguns exemplos sobre o tibble moedas_2019.</p>
+<p><strong>Combinando um gráfico de linha com um gráfico de ponto</strong></p>
+<p>Podemos colocar pontos em cada linha para “demarcar” seus cruzamentos em cada valor do eixo x e y. Inclusive, especificando um tipo particular de forma de ponto para cada linha da seguinte forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, group <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                   shape <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_84_0.png" alt="png"></p>
+<p>Ou ainda, podemos definir uma forma específica de ponto para todas as linhas:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, group <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                   colour <span style="color:#f92672">=</span> Denominação), fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, stroke <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_86_0.png" alt="png"></p>
+<p>Perceba que nos dois exemplos anteriores, de forma literal, os pontos foram colocados por cima das linhas. O que acontece seinvertermos as camadas? Vamos checar no seguinte exemplo (trocamos a ordem do geom_line() e geom_point()):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                   colour <span style="color:#f92672">=</span> Denominação), fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, stroke <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                  colour <span style="color:#f92672">=</span> Denominação, group <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_88_0.png" alt="png"></p>
+<p>Resultado diferente, certo?</p>
+<p>Cuidado com as sobreposições!</p>
+<p>Uma coisa a ser notada nos exemplos anteriores é que o aes() das funções geom_line() e geom_point() possuem diversosparâmetros iguais, talvez poluindo um pouco o código. Conseguimos melhorar isso ao especificar o aes() de maneira global. Isso éfeito na função ggplot(). Assim, da mesma forma que data = moedas_2019 é acessado por todas as funções geom_, o aes()também será herdado pelas funções geom_. Conseguimos sobrepor algum parâmetro bastando apenas redefinir uma nova funçãoaes() dentro da função geom_ respectiva.</p>
+<p>Podemos reescrever um código que gera o mesmo resultado do penúltimo exemplo da seguinte forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Mês), y <span style="color:#f92672">=</span> Média, <span style="color:#75715e">#lembre-se, x e y são obrigatórios!                </span>
+                               colour <span style="color:#f92672">=</span> Denominação, group <span style="color:#f92672">=</span> Denominação)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_line</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">geom_point</span>(fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, stroke <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>) <span style="color:#f92672">+</span> <span style="color:#75715e">#aqui são características aplicadas apenas ao geom_point, por isso mantém aqui  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mês&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>)
+</code></pre></div><p><img src="output_90_0.png" alt="png"></p>
+<p>Então observe que diferentes códigos podem gerar o mesmo resultado - <strong>a arte da programação!</strong></p>
+<h1 id="fazendo-vários-pequenos-gráficos">Fazendo vários “pequenos” gráficos</h1>
+<p>As funções facet_grid() e facet_wrap() do ggplot2 possuem a característica de fazer subgráficos dentro de um mesmográfico. A primeira função, facet_grid() organiza esses subgráficos de maneira de um tabela, onde conseguimos especificar se osgráficos serão organizados por linhas ou colunas, por meio dos parâmetros rows e cols. Ademais, conseguimos limitar o número delinhas e colunas a serem usados na nossa organização dos subgráficos por meio dos parâmetros nrow e ncol, respectivamente. Porfim, definimos se as escalas dos eixos x e y serão livres ou fixos para todos os subgráficos por meio do parâmetro scales.</p>
+<p>No nosso primeiro conjunto de exemplos, vamos utilizar o tibble moedas_2019 para mostrar em cada subgráfico a quantidademédia de circulação de moedas em cada mês. Iremos variar alguns parâmetros das funções facet_grid() e facet_wrap() para explorar seus comportamentos.</p>
+<p>Utilizando o facet_grid() para deixar cada mês como subgráficos organizadas nas linhas:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Denominação), y <span style="color:#f92672">=</span> Média)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Denominação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">facet_grid</span>(rows <span style="color:#f92672">=</span> <span style="color:#a6e22e">vars</span>(Mês))
+</code></pre></div><p><img src="output_92_0.png" alt="png"></p>
+<p>Repare que cada linha é de fato um subgráfico de colunas, onde o seu eixo x é a Denominação e o eixo y é a quantidade média. Cada subgráfico é baseado nos valores da variável Mês (ou seja, usando vars(Mês)).</p>
+<p>Vamos mudar a orientação, deixando que cada Mês fique em forma de colunas:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Denominação), y <span style="color:#f92672">=</span> Média)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Denominação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">facet_grid</span>(cols <span style="color:#f92672">=</span> <span style="color:#a6e22e">vars</span>(Mês))
+</code></pre></div><p><img src="output_94_0.png" alt="png"></p>
+<p>As coisas ficam meio “apertadas” certo? Podemos organizar melhor ao usar a função face_wrap():</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Denominação), y <span style="color:#f92672">=</span> Média)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Denominação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#a6e22e">vars</span>(Mês))
+</code></pre></div><p><img src="output_96_0.png" alt="png"></p>
+<p>A função face_wrap() sempre vai tentar organizar os subgráficos em um layout retangular. Podemos especificar que os subgráficos sejam organizados em 4 linhas:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Denominação), y <span style="color:#f92672">=</span> Média)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Denominação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#a6e22e">vars</span>(Mês), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>)
+</code></pre></div><p><img src="output_98_0.png" alt="png"></p>
+<p>Repare que sempre a mesma escala pro eixo y foi usada, mas poderíamos deixá-la livre, conforme a necessidade de cada subgráfico.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_2019, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Denominação), y <span style="color:#f92672">=</span> Média)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Denominação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#a6e22e">vars</span>(Mês), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>, scales <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free_y&#34;</span>)
+</code></pre></div><p><img src="output_100_0.png" alt="png"></p>
+<p>Perceba que cada subgráfico agora tem sua escala y específica (mesmo que ela seja a mesma, por causa da característica desses dados).</p>
+<p>Isso é interessante quando temos dados que variam bastante, necessitando de escalas diferentes para melhor visualização.</p>
+<p><strong>O que acontece quando queremos combinar 2 ou mais colunas no facet_wrap() e facet_grid()?</strong></p>
+<p>Nesse caso, basta colocar todas as suas colunas que você queira combinar o valor para montar “os títulos” dos subgráficos.</p>
+<p>Por exemplo, suponha que queiramos formar subgráficos de quantidade média de circulação de moedas por ano e por mês, considerando apenas o primeiro trimestre de cada ano a partir de 2010. Para isso, primeiro de tudo, precisamos um tibble com essesdados (o tibble atual do moedas_2019 só contém o ano 2019):Criar 3 novas colunas: Dia, Mês e Ano. Então, capturar as observações onde o ano seja maior ou igual a2010, os meses sejam iguais a 1, 2 ou 3 e com denominações iguais a 0.01, 0.05, 0.10, 0.25, 0.50 e 1.00.</p>
+<p>Queremos que o conjunto de dados seja ordenado pelas datas mais recentes. Por fim, queremos aquantidade média de moedas em circulação (previamente selecionadas) por mês, ano e denominação.</p>
+<p>Vamos considerar o seguinte gráfico (na próxima seção você entenderá melhor como projetar esse gráfico):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">moedas_circulacao_media <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mutate</span>(circulacao_dinheiro,                       
+                                  Dia <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%d&#34;</span>)),                      
+                                  Mês <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%m&#34;</span>)),                      
+                                  Ano <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">format</span>(Data, <span style="color:#e6db74">&#34;%Y&#34;</span>))) <span style="color:#f92672">%&gt;%</span> 
+    <span style="color:#a6e22e">filter</span>(Ano <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2010</span> <span style="color:#f92672">&amp;</span> Mês <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>) <span style="color:#f92672">&amp;</span> Denominação <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;0.01&#34;</span>, <span style="color:#e6db74">&#34;0.05&#34;</span>, <span style="color:#e6db74">&#34;0.10&#34;</span>, <span style="color:#e6db74">&#34;0.25&#34;</span>, <span style="color:#e6db74">&#34;0.50&#34;</span>, <span style="color:#e6db74">&#34;1.00&#34;</span>)) <span style="color:#f92672">%&gt;%</span>   
+    <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(Ano), <span style="color:#a6e22e">desc</span>(Mês), <span style="color:#a6e22e">desc</span>(Dia)) <span style="color:#f92672">%&gt;%</span> 
+    <span style="color:#a6e22e">group_by</span>(Mês, Ano, Denominação) <span style="color:#f92672">%&gt;%</span> 
+    <span style="color:#a6e22e">summarise</span>(Média <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(Quantidade, na.rm <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>))
+</code></pre></div><pre><code>`summarise()` has grouped output by 'Mês', 'Ano'. You can override using the `.groups` argument.
+</code></pre>
+<p>A ordem definida em vars() definirá também a ordem de aparição dos valores das colunas que serão combinados para formar o títulode cada subgráfico. Vamos determinar que cada coluna do grid de subgráficos corresponde a um mês específico. Sendo assim, definimoso ncol = 3:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_circulacao_media, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Denominação), y <span style="color:#f92672">=</span> Média)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Denominação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#a6e22e">vars</span>(Ano, Mês), ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
+</code></pre></div><p><img src="output_104_0.png" alt="png"></p>
+<p>Alguns pontos importantes:</p>
+<ol>
+<li>A formatação definida em cada geom_ é aplicada a todos os subgráficos!</li>
+<li>Você sempre deve preparar seus dados para refletir o que você quer visualizar (nunca é demais lembrar)</li>
+<li>Uma dica é entender (e até mesmo desenhar no papel) qual é o tipo de gráfico que você quer fazer e então buscar os comandos necessários para produzir o que você definiu de maneira conceitual</li>
+</ol>
+<h1 id="material-complementar">Material complementar</h1>
+<p>É sempre recomendável vermos as opções gerais dos pacotes. Nesse link (<a href="https://rstudio.com/resources/cheatsheets/),">https://rstudio.com/resources/cheatsheets/),</a> podemos teracesso à uma série de cheatsheet para diversos pacotes.</p>
+<p>Mais detalhadamente, sobre o ggplot2, temos esse cheatsheet: <a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf</a> (<a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf</a>)</p>
+<p>Uma função complementar é a ggsave(), a qual salva como .png um gráfico produzido pelo ggplot(). Para isso, vc deve atribuir umggplot() à uma variável e então chamar o ggsave() passando como parâmetro esse variável e o local onde deseja salvar seugráfico. Por exemplo, vamos salvar o último gráfico gerado da seguinte forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">meu_grafico <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> moedas_circulacao_media, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(Denominação), y <span style="color:#f92672">=</span> Média)) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span> <span style="color:#75715e">#as características estéticas serão herdadas do aes() definido no ggplot  </span>
+    <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Denominação&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quantidade Média&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Moedas em Circulação&#34;</span>) <span style="color:#f92672">+</span>  
+    <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#a6e22e">vars</span>(Ano, Mês), ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)<span style="color:#75715e">#agora a variável meu_grafico está com o gráfico salvo em memória#inclusive, se você executar ela de maneira isolada (como fazemos para ver os dados de um vetor), oRStudio irá mostrar o gráfico para você, normalmente</span>
+    
+<span style="color:#a6e22e">ggsave</span>(<span style="color:#e6db74">&#34;.//nome_do_arquivo_do_grafico.png&#34;</span>, plot<span style="color:#f92672">=</span>meu_grafico, height <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, dpi <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;print&#34;</span>) <span style="color:#75715e">#conseguimos especificar também a largura da imagem, se necessário</span>
+</code></pre></div><pre><code>Saving 6.67 x 20 in image
+</code></pre>
+<p>Veja mais sobre a função ggsave() aqui (<a href="https://ggplot2.tidyverse.org/reference/ggsave.html)">https://ggplot2.tidyverse.org/reference/ggsave.html)</a>.</p>
+<h1 id="conclusão">Conclusão</h1>
+<p>Perceba os seguintes pontos:</p>
+<ul>
+<li>A estética do gráfico é bastante importante e você tem absoluto poder em sua definição (deixe sua criatividade fluir!)</li>
+<li>Consultar a documentação do ggplot2 é algo comum e para fazer os gráficos com as aparências que queremos, muitas vezes precisamos recorrer a sua documentação - veja o material complementar</li>
+<li>A forma com que fazemos os gráficos é muito semelhante, bastando mudar basicamente, o nome da função geradora do gráfico(iniciado com geom_) e checando o comportamento de cada parte estética do respectivo gráfico</li>
+<li>Lembre-se, o gráfico é apenas um reflexo dos dados tabulares. Por isso, é importante que você faça as devidas transformações emanipulação antes de visualizar qualquer coisa.</li>
+</ul>
+<p>Bons estudos!</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/tags/r" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">R</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/tags/visualiza%C3%A7%C3%A3o-de-dados" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Visualização de dados</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Relacionado</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/post/introducao-visualizacao/">Introdução a visualização de dados</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/post/conex%C3%A3o-ao-postgresql-utilizando-o-r/">Conexão ao PostgreSQL utilizando o R</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://nic1611.github.io/blog/" >
+    &copy;  Q.G do Tux 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
