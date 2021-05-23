@@ -6,7 +6,17 @@
     <description>Recent content in probabilidade on Q.G do Tux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/probabilidade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/probabilidade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Variáveis Aleatórias</title>
+      <link>https://nic1611.github.io/blog/post/variaveis-aleatorias/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/variaveis-aleatorias/</guid>
+      <description>Variáveis Aleatórias O que é uma variável aleatória? Apesar do nome, variável aleatória, estamos mais interessados na função de probabilidade que será gerada. A variável aleatória associa cada resultado obtido de um experimento aleatório a um número. Veja o exemplo:
+Assim, se o espaço amostral relativo ao &amp;ldquo;lançamento simultâneo de duas moedas de caras&amp;rdquo; que aparecem, a cada ponto amostral podemos associar um número para X, de acordo com a Tabela 10.</description>
+    </item>
+    
     <item>
       <title>Teoria da probabilidade</title>
       <link>https://nic1611.github.io/blog/post/teoria-probabilidade/</link>

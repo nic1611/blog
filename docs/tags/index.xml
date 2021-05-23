@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Q.G do Tux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>probabilidade</title>
+      <link>https://nic1611.github.io/blog/tags/probabilidade/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/tags/probabilidade/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>R</title>
       <link>https://nic1611.github.io/blog/tags/r/</link>
@@ -31,15 +40,6 @@
       <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://nic1611.github.io/blog/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>probabilidade</title>
-      <link>https://nic1611.github.io/blog/tags/probabilidade/</link>
-      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://nic1611.github.io/blog/tags/probabilidade/</guid>
       <description></description>
     </item>
     

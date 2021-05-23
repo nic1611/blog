@@ -22,12 +22,12 @@ params:
   background_color_class: bg-black
   description: Venha para o lado tux da força.
   facebook: ''
-  favicon: ''
+  favicon: /images/favicon.svg
   featured_image: /images/sean-lim.jpg
-  github: ''
+  github: 'https://github.com/nic1611'
   gitlab: ''
   instagram: ''
-  linkedin: ''
+  linkedin: 'https://www.linkedin.com/in/nicolas-soffi-565028198/'
   mastodon: ''
   recent_posts_number: 3
   rss: ''
