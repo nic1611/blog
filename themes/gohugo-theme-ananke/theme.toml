@@ -10,6 +10,8 @@ tags = ["website", "starter", "responsive", "Disqus", "blog", "Tachyons", "Multi
 features = ["posts", "shortcodes", "related content", "comments"]
 min_version = "0.64.0"
 
+disqusShortname = "qg-tux"
+
 [author]
   name = "theNewDynamic"
   homepage = "https://www.thenewdynamic.com/"
