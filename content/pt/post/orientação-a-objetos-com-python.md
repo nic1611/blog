@@ -12,11 +12,13 @@ title: 'Orientação a Objetos com Python'
 
 # Introdução
 
-A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação deforma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadasvia objetos.  Outro tipo de paradigma de programação muito conhecido é o funcional, utilizadopara criar programas na linguagem de programação R; muitas dasfeaturesdo paradigma funcionaltambém estão disponível no Python.Por  exemplo,  um  aluno  pode  ser  representado  por  uma  classeAlunoque  tem  vários  campos(atributos) como nome, código (id), data de nascimento, etc.  Várias operações (métodos) podemser associadas:aprovar(),matricular(),retornar_grade_de_horario().
+A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação de forma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadas via objetos.  Outro tipo de paradigma de programação muito conhecido é o funcional, utilizado para criar programas na linguagem de programação R; muitas das features do paradigma funcional também estão disponível no Python.
+
+Por  exemplo,  um  aluno  pode  ser  representado  por  uma  classe Aluno que  tem  vários  campos(atributos) como nome, código (id), data de nascimento, etc.  Várias operações (métodos) podem ser associadas: aprovar(), matricular(), retornar_grade_de_horario().
 
 # Classes
 
-Vários tipos de dados em Python que como inteiros, string e booleanos são objetos que armazenamum único item de dado. Porém, podemos fazer classes que armazenem um conjunto de dados que,em conjunto, representam algum objeto complexo como uma pessoa, aluno, empregado, etc.
+Vários tipos de dados em Python que como inteiros, string e booleanos são objetos que armazenamum único item de dado. Porém, podemos fazer classes que armazenem um conjunto de dados que, em conjunto, representam algum objeto complexo como uma pessoa, aluno, empregado, etc.
 
 ## Classes padrões
 
@@ -31,7 +33,7 @@ print(type('Texto'))
 print(type([1, 2, 3, 4]))
 ```
 
-Podemos usarisinstancepara descobrir se um determinado valor ou variável é de uma determi-nada classe/tipo:
+Podemos usar is instance para descobrir se um determinado valor ou variável é de uma determinada classe/tipo:
 
 ```python
 x = 42
@@ -49,9 +51,9 @@ Não é float!
 
 ## Criando classes
 
-O código abaixo cria uma classeAlunocom vários atributos.
+O código abaixo cria uma classe Aluno com vários atributos.
 
-A função__init__é a função de inicialização de um objeto da classe, ela recebe pelo menos umparâmetro,selfque é o objeto sendo criado.
+A função__init__ é a função de inicialização de um objeto da classe, ela recebe pelo menos um parâmetro, self que é o objeto sendo criado.
 
 ```python
 class Aluno:
@@ -68,11 +70,11 @@ print(aluno.id)
 print(aluno.curso)
 ```
 
-Observe como fazemos para instanciar um objeto.  Primeiro definimos um nome para o objeto.Nesse caso usamos o nomealuno.  Após isso há o sinal de atribuição (=) e por fim,  o nome daclasse seguido dos parenteses. Ficando:
+Observe como fazemos para instanciar um objeto.  Primeiro definimos um nome para o objeto. Nesse caso usamos o nome aluno. Após isso há o sinal de atribuição (=) e por fim,  o nome da classe seguido dos parenteses. Ficando:
 
 aluno = Aluno()
 
-Observe também como acessamos os atributos de um objeto. Utilizamos o nome do objeto (nessecaso  aluno)  seguindo  de  um  ponto  (.)   e  o  atributo  que  queremos  acessar.   Por  exemplo,  paraacessar o valor nome, usamos:
+Observe também como acessamos os atributos de um objeto. Utilizamos o nome do objeto (nesse caso  aluno)  seguindo de um ponto (.) e o atributo  que  queremos  acessar. Por  exemplo,  para acessar o valor nome, usamos:
 
 aluno.nome
 
@@ -96,7 +98,7 @@ print(aluno.id)
 print(aluno.curso)
 ```
 
-Observe que toda vez que instanciamos um objeto, fazemos uma chamada ao método__init__.
+Observe que toda vez que instanciamos um objeto, fazemos uma chamada ao método __init__.
 
 Dessa forma, fazemos a passagem de parâmetros ao instanciar o objeto.
 
@@ -120,11 +122,11 @@ aluno = Aluno("Pedro")
 print(aluno)
 ```
 
-Observe que a função **__srt__** formata como serão apresentados os valores dos atributos de umobjeto da classe Aluno.
+Observe que a função **__srt__** formata como serão apresentados os valores dos atributos de um objeto da classe Aluno.
 
 ##  Criando objeto
 
-Como visto acima, podemos instanciar uma classe por meio de um objeto. Na verdade, podemoscriar quantos objetos de uma mesma classe forem necessários.
+Como visto acima, podemos instanciar uma classe por meio de um objeto. Na verdade, podemos criar quantos objetos de uma mesma classe forem necessários.
 
 ```python
 a1 = Aluno("João", 1)
@@ -135,9 +137,9 @@ print(a1, "::", a2)
 
 Aluno (João: 1) :: Aluno (Maria: 2)
 
-Cuidado com atribuições, veja no exemplo abaixo quea1ea“apontam” para o mesmo objeto.
+Cuidado com atribuições, veja no exemplo abaixo que a1 e a “apontam” para o mesmo objeto.
 
-Observe também que podemos acessar diretamente os atributos de um objeto. No exemplo abaixo,modificamos o atributonome.
+Observe também que podemos acessar diretamente os atributos de um objeto. No exemplo abaixo,modificamos o atributo nome.
 
 ```python
 a = a1
@@ -175,7 +177,7 @@ Aluno (Pedro: -1)
 
 ##  Adicionando métodos
 
-Podemos adicionar métodos, que são funções que representam operações sobre um objeto de umaclasse. Essas operações podem calcular e/ou retornar informações sobre o objeto ou ainda modi-ficar os dados do objeto.
+Podemos adicionar métodos, que são funções que representam operações sobre um objeto de uma classe. Essas operações podem calcular e/ou retornar informações sobre o objeto ou ainda modificar os dados do objeto.
 
 ```python
 class Aluno:
@@ -200,9 +202,9 @@ class Aluno:
         return self.curso == curso
 ```
 
-O método **__init__**, como visto anteriormente, é o inicializador da classe.  Quando criamos umobjeto  da  classe Aluno,  é  esse  método  que  será  executado.   O  método  matricular  recebe  como parâmetro um curso e insere esse valor no atributo curso.  O método **esta_matriculado** verifica ovalor do atributo curso e retorna **True** se o valor for diferente de **None**. Observe a utilização doisnot, apresentado anteriormente. Por fim, o método **esta_matriculado_em_curso** recebe um valor de um curso como parâmetro, compara com o valor do objeto e retornaTruese o valor for igual.
+O método **__init__**, como visto anteriormente, é o inicializador da classe.  Quando criamos um objeto  da  classe Aluno,  é  esse  método  que  será  executado.   O  método  matricular  recebe  como parâmetro um curso e insere esse valor no atributo curso.  O método **esta_matriculado** verifica ovalor do atributo curso e retorna **True** se o valor for diferente de **None**. Observe a utilização do is not, apresentado anteriormente. Por fim, o método **esta_matriculado_em_curso** recebe um valor de um curso como parâmetro, compara com o valor do objeto e retorna True se o valor for igual.
 
-Observe que os métodos recebemselfque é como chamamos o objeto.
+Observe que os métodos recebem self que é como chamamos o objeto.
 
 ##  Utilizando métodos
 
@@ -225,7 +227,7 @@ True
 
 False
 
-Na primeira linha,  a variávelcursorecebe o valor “Ciência de dados”.   A segunda linha faz a instanciação de um objeto chamado aluno da classe Aluno, passando o valor “João” como nome eo valor 1 como id_aluno. Como nenhum valor foi passado para o curso, ao criar o objeto, o método __init__ irá atribuir o valor None para esse atributo.  A terceira linha faz uma chama ao método esta_matriculado().  Observe a forma como isso é feito.  Primeiro colocamos o nome do objeto,seguido de um ponto (.) e depois o nome do método. Como esse método não recebe parâmetros,não há valor entre os parênteses (mas é necessário colocar os parênteses).  Como o valor que oobjeto  possui  no  atributo  curso  é None,  o  valor  da  operação self.curso  is  not  None retornará False. Na quarta linha, temos a atribuição da variável curso ao objeto aluno por meio do método matricular. Isso fará o valor do atributo curso do objeto aluno receber o valor “Ciência de dados”.
+Na primeira linha,  a variável curso recebe o valor “Ciência de dados”. A segunda linha faz a instanciação de um objeto chamado aluno da classe Aluno, passando o valor “João” como nome eo valor 1 como id_aluno. Como nenhum valor foi passado para o curso, ao criar o objeto, o método __init__ irá atribuir o valor None para esse atributo.  A terceira linha faz uma chama ao método esta_matriculado().  Observe a forma como isso é feito.  Primeiro colocamos o nome do objeto, seguido de um ponto (.) e depois o nome do método. Como esse método não recebe parâmetros, não há valor entre os parênteses (mas é necessário colocar os parênteses). Como o valor que oobjeto  possui  no  atributo  curso  é None,  o  valor  da  operação self.curso  is  not  None retornará False. Na quarta linha, temos a atribuição da variável curso ao objeto aluno por meio do método matricular. Isso fará o valor do atributo curso do objeto aluno receber o valor “Ciência de dados”.
 
 Ao realizar novamente a chamada do método esta_matriculado na linha 5, temos como resultado True,  pois o valor do atributo curso do objeto aluno não é mais None.   A sexta linha possui achamada para o método esta_matriculado_em_curso, passando como parâmetro a variável curso.
 
@@ -237,13 +239,13 @@ Podemos remover um objeto comdelaluno = Aluno("João")
 
 del aluno
 
-Porém, o Python conta com coletor de lixo, e, se o programa estiver bem estruturado, é raro ne-cessitar fazer a remoção de um objeto.
+Porém, o Python conta com coletor de lixo, e, se o programa estiver bem estruturado, é raro necessitar fazer a remoção de um objeto.
 
 ##  Métodos e Atributos da classe
 
 Os  métodos  vistos  até  agora  são  métodos  que  atuam  sobre  o  objetoself,  porém  podemos  termétodos que atuam sobre a classe em si. Para isso, utilizamos o decorador @classmethod.
 
-Métodos da classe são úteis para implementar funcionalidades como construtores específicos oumanter uma contagem de objetos instanciados. Veja que no exemplo abaixo implementamos doismétodos da classe. Algumas informações sobre a classe
+Métodos da classe são úteis para implementar funcionalidades como construtores específicos oumanter uma contagem de objetos instanciados. Veja que no exemplo abaixo implementamos dois métodos da classe. Algumas informações sobre a classe
  - inc_inst() é incrementado toda vez que uma classe é criada (e é chamado por__init()__)
  - novo_auto_id() é um construtor que usa o valor mantido porinc_inst()para automatica-mente atribuir um id incremental na construção
  - inst_count é um atributo da classe que armazena a quantidade de instancias da classe (quan-tos  objetos  já  foram  criados).    O  valor  é  atualizado  pela  chamada  ao  método  da  classe inc_inst() que é feito dentro do método __init()__.
@@ -286,14 +288,14 @@ Aluno (Maria: 2)
 
 2
 
-Observe que nos métodos de classe, utilizamos a palavraclspara nos referirmos à classe, assimcomo fazemos comselfquando nos referimos ao objeto. No exemplo, com queremos fazer acesso à variável inst_countque é de escopo global da classe, usamos: 
+Observe que nos métodos de classe, utilizamos a palavra cls para nos referirmos à classe, assim como fazemos com self quando nos referimos ao objeto. No exemplo, com queremos fazer acesso à variável inst_count que é de escopo global da classe, usamos: 
 cls.inst_count
 
 Observe também como a função da classe é chamada no método construtor:
 
 Aluno.inst_count()
 
-Outro  ponto  a  ser  observado  é  a  utilização  de  um  novo  método  construtor  para  instanciar  osobjetos.  Isso ocorre nos objetosa1ea2instanciados no exemplo acima.  Também observe como podemos acessar o valor da variáve linst_countda classe Aluno (Aluno.inst_count).
+Outro  ponto  a  ser  observado  é  a  utilização  de  um  novo  método  construtor  para  instanciar  osobjetos.  Isso ocorre nos objetos a1 e a2 instanciados no exemplo acima.  Também observe como podemos acessar o valor da variáve linst_countda classe Aluno (Aluno.inst_count).
 
 ## Métodos Estáticos
 
@@ -310,14 +312,14 @@ Pessoa.funcao_estatica_qualquer()
 
 Uma função estática na classe Pessoa
 
-Observe que nos métodos relacionados a objetos (normais) chamamos o primeiro argumento dométodo (o objeto em si) de self e em métodos da classe (@classmethod), chamamos o primeiro argumento decls(a classe). Esses nomes são apenas convenções, o desenvolvedor pode escolhero nome que achar mais conveniente. Porém o recomendado é manter a convenção.
+Observe que nos métodos relacionados a objetos (normais) chamamos o primeiro argumento do método (o objeto em si) de self e em métodos da classe (@classmethod), chamamos o primeiro argumento de cls(a classe). Esses nomes são apenas convenções, o desenvolvedor pode escolhero nome que achar mais conveniente. Porém o recomendado é manter a convenção.
 
 # Herança
 
-A herança permite que uma classe herde atributos e métodos de outras classes.  A grande van-tagem do uso de herança é a reutilização de código entre classes.
+A herança permite que uma classe herde atributos e métodos de outras classes.  A grande vantagem do uso de herança é a reutilização de código entre classes.
 
 A classe
-Pessoa possui três atributos (nome,cpf e idade) e um método (aniversario).   A classe Aluno possui um atributo (curso) e um método(matricular). Porém, a classe Aluno herda os atributos e métodos da classe Pessoa.
+Pessoa possui três atributos (nome,cpf e idade) e um método (aniversario). A classe Aluno possui um atributo (curso) e um método(matricular). Porém, a classe Aluno herda os atributos e métodos da classe Pessoa.
 
 Sua implementação em Python fica:
 
@@ -384,13 +386,13 @@ class Aluno(Pessoa):
 
 Definimos que a classe Professor e Aluno herdam da classe Pessoa.  Por hora, vamos ignorar aoutra super classe de Professor chamada de MixinNomes.
 
-Observe como usamos o inicializador da classe Pessoa no construtor da classeAluno. Utilizamos super para fazer referência a classe pai (classe da qual herdamos métodos e atributos). Para fazer autilização do construtor da classe Pessoa, usamos super().__init__ passando os argumentos comoparâmetro.
+Observe como usamos o inicializador da classe Pessoa no construtor da classeAluno. Utilizamos super para fazer referência a classe pai (classe da qual herdamos métodos e atributos). Para fazer autilização do construtor da classe Pessoa, usamos super().__init__ passando os argumentos como parâmetro.
 
 ##  Super classe e sub classe
 
 Do  ponto  de  vista  de  uma  classe,  no  exemplo  abaixo  a  classe Professor,  adotamos  a  seguinte terminologia para denominar as classes relacionadas:
- - Super classe:  É um pai da classe em questão, no nosso caso a classePessoa.  Note que umaclasse pode ter várias super classes (herança múltipla)
- - Sub classe:  Uma classe que herda da classe em questão (“uma classe filha”),  no exemplo abaixo as classes Efetivo  eTemporario Note que esta terminologia é sempre relacional, dizemos que Pessoa é uma super classe de Professor e que Professor é uma sub classe de Pessoa.
+ - Super classe:  É um pai da classe em questão, no nosso caso a classePessoa.  Note que uma classe pode ter várias super classes (herança múltipla)
+ - Sub classe:  Uma classe que herda da classe em questão (“uma classe filha”),  no exemplo abaixo as classes Efetivo  e Temporario Note que esta terminologia é sempre relacional, dizemos que Pessoa é uma super classe de Professor e que Professor é uma sub classe de Pessoa.
  
 ##  Sobrescrita de métodos
 
@@ -430,11 +432,11 @@ A classe AlunoComNomes é uma nova classe Aluno com a adição das funcionalidad
 
 # Sobrecarga de operadores
 
-A sobrecarga de operadores possibilita definir o comportamento dos objetos ao serem utilizadoscom os diversos operadores (e.g., lógicos, relacionais).
+A sobrecarga de operadores possibilita definir o comportamento dos objetos ao serem utilizados com os diversos operadores (e.g., lógicos, relacionais).
 
 ##  conversão de tipos:
 
-O  Python  suporta  os  seguintes  operadores  para  a  conversão  de  tipos,  já  vimos__str__para  aconversão comstr():
+O  Python  suporta  os  seguintes  operadores  para  a  conversão  de  tipos,  já  vimos__str__para  aconversão com str():
  - __str__(self): para string, str()
  - __int__(self): para inteiros, int()
  - __float__(self): para números de ponto flutuante, float()
@@ -442,7 +444,7 @@ O  Python  suporta  os  seguintes  operadores  para  a  conversão  de  tipos,  
 
 ##  operadores aritméticos:
 
-Classes em Python suportam a sobrecarga de operadores. Para isto deve-se implementar funçõescom nomes específicos:
+Classes em Python suportam a sobrecarga de operadores. Para isto deve-se implementar funções com nomes específicos:
  - __add(self, obj2)__: Adição (obj1 + obj2)
  - __sub(self, obj2)__: Subtração (obj1 - obj2)
  - __mul(self, obj2)__: Multiplicação (obj1 * obj2)

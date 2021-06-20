@@ -6,7 +6,20 @@
     <description>Recent content in probabilidade on Q.G do Tux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/probabilidade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/probabilidade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>As distribuições</title>
+      <link>https://nic1611.github.io/blog/post/distribuicoes/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/distribuicoes/</guid>
+      <description>Distribuições As distribuições são modelos matemáticos que tem por objetivo resolver certos problemas probabilísticos.
+Pense da seguinte maneira:
+Situações são diferentes: mas não tão diferentes assim&amp;hellip;
+Dessa forma: se eu elaboro um método que resolve um certo tipo de situação, eu posso reproduzí-lo para resolver situações parecidas com a que eu resolvi previamente.
+Distribuição Binomial A Distribuição Binomial é uma distribuição que chamamos de DISCRETA. Isso ocorre, pois a variável envolvida “n” são número inteiros.</description>
+    </item>
+    
     <item>
       <title>Variáveis Aleatórias</title>
       <link>https://nic1611.github.io/blog/post/variaveis-aleatorias/</link>

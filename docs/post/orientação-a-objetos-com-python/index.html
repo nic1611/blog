@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Orientação a Objetos com Python">
 <meta itemprop="description" content="A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação deforma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadasvia objetos."><meta itemprop="datePublished" content="2021-06-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3025">
+<meta itemprop="wordCount" content="3092">
 <meta itemprop="keywords" content="python,orientação a objetos," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Orientação a Objetos com Python"/>
 <meta name="twitter:description" content="A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação deforma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadasvia objetos."/>
@@ -191,9 +191,10 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="orientação-a-objetos">Orientação a Objetos</h1>
 <h1 id="introdução">Introdução</h1>
-<p>A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação deforma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadasvia objetos.  Outro tipo de paradigma de programação muito conhecido é o funcional, utilizadopara criar programas na linguagem de programação R; muitas dasfeaturesdo paradigma funcionaltambém estão disponível no Python.Por  exemplo,  um  aluno  pode  ser  representado  por  uma  classeAlunoque  tem  vários  campos(atributos) como nome, código (id), data de nascimento, etc.  Várias operações (métodos) podemser associadas:aprovar(),matricular(),retornar_grade_de_horario().</p>
+<p>A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação de forma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadas via objetos.  Outro tipo de paradigma de programação muito conhecido é o funcional, utilizado para criar programas na linguagem de programação R; muitas das features do paradigma funcional também estão disponível no Python.</p>
+<p>Por  exemplo,  um  aluno  pode  ser  representado  por  uma  classe Aluno que  tem  vários  campos(atributos) como nome, código (id), data de nascimento, etc.  Várias operações (métodos) podem ser associadas: aprovar(), matricular(), retornar_grade_de_horario().</p>
 <h1 id="classes">Classes</h1>
-<p>Vários tipos de dados em Python que como inteiros, string e booleanos são objetos que armazenamum único item de dado. Porém, podemos fazer classes que armazenem um conjunto de dados que,em conjunto, representam algum objeto complexo como uma pessoa, aluno, empregado, etc.</p>
+<p>Vários tipos de dados em Python que como inteiros, string e booleanos são objetos que armazenamum único item de dado. Porém, podemos fazer classes que armazenem um conjunto de dados que, em conjunto, representam algum objeto complexo como uma pessoa, aluno, empregado, etc.</p>
 <h2 id="classes-padrões">Classes padrões</h2>
 <p>Como visto anteriormente, os tipos de dados em Python são classes e cada valor um objeto (dize-mos que o objeto é a instância de uma classe).
 Usamos <strong>type()</strong> para descobrir o tipo/classe de um objeto.</p>
@@ -202,7 +203,7 @@ Usamos <strong>type()</strong> para descobrir o tipo/classe de um objeto.</p>
 <span style="color:#66d9ef">print</span>(type(True))
 <span style="color:#66d9ef">print</span>(type(<span style="color:#e6db74">&#39;Texto&#39;</span>))
 <span style="color:#66d9ef">print</span>(type([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]))
-</code></pre></div><p>Podemos usarisinstancepara descobrir se um determinado valor ou variável é de uma determi-nada classe/tipo:</p>
+</code></pre></div><p>Podemos usar is instance para descobrir se um determinado valor ou variável é de uma determinada classe/tipo:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>
 
 <span style="color:#66d9ef">if</span> isinstance(x, int):
@@ -215,8 +216,8 @@ Usamos <strong>type()</strong> para descobrir o tipo/classe de um objeto.</p>
 </code></pre></div><p>É inteiro!
 Não é float!</p>
 <h2 id="criando-classes">Criando classes</h2>
-<p>O código abaixo cria uma classeAlunocom vários atributos.</p>
-<p>A função__init__é a função de inicialização de um objeto da classe, ela recebe pelo menos umparâmetro,selfque é o objeto sendo criado.</p>
+<p>O código abaixo cria uma classe Aluno com vários atributos.</p>
+<p>A função__init__ é a função de inicialização de um objeto da classe, ela recebe pelo menos um parâmetro, self que é o objeto sendo criado.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Aluno</span>:
     <span style="color:#66d9ef">def</span> __init__(self):
         self<span style="color:#f92672">.</span>nome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;-x-&#34;</span>
@@ -229,9 +230,9 @@ aluno <span style="color:#f92672">=</span> Aluno()
 <span style="color:#66d9ef">print</span>(aluno<span style="color:#f92672">.</span>nome)
 <span style="color:#66d9ef">print</span>(aluno<span style="color:#f92672">.</span>id)
 <span style="color:#66d9ef">print</span>(aluno<span style="color:#f92672">.</span>curso)
-</code></pre></div><p>Observe como fazemos para instanciar um objeto.  Primeiro definimos um nome para o objeto.Nesse caso usamos o nomealuno.  Após isso há o sinal de atribuição (=) e por fim,  o nome daclasse seguido dos parenteses. Ficando:</p>
+</code></pre></div><p>Observe como fazemos para instanciar um objeto.  Primeiro definimos um nome para o objeto. Nesse caso usamos o nome aluno. Após isso há o sinal de atribuição (=) e por fim,  o nome da classe seguido dos parenteses. Ficando:</p>
 <p>aluno = Aluno()</p>
-<p>Observe também como acessamos os atributos de um objeto. Utilizamos o nome do objeto (nessecaso  aluno)  seguindo  de  um  ponto  (.)   e  o  atributo  que  queremos  acessar.   Por  exemplo,  paraacessar o valor nome, usamos:</p>
+<p>Observe também como acessamos os atributos de um objeto. Utilizamos o nome do objeto (nesse caso  aluno)  seguindo de um ponto (.) e o atributo  que  queremos  acessar. Por  exemplo,  para acessar o valor nome, usamos:</p>
 <p>aluno.nome</p>
 <h2 id="argumentos-para-a-inicialização">Argumentos para a inicialização</h2>
 <p>O método__init__aceita receber argumentos, veja:</p>
@@ -248,7 +249,7 @@ aluno <span style="color:#f92672">=</span> Aluno(<span style="color:#e6db74">&#3
 <span style="color:#66d9ef">print</span>(aluno<span style="color:#f92672">.</span>nome)
 <span style="color:#66d9ef">print</span>(aluno<span style="color:#f92672">.</span>id)
 <span style="color:#66d9ef">print</span>(aluno<span style="color:#f92672">.</span>curso)
-</code></pre></div><p>Observe que toda vez que instanciamos um objeto, fazemos uma chamada ao método__init__.</p>
+</code></pre></div><p>Observe que toda vez que instanciamos um objeto, fazemos uma chamada ao método <strong>init</strong>.</p>
 <p>Dessa forma, fazemos a passagem de parâmetros ao instanciar o objeto.</p>
 <h2 id="__str__"><strong>str</strong></h2>
 <p>Métodos com o nome iniciando e terminando com duas linhas (__) são métodos especiais. Um deles, <strong><strong>str</strong></strong>, nos permite definir a string a ser impressa quando imprimimos um objeto dessa classe.</p>
@@ -265,16 +266,16 @@ aluno <span style="color:#f92672">=</span> Aluno(<span style="color:#e6db74">&#3
 <span style="color:#75715e"># criando um objeto do tipo aluno</span>
 aluno <span style="color:#f92672">=</span> Aluno(<span style="color:#e6db74">&#34;Pedro&#34;</span>)
 <span style="color:#66d9ef">print</span>(aluno)
-</code></pre></div><p>Observe que a função <strong><strong>srt</strong></strong> formata como serão apresentados os valores dos atributos de umobjeto da classe Aluno.</p>
+</code></pre></div><p>Observe que a função <strong><strong>srt</strong></strong> formata como serão apresentados os valores dos atributos de um objeto da classe Aluno.</p>
 <h2 id="criando-objeto">Criando objeto</h2>
-<p>Como visto acima, podemos instanciar uma classe por meio de um objeto. Na verdade, podemoscriar quantos objetos de uma mesma classe forem necessários.</p>
+<p>Como visto acima, podemos instanciar uma classe por meio de um objeto. Na verdade, podemos criar quantos objetos de uma mesma classe forem necessários.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a1 <span style="color:#f92672">=</span> Aluno(<span style="color:#e6db74">&#34;João&#34;</span>, <span style="color:#ae81ff">1</span>)
 a2 <span style="color:#f92672">=</span> Aluno(<span style="color:#e6db74">&#34;Maria&#34;</span>, <span style="color:#ae81ff">2</span>)
 
 <span style="color:#66d9ef">print</span>(a1, <span style="color:#e6db74">&#34;::&#34;</span>, a2)
 </code></pre></div><p>Aluno (João: 1) :: Aluno (Maria: 2)</p>
-<p>Cuidado com atribuições, veja no exemplo abaixo quea1ea“apontam” para o mesmo objeto.</p>
-<p>Observe também que podemos acessar diretamente os atributos de um objeto. No exemplo abaixo,modificamos o atributonome.</p>
+<p>Cuidado com atribuições, veja no exemplo abaixo que a1 e a “apontam” para o mesmo objeto.</p>
+<p>Observe também que podemos acessar diretamente os atributos de um objeto. No exemplo abaixo,modificamos o atributo nome.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> a1
 <span style="color:#66d9ef">print</span>(a1)
 a<span style="color:#f92672">.</span>nome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Pedro&#34;</span>
@@ -302,7 +303,7 @@ aluno <span style="color:#f92672">=</span> Aluno(<span style="color:#e6db74">&#3
 <span style="color:#66d9ef">print</span>(aluno)
 </code></pre></div><p>Aluno (Pedro: -1)</p>
 <h2 id="adicionando-métodos">Adicionando métodos</h2>
-<p>Podemos adicionar métodos, que são funções que representam operações sobre um objeto de umaclasse. Essas operações podem calcular e/ou retornar informações sobre o objeto ou ainda modi-ficar os dados do objeto.</p>
+<p>Podemos adicionar métodos, que são funções que representam operações sobre um objeto de uma classe. Essas operações podem calcular e/ou retornar informações sobre o objeto ou ainda modificar os dados do objeto.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Aluno</span>:
     <span style="color:#e6db74">&#34;&#34;&#34;Esta classe representa um aluno,possui nome, curso e código.&#34;&#34;&#34;</span>
     
@@ -323,8 +324,8 @@ aluno <span style="color:#f92672">=</span> Aluno(<span style="color:#e6db74">&#3
         
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">esta_matriculado_em_curso</span>(self, curso):
         <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>curso <span style="color:#f92672">==</span> curso
-</code></pre></div><p>O método <strong><strong>init</strong></strong>, como visto anteriormente, é o inicializador da classe.  Quando criamos umobjeto  da  classe Aluno,  é  esse  método  que  será  executado.   O  método  matricular  recebe  como parâmetro um curso e insere esse valor no atributo curso.  O método <strong>esta_matriculado</strong> verifica ovalor do atributo curso e retorna <strong>True</strong> se o valor for diferente de <strong>None</strong>. Observe a utilização doisnot, apresentado anteriormente. Por fim, o método <strong>esta_matriculado_em_curso</strong> recebe um valor de um curso como parâmetro, compara com o valor do objeto e retornaTruese o valor for igual.</p>
-<p>Observe que os métodos recebemselfque é como chamamos o objeto.</p>
+</code></pre></div><p>O método <strong><strong>init</strong></strong>, como visto anteriormente, é o inicializador da classe.  Quando criamos um objeto  da  classe Aluno,  é  esse  método  que  será  executado.   O  método  matricular  recebe  como parâmetro um curso e insere esse valor no atributo curso.  O método <strong>esta_matriculado</strong> verifica ovalor do atributo curso e retorna <strong>True</strong> se o valor for diferente de <strong>None</strong>. Observe a utilização do is not, apresentado anteriormente. Por fim, o método <strong>esta_matriculado_em_curso</strong> recebe um valor de um curso como parâmetro, compara com o valor do objeto e retorna True se o valor for igual.</p>
+<p>Observe que os métodos recebem self que é como chamamos o objeto.</p>
 <h2 id="utilizando-métodos">Utilizando métodos</h2>
 <p>Observe o exemplo abaixo.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">curso <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ciência de Dados&#34;</span>
@@ -338,16 +339,16 @@ aluno<span style="color:#f92672">.</span>matricular(curso)
 <p>True</p>
 <p>True</p>
 <p>False</p>
-<p>Na primeira linha,  a variávelcursorecebe o valor “Ciência de dados”.   A segunda linha faz a instanciação de um objeto chamado aluno da classe Aluno, passando o valor “João” como nome eo valor 1 como id_aluno. Como nenhum valor foi passado para o curso, ao criar o objeto, o método <strong>init</strong> irá atribuir o valor None para esse atributo.  A terceira linha faz uma chama ao método esta_matriculado().  Observe a forma como isso é feito.  Primeiro colocamos o nome do objeto,seguido de um ponto (.) e depois o nome do método. Como esse método não recebe parâmetros,não há valor entre os parênteses (mas é necessário colocar os parênteses).  Como o valor que oobjeto  possui  no  atributo  curso  é None,  o  valor  da  operação self.curso  is  not  None retornará False. Na quarta linha, temos a atribuição da variável curso ao objeto aluno por meio do método matricular. Isso fará o valor do atributo curso do objeto aluno receber o valor “Ciência de dados”.</p>
+<p>Na primeira linha,  a variável curso recebe o valor “Ciência de dados”. A segunda linha faz a instanciação de um objeto chamado aluno da classe Aluno, passando o valor “João” como nome eo valor 1 como id_aluno. Como nenhum valor foi passado para o curso, ao criar o objeto, o método <strong>init</strong> irá atribuir o valor None para esse atributo.  A terceira linha faz uma chama ao método esta_matriculado().  Observe a forma como isso é feito.  Primeiro colocamos o nome do objeto, seguido de um ponto (.) e depois o nome do método. Como esse método não recebe parâmetros, não há valor entre os parênteses (mas é necessário colocar os parênteses). Como o valor que oobjeto  possui  no  atributo  curso  é None,  o  valor  da  operação self.curso  is  not  None retornará False. Na quarta linha, temos a atribuição da variável curso ao objeto aluno por meio do método matricular. Isso fará o valor do atributo curso do objeto aluno receber o valor “Ciência de dados”.</p>
 <p>Ao realizar novamente a chamada do método esta_matriculado na linha 5, temos como resultado True,  pois o valor do atributo curso do objeto aluno não é mais None.   A sexta linha possui achamada para o método esta_matriculado_em_curso, passando como parâmetro a variável curso.</p>
 <p>Como esse valor é igual ao valor do atributo curso do objeto aluno, o resultado retorna True. Por fim,  a  última  linha  faz  uma  outra  chamada  ao  método esta_matriculado_em_curso,  passandocomo parâmetro um outro curso.  Como o valor dos cursos é diferente, o resultado retornado é False.</p>
 <h2 id="del">del</h2>
 <p>Podemos remover um objeto comdelaluno = Aluno(&ldquo;João&rdquo;)</p>
 <p>del aluno</p>
-<p>Porém, o Python conta com coletor de lixo, e, se o programa estiver bem estruturado, é raro ne-cessitar fazer a remoção de um objeto.</p>
+<p>Porém, o Python conta com coletor de lixo, e, se o programa estiver bem estruturado, é raro necessitar fazer a remoção de um objeto.</p>
 <h2 id="métodos-e-atributos-da-classe">Métodos e Atributos da classe</h2>
 <p>Os  métodos  vistos  até  agora  são  métodos  que  atuam  sobre  o  objetoself,  porém  podemos  termétodos que atuam sobre a classe em si. Para isso, utilizamos o decorador @classmethod.</p>
-<p>Métodos da classe são úteis para implementar funcionalidades como construtores específicos oumanter uma contagem de objetos instanciados. Veja que no exemplo abaixo implementamos doismétodos da classe. Algumas informações sobre a classe</p>
+<p>Métodos da classe são úteis para implementar funcionalidades como construtores específicos oumanter uma contagem de objetos instanciados. Veja que no exemplo abaixo implementamos dois métodos da classe. Algumas informações sobre a classe</p>
 <ul>
 <li>inc_inst() é incrementado toda vez que uma classe é criada (e é chamado por__init()__)</li>
 <li>novo_auto_id() é um construtor que usa o valor mantido porinc_inst()para automatica-mente atribuir um id incremental na construção</li>
@@ -384,11 +385,11 @@ a2 <span style="color:#f92672">=</span> Aluno<span style="color:#f92672">.</span
 <p>Aluno (João: 1)</p>
 <p>Aluno (Maria: 2)</p>
 <p>2</p>
-<p>Observe que nos métodos de classe, utilizamos a palavraclspara nos referirmos à classe, assimcomo fazemos comselfquando nos referimos ao objeto. No exemplo, com queremos fazer acesso à variável inst_countque é de escopo global da classe, usamos: 
+<p>Observe que nos métodos de classe, utilizamos a palavra cls para nos referirmos à classe, assim como fazemos com self quando nos referimos ao objeto. No exemplo, com queremos fazer acesso à variável inst_count que é de escopo global da classe, usamos: 
 cls.inst_count</p>
 <p>Observe também como a função da classe é chamada no método construtor:</p>
 <p>Aluno.inst_count()</p>
-<p>Outro  ponto  a  ser  observado  é  a  utilização  de  um  novo  método  construtor  para  instanciar  osobjetos.  Isso ocorre nos objetosa1ea2instanciados no exemplo acima.  Também observe como podemos acessar o valor da variáve linst_countda classe Aluno (Aluno.inst_count).</p>
+<p>Outro  ponto  a  ser  observado  é  a  utilização  de  um  novo  método  construtor  para  instanciar  osobjetos.  Isso ocorre nos objetos a1 e a2 instanciados no exemplo acima.  Também observe como podemos acessar o valor da variáve linst_countda classe Aluno (Aluno.inst_count).</p>
 <h2 id="métodos-estáticos">Métodos Estáticos</h2>
 <p>Métodos estáticos não recebem um objeto (self) nem uma classe (cls) como argumentos. Ou seja, não estão associados nem a classe nem a sua instância (objeto). Eles são como uma função normal, mas definidos dentro do namespace de uma classe.  É uma forma de conveniência para o agrupamento de funções relacionadas</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span>:
@@ -398,11 +399,11 @@ cls.inst_count</p>
         
 Pessoa<span style="color:#f92672">.</span>funcao_estatica_qualquer()
 </code></pre></div><p>Uma função estática na classe Pessoa</p>
-<p>Observe que nos métodos relacionados a objetos (normais) chamamos o primeiro argumento dométodo (o objeto em si) de self e em métodos da classe (@classmethod), chamamos o primeiro argumento decls(a classe). Esses nomes são apenas convenções, o desenvolvedor pode escolhero nome que achar mais conveniente. Porém o recomendado é manter a convenção.</p>
+<p>Observe que nos métodos relacionados a objetos (normais) chamamos o primeiro argumento do método (o objeto em si) de self e em métodos da classe (@classmethod), chamamos o primeiro argumento de cls(a classe). Esses nomes são apenas convenções, o desenvolvedor pode escolhero nome que achar mais conveniente. Porém o recomendado é manter a convenção.</p>
 <h1 id="herança">Herança</h1>
-<p>A herança permite que uma classe herde atributos e métodos de outras classes.  A grande van-tagem do uso de herança é a reutilização de código entre classes.</p>
+<p>A herança permite que uma classe herde atributos e métodos de outras classes.  A grande vantagem do uso de herança é a reutilização de código entre classes.</p>
 <p>A classe
-Pessoa possui três atributos (nome,cpf e idade) e um método (aniversario).   A classe Aluno possui um atributo (curso) e um método(matricular). Porém, a classe Aluno herda os atributos e métodos da classe Pessoa.</p>
+Pessoa possui três atributos (nome,cpf e idade) e um método (aniversario). A classe Aluno possui um atributo (curso) e um método(matricular). Porém, a classe Aluno herda os atributos e métodos da classe Pessoa.</p>
 <p>Sua implementação em Python fica:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span>:
     
@@ -461,12 +462,12 @@ class Professor(Pessoa, MixinNomes):
 e
 class Aluno(Pessoa):</p>
 <p>Definimos que a classe Professor e Aluno herdam da classe Pessoa.  Por hora, vamos ignorar aoutra super classe de Professor chamada de MixinNomes.</p>
-<p>Observe como usamos o inicializador da classe Pessoa no construtor da classeAluno. Utilizamos super para fazer referência a classe pai (classe da qual herdamos métodos e atributos). Para fazer autilização do construtor da classe Pessoa, usamos super().<strong>init</strong> passando os argumentos comoparâmetro.</p>
+<p>Observe como usamos o inicializador da classe Pessoa no construtor da classeAluno. Utilizamos super para fazer referência a classe pai (classe da qual herdamos métodos e atributos). Para fazer autilização do construtor da classe Pessoa, usamos super().<strong>init</strong> passando os argumentos como parâmetro.</p>
 <h2 id="super-classe-e-sub-classe">Super classe e sub classe</h2>
 <p>Do  ponto  de  vista  de  uma  classe,  no  exemplo  abaixo  a  classe Professor,  adotamos  a  seguinte terminologia para denominar as classes relacionadas:</p>
 <ul>
-<li>Super classe:  É um pai da classe em questão, no nosso caso a classePessoa.  Note que umaclasse pode ter várias super classes (herança múltipla)</li>
-<li>Sub classe:  Uma classe que herda da classe em questão (“uma classe filha”),  no exemplo abaixo as classes Efetivo  eTemporario Note que esta terminologia é sempre relacional, dizemos que Pessoa é uma super classe de Professor e que Professor é uma sub classe de Pessoa.</li>
+<li>Super classe:  É um pai da classe em questão, no nosso caso a classePessoa.  Note que uma classe pode ter várias super classes (herança múltipla)</li>
+<li>Sub classe:  Uma classe que herda da classe em questão (“uma classe filha”),  no exemplo abaixo as classes Efetivo  e Temporario Note que esta terminologia é sempre relacional, dizemos que Pessoa é uma super classe de Professor e que Professor é uma sub classe de Pessoa.</li>
 </ul>
 <h2 id="sobrescrita-de-métodos">Sobrescrita de métodos</h2>
 <p>Uma classe pode sobrescrever os métodos de sua(s) super classe(s). Basta reimplementar o métodocom o mesmo nome. No código do exemplo anterior, isso ocorre com os métodos <strong>init</strong> e texto das classes Professor e Aluno.</p>
@@ -488,9 +489,9 @@ a <span style="color:#f92672">=</span> AlunoComNomes(<span style="color:#e6db74"
 a<span style="color:#f92672">.</span>nome_minusculo()
 </code></pre></div><p>A classe AlunoComNomes é uma nova classe Aluno com a adição das funcionalidades do Mixin MixinNomes.  Note o uso da palavra reservada pass.  O pass serve para indicar a ausência de instruções em uma função ou de funções e atributos em uma classe.  No nosso caso, indica que a classe AlunoComNomes é apenas formada pela junção das classes Aluno e MixinNomes e nada mais.</p>
 <h1 id="sobrecarga-de-operadores">Sobrecarga de operadores</h1>
-<p>A sobrecarga de operadores possibilita definir o comportamento dos objetos ao serem utilizadoscom os diversos operadores (e.g., lógicos, relacionais).</p>
+<p>A sobrecarga de operadores possibilita definir o comportamento dos objetos ao serem utilizados com os diversos operadores (e.g., lógicos, relacionais).</p>
 <h2 id="conversão-de-tipos">conversão de tipos:</h2>
-<p>O  Python  suporta  os  seguintes  operadores  para  a  conversão  de  tipos,  já  vimos__str__para  aconversão comstr():</p>
+<p>O  Python  suporta  os  seguintes  operadores  para  a  conversão  de  tipos,  já  vimos__str__para  aconversão com str():</p>
 <ul>
 <li><strong>str</strong>(self): para string, str()</li>
 <li><strong>int</strong>(self): para inteiros, int()</li>
@@ -498,7 +499,7 @@ a<span style="color:#f92672">.</span>nome_minusculo()
 <li><strong>bool</strong>(self): para valores lógicos booleanos, bool()</li>
 </ul>
 <h2 id="operadores-aritméticos">operadores aritméticos:</h2>
-<p>Classes em Python suportam a sobrecarga de operadores. Para isto deve-se implementar funçõescom nomes específicos:</p>
+<p>Classes em Python suportam a sobrecarga de operadores. Para isto deve-se implementar funções com nomes específicos:</p>
 <ul>
 <li><strong>add(self, obj2)</strong>: Adição (obj1 + obj2)</li>
 <li><strong>sub(self, obj2)</strong>: Subtração (obj1 - obj2)</li>
