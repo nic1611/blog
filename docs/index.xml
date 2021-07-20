@@ -6,7 +6,17 @@
     <description>Recent content on Q.G do Tux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introdução a visualização com Matplotlib</title>
+      <link>https://nic1611.github.io/blog/post/introducao-ao-matplotlib/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/introducao-ao-matplotlib/</guid>
+      <description>Introdução O matplotlib é uma biblioteca para gerar gráficos ( plots ) em Python, inclusive em 3 dimensões. Abaixo um exemplo de como plotar um gráfico com matplotlib. Primeiramente importamos a interface baseada em estados ( pyplot ) do matplotlib. O padrão da comunidade é usar o alias plt :
+from matplotlib import pyplot as plt import math import numpy as np Então, definimos uma sequencia de valores (em uma lista) a serem impressos.</description>
+    </item>
+    
     <item>
       <title>Normalização e Padronização</title>
       <link>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</link>
