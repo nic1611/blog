@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Introdução a visualização com Matplotlib">
 <meta itemprop="description" content="O matplotlib é uma biblioteca para gerar gráficos ( plots ) em Python, inclusive em 3 dimensões."><meta itemprop="datePublished" content="2021-07-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-07-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2505">
+<meta itemprop="wordCount" content="2269">
 <meta itemprop="keywords" content="Python,Visualização de dados," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Introdução a visualização com Matplotlib"/>
 <meta name="twitter:description" content="O matplotlib é uma biblioteca para gerar gráficos ( plots ) em Python, inclusive em 3 dimensões."/>
@@ -199,9 +199,7 @@ comunidade é usar o alias plt :</p>
 <span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
 </code></pre></div><p>Então, definimos uma sequencia de valores (em uma lista) a serem impressos. Por padrão</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef82960a0&gt;]
-</code></pre>
-<p><img src="output_3_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_3_1.png" alt="png"></p>
 <p>No comando acima, passamos uma lista com os valores no eixo y. Os valores do eixo x são inferi-
 dos pelo índice dos valores na lista.
 Note que no Jupyter, para cada célula de código que gera uma figura, a figura é exibida automati-
@@ -228,9 +226,7 @@ plotlib.pyplot.subplots (ou plt.subplots com o uso do alias).
 Observe o exemplo abaixo:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 ax<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef8459580&gt;]
-</code></pre>
-<p><img src="output_7_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_7_1.png" alt="png"></p>
 <p>O exemplo acima usa a API orientada a objetos para plotar o mesmo plot anterior. O comando
 plt.subplots retorna uma figura e um eixo, ax , (ou uma lista de eixos) criado(s). É uma maneira
 conveniente de criar umlayoutde vários plots, incluindo a figura que os agrega, em um único
@@ -252,16 +248,12 @@ matplotlib.pyplot.subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
 axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
 axes[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">1.4</span>, <span style="color:#ae81ff">1.2</span>, <span style="color:#ae81ff">0.9</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.7</span>, <span style="color:#ae81ff">1.0</span>])
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef84fa850&gt;]
-</code></pre>
-<p><img src="output_9_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_9_1.png" alt="png"></p>
 <p>O mesmo exemplo, mas com o eixo y compartilhado:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, sharey<span style="color:#f92672">=</span>True)
 axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
 axes[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">1.4</span>, <span style="color:#ae81ff">1.2</span>, <span style="color:#ae81ff">0.9</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.7</span>, <span style="color:#ae81ff">1.0</span>])
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef85a9e80&gt;]
-</code></pre>
-<p><img src="output_11_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_11_1.png" alt="png"></p>
 <h2 id="controlando-ambos-os-eixos-x-e-y">Controlando ambos os eixos (x e y)</h2>
 <p>O comando plot aceita que definimos tanto os valores do eixo x como do y. Podemos passar
 as duas listas para plot , devemos tomar cuidado que as listas devem ter o mesmo número de
@@ -271,9 +263,7 @@ X <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1.0</span>, 
 Y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">6.0</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">6.5</span>, <span style="color:#ae81ff">2.0</span>]
 
 ax<span style="color:#f92672">.</span>plot(X, Y)
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef8626bb0&gt;]
-</code></pre>
-<p><img src="output_13_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_13_1.png" alt="png"></p>
 <h2 id="várias-linhas-em-um-mesmo-subplot">Várias linhas em um mesmo subplot</h2>
 <p>Podemos adicionar quantas linhas forem necessárias a um mesmo subplot.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
@@ -284,9 +274,7 @@ Y2 <span style="color:#f92672">=</span> list(map(<span style="color:#66d9ef">lam
 
 ax<span style="color:#f92672">.</span>plot(X, Y1)
 ax<span style="color:#f92672">.</span>plot(X, Y2)
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef86988b0&gt;]
-</code></pre>
-<p><img src="output_15_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_15_1.png" alt="png"></p>
 <h2 id="componentes-do-gráfico">Componentes do gráfico</h2>
 <h3 id="legendas">Legendas</h3>
 <p>Abaixo adicionamos legendas ao exemplo acima, facilitando a leitura do gráfico. Para isso pas-
@@ -314,23 +302,17 @@ Y2 <span style="color:#f92672">=</span> list(map(<span style="color:#66d9ef">lam
 ax<span style="color:#f92672">.</span>plot(X, Y1, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Seno&#39;</span>)
 ax<span style="color:#f92672">.</span>plot(X, Y2, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Cosseno&#39;</span>)
 ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;upper right&#39;</span>)
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22ef870ec10&gt;
-</code></pre>
-<p><img src="output_17_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_17_1.png" alt="png"></p>
 <h3 id="título-do-subplot">Título do subplot</h3>
 <p>O título é adicionado com o método set_title na API orientada a objetos e com plt.title na API
 pyplot.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 ax<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
 ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;Gráfico com matplotlib&#34;</span>)
-</code></pre></div><pre><code>Text(0.5, 1.0, 'Gráfico com matplotlib')
-</code></pre>
-<p><img src="output_19_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_19_1.png" alt="png"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
 plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Gráfico com matplotlib&#34;</span>)
-</code></pre></div><pre><code>Text(0.5, 1.0, 'Gráfico com matplotlib')
-</code></pre>
-<p><img src="output_20_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_20_1.png" alt="png"></p>
 <h3 id="rótulo-ou-título-dos-eixos">Rótulo (ou título) dos eixos</h3>
 <p>Na API orientada a objetos , adicionamos rótulos do eixo x e y com set_xlabel e set_ylabel , re-
 spectivamente</p>
@@ -338,16 +320,12 @@ spectivamente</p>
 ax<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
 ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#34;Eixo x&#34;</span>)
 ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#34;Eixo y&#34;</span>)
-</code></pre></div><pre><code>Text(0, 0.5, 'Eixo y')
-</code></pre>
-<p><img src="output_22_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_22_1.png" alt="png"></p>
 <p>Na API pyplot , adicionamos rótulos do eixo x e y com xlabel e ylabel , respectivamente</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.2</span>])
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Eixo x&#34;</span>)
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Eixo y&#34;</span>)
-</code></pre></div><pre><code>Text(0, 0.5, 'Eixo y')
-</code></pre>
-<p><img src="output_24_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_24_1.png" alt="png"></p>
 <h3 id="título-da-figura">Título da figura</h3>
 <p>Usamos o método suptitle do objeto Figure (primeiro retorno da função plt.subplots , o qual
 chamamos fig ) para adicionar um título para a figura. Observe o exemplo abaixo:</p>
@@ -363,9 +341,7 @@ ax2<span style="color:#f92672">.</span>plot(X, Y2)
 ax2<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;Cosseno&#34;</span>)
 
 fig<span style="color:#f92672">.</span>suptitle(<span style="color:#e6db74">&#34;Seno e Cosseno&#34;</span>)
-</code></pre></div><pre><code>Text(0.5, 0.98, 'Seno e Cosseno')
-</code></pre>
-<p><img src="output_26_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_26_1.png" alt="png"></p>
 <p>No exemplo acima também estamos compartilhando o eixo <strong>x</strong>.</p>
 <h2 id="gráficos-y-vs-x-linhas">Gráficos y vs x (linhas)</h2>
 <p>Já vimos que utilizamos <strong>plot</strong> para adicionar um gráfico de linha a um eixo. Na realidade, <strong>plot</strong> faz
@@ -405,24 +381,16 @@ Nos exemplos abaixo usamos os dados já gerados acima em <strong>X</strong> e <s
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 ax<span style="color:#f92672">.</span>plot(X, Y1, <span style="color:#e6db74">&#39;:m&#39;</span>)
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef9a06af0&gt;]
-</code></pre>
-<p><img src="output_28_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_28_1.png" alt="png"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 ax<span style="color:#f92672">.</span>plot(X, Y1, <span style="color:#e6db74">&#39;*g&#39;</span>)
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef9a7a0a0&gt;]
-</code></pre>
-<p><img src="output_29_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_29_1.png" alt="png"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 ax<span style="color:#f92672">.</span>plot(X, Y1, <span style="color:#e6db74">&#39;r&#39;</span>)
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef9ae26d0&gt;]
-</code></pre>
-<p><img src="output_30_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_30_1.png" alt="png"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 ax<span style="color:#f92672">.</span>plot(X, Y1, <span style="color:#e6db74">&#39;--b&#39;</span>)
-</code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x22ef9b4ac10&gt;]
-</code></pre>
-<p><img src="output_31_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_31_1.png" alt="png"></p>
 <h2 id="gráfico-de-barras">Gráfico de barras</h2>
 <p>Usamos o método bar para adicionar um gráfico de barras que gera uma barra para cada elemento
 da lista Y.
@@ -436,9 +404,7 @@ ax1<span style="color:#f92672">.</span>bar(X, Y)
 rotulos <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;SC&#39;</span>,<span style="color:#e6db74">&#39;PR&#39;</span>, <span style="color:#e6db74">&#39;RS&#39;</span>,<span style="color:#e6db74">&#39;SP&#39;</span>,<span style="color:#e6db74">&#39;RJ&#39;</span>]
 ax2<span style="color:#f92672">.</span>bar(X, Y, tick_label<span style="color:#f92672">=</span>rotulos)
 ax2<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#34;Estado&#34;</span>)
-</code></pre></div><pre><code>Text(0.5, 0, 'Estado')
-</code></pre>
-<p><img src="output_33_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_33_1.png" alt="png"></p>
 <p>Para gráfico de barras horizontais usamos barh :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, (ax1, ax2) <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
 X <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
@@ -448,26 +414,20 @@ ax1<span style="color:#f92672">.</span>barh(X, Y)
 rotulos <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;SC&#39;</span>,<span style="color:#e6db74">&#39;PR&#39;</span>, <span style="color:#e6db74">&#39;RS&#39;</span>,<span style="color:#e6db74">&#39;SP&#39;</span>,<span style="color:#e6db74">&#39;RJ&#39;</span>]
 ax2<span style="color:#f92672">.</span>barh(X, Y, tick_label<span style="color:#f92672">=</span>rotulos)
 ax2<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#34;Estado&#34;</span>)
-</code></pre></div><pre><code>Text(0.5, 0, 'Estado')
-</code></pre>
-<p><img src="output_35_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_35_1.png" alt="png"></p>
 <p>O argumento color permite definir as cores de cada barra individualmente com uma lista dos
 nomes das cores desejadas:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 X <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
 Y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">45</span>]
 ax<span style="color:#f92672">.</span>bar(X, Y, color<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>,<span style="color:#e6db74">&#39;cyan&#39;</span>,<span style="color:#e6db74">&#39;magenta&#39;</span>])
-</code></pre></div><pre><code>&lt;BarContainer object of 5 artists&gt;
-</code></pre>
-<p><img src="output_37_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_37_1.png" alt="png"></p>
 <p>Ou de todas as barras passando apenas uma string com o nome da cor desejada.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 X <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
 Y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">45</span>]
 ax<span style="color:#f92672">.</span>bar(X, Y, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>)
-</code></pre></div><pre><code>&lt;BarContainer object of 5 artists&gt;
-</code></pre>
-<p><img src="output_39_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_39_1.png" alt="png"></p>
 <p>Usamo o argumento bottom para empilhar barras. Observe que também usamos o argumento
 label para definir o nome de cada barra na legenda.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
@@ -477,25 +437,19 @@ Y2 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">10</span>, 
 ax<span style="color:#f92672">.</span>bar(X, Y1, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Y1&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;orange&#39;</span>)
 ax<span style="color:#f92672">.</span>bar(X, Y2, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Y2&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;green&#39;</span>, bottom<span style="color:#f92672">=</span>Y1)
 ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;upper left&#39;</span>)
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22ef9d9bb20&gt;
-</code></pre>
-<p><img src="output_41_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_41_1.png" alt="png"></p>
 <h3 id="ajustando-a-espessura-da-barra">Ajustando a espessura da barra</h3>
 <p>No exemplo abaixo modificamos a espessura das barras com o terceiro argumento de bar</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 X <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
 Y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">45</span>]
 ax<span style="color:#f92672">.</span>bar(X, Y, <span style="color:#ae81ff">0.35</span>)
-</code></pre></div><pre><code>&lt;BarContainer object of 5 artists&gt;
-</code></pre>
-<p><img src="output_43_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_43_1.png" alt="png"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 X <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
 Y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">45</span>]
 ax<span style="color:#f92672">.</span>bar(X, Y, <span style="color:#ae81ff">0.1</span>)
-</code></pre></div><pre><code>&lt;BarContainer object of 5 artists&gt;
-</code></pre>
-<p><img src="output_44_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_44_1.png" alt="png"></p>
 <h3 id="gráfico-de-barras-agrupados">Gráfico de barras agrupados.</h3>
 <p>O primeiro argumento de bar controla a posição no eixo x da barra. Assim, com uma lógica bem
 simples podemos agrupar vários gráficos de barra.</p>
@@ -519,9 +473,7 @@ ax<span style="color:#f92672">.</span>bar(X1, Y1, ESPESSURA, color<span style="c
 ax<span style="color:#f92672">.</span>bar(X2, Y2, ESPESSURA, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Y2&#39;</span>)
 
 ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;upper center&#39;</span>)
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22ef9b62a30&gt;
-</code></pre>
-<p><img src="output_47_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_47_1.png" alt="png"></p>
 <h2 id="gráfico-de-dispersão-scatter">Gráfico de dispersão (scatter)</h2>
 <p>Para gerar um gráfico de dispersão usamos plt.scatter. Passamos uma lista com o componente
 x e outra com o componente y da coordenada de cada ponto. Assim como nos gráficos de linha
@@ -543,9 +495,7 @@ ax<span style="color:#f92672">.</span>scatter(X2, Y2, color<span style="color:#f
 ax<span style="color:#f92672">.</span>scatter(X3, Y3, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;^&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Y3&#39;</span>)
 
 ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;upper center&#39;</span>)
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22efa037fd0&gt;
-</code></pre>
-<p><img src="output_49_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_49_1.png" alt="png"></p>
 <p>Ajustamos o tamanho de cada ponto do gráfico de dispersão com o terceiro argumento, s.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
 
@@ -554,9 +504,7 @@ ax<span style="color:#f92672">.</span>scatter(X2, Y2, <span style="color:#ae81ff
 ax<span style="color:#f92672">.</span>scatter(X3, Y3, s<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;^&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Y3&#39;</span>)
 
 ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;upper center&#39;</span>)
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22efa0bc430&gt;
-</code></pre>
-<p><img src="output_51_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_51_1.png" alt="png"></p>
 <p>Podemos ajustar o tamanho de cada ponto interindividual. Para isso passando uma lista com o
 tamanho desejado de cada ponto para o terceiro argumento, s.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
@@ -566,9 +514,7 @@ S <span style="color:#f92672">=</span> [<span style="color:#ae81ff">100</span>, 
 ax<span style="color:#f92672">.</span>scatter(X1, Y1, s<span style="color:#f92672">=</span>S, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;o&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Y1&#39;</span>)
 
 ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;upper center&#39;</span>)
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22efa109c10&gt;
-</code></pre>
-<p><img src="output_53_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_53_1.png" alt="png"></p>
 <h2 id="gráfico-de-pizza-pie">Gráfico de pizza (pie)</h2>
 <p>Usamos o método pie para plotar um gráfico de pizza.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">estados <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;SC&#39;</span>,<span style="color:#e6db74">&#39;PR&#39;</span>, <span style="color:#e6db74">&#39;RS&#39;</span>]
@@ -577,17 +523,7 @@ pop <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6.73</span
 fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>)
 
 ax<span style="color:#f92672">.</span>pie(pop, labels<span style="color:#f92672">=</span>estados, autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%1.f</span><span style="color:#e6db74">%%</span><span style="color:#e6db74">&#39;</span>, counterclock<span style="color:#f92672">=</span>False, startangle<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>)
-</code></pre></div><pre><code>([&lt;matplotlib.patches.Wedge at 0x22efa1b5190&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa1b58b0&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa1b5fd0&gt;],
- [Text(0.7307331942512733, 0.8222098265159151, 'SC'),
-  Text(0.5199103983360013, -0.9693777270507615, 'PR'),
-  Text(-1.0325744206942291, 0.37919660563878677, 'RS')],
- [Text(0.3985817423188763, 0.4484780871904991, '23%'),
-  Text(0.2835874900014552, -0.5287514874822334, '38%'),
-  Text(-0.5632224112877612, 0.20683451216661095, '39%')])
-</code></pre>
-<p><img src="output_55_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_55_1.png" alt="png"></p>
 <p>Em plt.subplots , usamos facecolor=‘w’ para configurar o fundo da imagem como branco.
 Em pie , usamos autopct para formatar o texto com os valores dentro das fatias da pizza. O trecho
 ‘%1.f’ configura como número sem casas decimais, ‘%%’ adiciona um símbolo de ‘%’ no final do
@@ -598,32 +534,12 @@ a direita:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>)
 
 ax<span style="color:#f92672">.</span>pie(pop, labels<span style="color:#f92672">=</span>estados, autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%1.f</span><span style="color:#e6db74">%%</span><span style="color:#e6db74">&#39;</span>, counterclock<span style="color:#f92672">=</span>False)
-</code></pre></div><pre><code>([&lt;matplotlib.patches.Wedge at 0x22efa1fbbe0&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa20a280&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa20a9d0&gt;],
- [Text(0.8222098265159151, -0.7307331942512731, 'SC'),
-  Text(-0.9693777270507615, -0.5199103983360014, 'PR'),
-  Text(0.3791966056387867, 1.0325744206942291, 'RS')],
- [Text(0.4484780871904991, -0.3985817423188762, '23%'),
-  Text(-0.5287514874822334, -0.2835874900014553, '38%'),
-  Text(0.20683451216661092, 0.5632224112877612, '39%')])
-</code></pre>
-<p><img src="output_57_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_57_1.png" alt="png"></p>
 <p>counterclock determina a direção de preenchimento:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>)
 
 ax<span style="color:#f92672">.</span>pie(pop, labels<span style="color:#f92672">=</span>estados, autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%1.f</span><span style="color:#e6db74">%%</span><span style="color:#e6db74">&#39;</span>, counterclock<span style="color:#f92672">=</span>True)
-</code></pre></div><pre><code>([&lt;matplotlib.patches.Wedge at 0x22efa253730&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa253ee0&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa260640&gt;],
- [Text(0.8222098265159151, 0.7307331942512731, 'SC'),
-  Text(-0.9693777270507615, 0.5199103983360014, 'PR'),
-  Text(0.3791966056387867, -1.0325744206942291, 'RS')],
- [Text(0.4484780871904991, 0.3985817423188762, '23%'),
-  Text(-0.5287514874822334, 0.2835874900014553, '38%'),
-  Text(0.20683451216661092, -0.5632224112877612, '39%')])
-</code></pre>
-<p><img src="output_59_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_59_1.png" alt="png"></p>
 <p>Podemos fazer alguns outros ajuste como ‘explodir’ o gráfico com explode e adicionar sombra
 com shadow :
 explode deve ser uma lista, cada item determinando um valor de deslocamento de cada fatia da
@@ -633,17 +549,7 @@ pizza.</p>
 explodir <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.2</span>, <span style="color:#ae81ff">0</span>] <span style="color:#75715e"># destacar o estado do Paraná</span>
 
 ax<span style="color:#f92672">.</span>pie(pop, labels<span style="color:#f92672">=</span>estados, autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%1.f</span><span style="color:#e6db74">%%</span><span style="color:#e6db74">&#39;</span>, counterclock<span style="color:#f92672">=</span>True,explode<span style="color:#f92672">=</span>explodir, shadow<span style="color:#f92672">=</span>True)
-</code></pre></div><pre><code>([&lt;matplotlib.patches.Wedge at 0x22efa2a02e0&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa2a0cd0&gt;,
-  &lt;matplotlib.patches.Wedge at 0x22efa2ad6a0&gt;],
- [Text(0.8222098265159151, 0.7307331942512731, 'SC'),
-  Text(-1.1456282228781727, 0.6144395616698198, 'PR'),
-  Text(0.3791966056387867, -1.0325744206942291, 'RS')],
- [Text(0.4484780871904991, 0.3985817423188762, '23%'),
-  Text(-0.7050019833096446, 0.3781166533352737, '38%'),
-  Text(0.20683451216661092, -0.5632224112877612, '39%')])
-</code></pre>
-<p><img src="output_61_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_61_1.png" alt="png"></p>
 <h2 id="misturando-vários-tipos-de-gráficos">Misturando vários tipos de gráficos</h2>
 <p>Muitas combinações de gráficos podem ser realizadas. Veja o exemplo abaixo com um gráfico de
 barras e de linhas em um único eixo.</p>
@@ -654,9 +560,7 @@ Y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">19</span>, <
 
 ax<span style="color:#f92672">.</span>plot(X, Y, <span style="color:#e6db74">&#39;:r&#39;</span>)
 ax<span style="color:#f92672">.</span>bar(X, Y, <span style="color:#ae81ff">0.25</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
-</code></pre></div><pre><code>&lt;BarContainer object of 6 artists&gt;
-</code></pre>
-<p><img src="output_63_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_63_1.png" alt="png"></p>
 <h2 id="definindo-os-ticks-dos-eixos">Definindo os ticks dos eixos</h2>
 <p>No gráfico acima o menor valor é 17 e o maior 23, vamos focar no intervalo 15 à 25. Usamos o
 método set_ylim para definir os limites dos ticks do eixo y e set_xlim para o eixo x</p>
@@ -668,9 +572,7 @@ Y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">19</span>, <
 ax<span style="color:#f92672">.</span>plot(X, Y, <span style="color:#e6db74">&#39;:r&#39;</span>)
 ax<span style="color:#f92672">.</span>bar(X, Y, <span style="color:#ae81ff">0.25</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
 ax<span style="color:#f92672">.</span>set_ylim(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">25</span>)
-</code></pre></div><pre><code>(15.0, 25.0)
-</code></pre>
-<p><img src="output_65_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_65_1.png" alt="png"></p>
 <p>Além do intervalo, podemos definir exatamente quais valores de ticks queremos com o método
 set_yticks (e set_xticks para o eixo x ):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
@@ -682,12 +584,7 @@ ax<span style="color:#f92672">.</span>plot(X, Y, <span style="color:#e6db74">&#3
 ax<span style="color:#f92672">.</span>bar(X, Y, <span style="color:#ae81ff">0.25</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
 ax<span style="color:#f92672">.</span>set_ylim(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">25</span>)
 ax<span style="color:#f92672">.</span>set_yticks([<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">22.5</span>, <span style="color:#ae81ff">25</span>])
-</code></pre></div><pre><code>[&lt;matplotlib.axis.YTick at 0x22efb378be0&gt;,
- &lt;matplotlib.axis.YTick at 0x22efb378520&gt;,
- &lt;matplotlib.axis.YTick at 0x22efb36f490&gt;,
- &lt;matplotlib.axis.YTick at 0x22efb3b54c0&gt;]
-</code></pre>
-<p><img src="output_67_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_67_1.png" alt="png"></p>
 <p>Podemos usar o método set_yticklabels ( set_xticklabels para o eixo x ) para definir exatamente o
 texto de cada tick.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
@@ -700,12 +597,7 @@ ax<span style="color:#f92672">.</span>bar(X, Y, <span style="color:#ae81ff">0.25
 ax<span style="color:#f92672">.</span>set_ylim(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">25</span>)
 ax<span style="color:#f92672">.</span>set_yticks([<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">22.5</span>, <span style="color:#ae81ff">25</span>])
 ax<span style="color:#f92672">.</span>set_yticklabels([<span style="color:#e6db74">&#34;baixo&#34;</span>, <span style="color:#e6db74">&#34;médio&#34;</span>, <span style="color:#e6db74">&#34;alto&#34;</span>, <span style="color:#e6db74">&#34;crítico&#34;</span>])
-</code></pre></div><pre><code>[Text(0, 15.0, 'baixo'),
- Text(0, 20.0, 'médio'),
- Text(0, 22.5, 'alto'),
- Text(0, 25.0, 'crítico')]
-</code></pre>
-<p><img src="output_69_1.png" alt="png"></p>
+</code></pre></div><p><img src="output_69_1.png" alt="png"></p>
 <h2 id="12-recursos">12 Recursos</h2>
 <p>O matplotlib é extremamente versátil e completo. Neste material tivemos apenas uma intro-
 dução a alguns dos seus principais gráficos. Para mais informações consulte sua documentação:

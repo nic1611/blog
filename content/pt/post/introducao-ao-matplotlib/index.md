@@ -29,14 +29,6 @@ Então, definimos uma sequencia de valores (em uma lista) a serem impressos. Por
 plt.plot([1.0, 1.5, 2.5, 0.0, 0.5, 1.2])
 ```
 
-
-
-
-    [<matplotlib.lines.Line2D at 0x22ef82960a0>]
-
-
-
-
     
 ![png](output_3_1.png)
     
@@ -91,13 +83,7 @@ ax.plot([1.0, 1.5, 2.5, 0.0, 0.5, 1.2])
 
 
 
-
-    [<matplotlib.lines.Line2D at 0x22ef8459580>]
-
-
-
-
-    
+   
 ![png](output_7_1.png)
     
 
@@ -130,12 +116,6 @@ axes[1].plot([1.5, 1.4, 1.2, 0.9, 0.5, 0.7, 1.0])
 
 
 
-
-    [<matplotlib.lines.Line2D at 0x22ef84fa850>]
-
-
-
-
     
 ![png](output_9_1.png)
     
@@ -149,12 +129,6 @@ fig, axes = plt.subplots(1, 2, sharey=True)
 axes[0].plot([1.0, 1.5, 2.5, 0.0, 0.5, 1.2])
 axes[1].plot([1.5, 1.4, 1.2, 0.9, 0.5, 0.7, 1.0])
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x22ef85a9e80>]
-
 
 
 
@@ -180,12 +154,6 @@ ax.plot(X, Y)
 
 
 
-
-    [<matplotlib.lines.Line2D at 0x22ef8626bb0>]
-
-
-
-
     
 ![png](output_13_1.png)
     
@@ -206,12 +174,6 @@ Y2 = list(map(lambda x: math.cos(x), X))
 ax.plot(X, Y1)
 ax.plot(X, Y2)
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x22ef86988b0>]
-
 
 
 
@@ -255,12 +217,6 @@ ax.legend(loc='upper right')
 
 
 
-
-    <matplotlib.legend.Legend at 0x22ef870ec10>
-
-
-
-
     
 ![png](output_17_1.png)
     
@@ -280,12 +236,6 @@ ax.set_title("Gráfico com matplotlib")
 
 
 
-
-    Text(0.5, 1.0, 'Gráfico com matplotlib')
-
-
-
-
     
 ![png](output_19_1.png)
     
@@ -296,11 +246,6 @@ ax.set_title("Gráfico com matplotlib")
 plt.plot([1.0, 1.5, 2.5, 0.0, 0.5, 1.2])
 plt.title("Gráfico com matplotlib")
 ```
-
-
-
-
-    Text(0.5, 1.0, 'Gráfico com matplotlib')
 
 
 
@@ -326,11 +271,6 @@ ax.set_ylabel("Eixo y")
 
 
 
-    Text(0, 0.5, 'Eixo y')
-
-
-
-
     
 ![png](output_22_1.png)
     
@@ -344,11 +284,6 @@ plt.plot([1.0, 1.5, 2.5, 0.0, 0.5, 1.2])
 plt.xlabel("Eixo x")
 plt.ylabel("Eixo y")
 ```
-
-
-
-
-    Text(0, 0.5, 'Eixo y')
 
 
 
@@ -378,11 +313,6 @@ ax2.set_title("Cosseno")
 
 fig.suptitle("Seno e Cosseno")
 ```
-
-
-
-
-    Text(0.5, 0.98, 'Seno e Cosseno')
 
 
 
@@ -443,12 +373,6 @@ ax.plot(X, Y1, ':m')
 
 
 
-
-    [<matplotlib.lines.Line2D at 0x22ef9a06af0>]
-
-
-
-
     
 ![png](output_28_1.png)
     
@@ -459,12 +383,6 @@ ax.plot(X, Y1, ':m')
 fig, ax = plt.subplots(1, 1)
 ax.plot(X, Y1, '*g')
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x22ef9a7a0a0>]
-
 
 
 
@@ -481,12 +399,6 @@ ax.plot(X, Y1, 'r')
 
 
 
-
-    [<matplotlib.lines.Line2D at 0x22ef9ae26d0>]
-
-
-
-
     
 ![png](output_30_1.png)
     
@@ -497,12 +409,6 @@ ax.plot(X, Y1, 'r')
 fig, ax = plt.subplots(1, 1)
 ax.plot(X, Y1, '--b')
 ```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x22ef9b4ac10>]
-
 
 
 
@@ -533,11 +439,6 @@ ax2.set_xlabel("Estado")
 
 
 
-    Text(0.5, 0, 'Estado')
-
-
-
-
     
 ![png](output_33_1.png)
     
@@ -560,11 +461,6 @@ ax2.set_xlabel("Estado")
 
 
 
-    Text(0.5, 0, 'Estado')
-
-
-
-
     
 ![png](output_35_1.png)
     
@@ -583,12 +479,6 @@ ax.bar(X, Y, color=['red','green','blue','cyan','magenta'])
 
 
 
-
-    <BarContainer object of 5 artists>
-
-
-
-
     
 ![png](output_37_1.png)
     
@@ -603,12 +493,6 @@ X = [1, 2, 3, 4, 5]
 Y = [30, 15, 20, 10, 45]
 ax.bar(X, Y, color='red')
 ```
-
-
-
-
-    <BarContainer object of 5 artists>
-
 
 
 
@@ -633,12 +517,6 @@ ax.legend(loc='upper left')
 
 
 
-
-    <matplotlib.legend.Legend at 0x22ef9d9bb20>
-
-
-
-
     
 ![png](output_41_1.png)
     
@@ -658,12 +536,6 @@ ax.bar(X, Y, 0.35)
 
 
 
-
-    <BarContainer object of 5 artists>
-
-
-
-
     
 ![png](output_43_1.png)
     
@@ -676,12 +548,6 @@ X = [1, 2, 3, 4, 5]
 Y = [30, 15, 20, 10, 45]
 ax.bar(X, Y, 0.1)
 ```
-
-
-
-
-    <BarContainer object of 5 artists>
-
 
 
 
@@ -726,12 +592,6 @@ ax.legend(loc='upper center')
 
 
 
-
-    <matplotlib.legend.Legend at 0x22ef9b62a30>
-
-
-
-
     
 ![png](output_47_1.png)
     
@@ -766,12 +626,6 @@ ax.legend(loc='upper center')
 
 
 
-
-    <matplotlib.legend.Legend at 0x22efa037fd0>
-
-
-
-
     
 ![png](output_49_1.png)
     
@@ -789,12 +643,6 @@ ax.scatter(X3, Y3, s=300, color='b', marker='^', label='Y3')
 
 ax.legend(loc='upper center')
 ```
-
-
-
-
-    <matplotlib.legend.Legend at 0x22efa0bc430>
-
 
 
 
@@ -819,12 +667,6 @@ ax.legend(loc='upper center')
 
 
 
-
-    <matplotlib.legend.Legend at 0x22efa109c10>
-
-
-
-
     
 ![png](output_53_1.png)
     
@@ -843,20 +685,6 @@ fig, ax = plt.subplots(1, 1, facecolor='w')
 
 ax.pie(pop, labels=estados, autopct='%1.f%%', counterclock=False, startangle=90)
 ```
-
-
-
-
-    ([<matplotlib.patches.Wedge at 0x22efa1b5190>,
-      <matplotlib.patches.Wedge at 0x22efa1b58b0>,
-      <matplotlib.patches.Wedge at 0x22efa1b5fd0>],
-     [Text(0.7307331942512733, 0.8222098265159151, 'SC'),
-      Text(0.5199103983360013, -0.9693777270507615, 'PR'),
-      Text(-1.0325744206942291, 0.37919660563878677, 'RS')],
-     [Text(0.3985817423188763, 0.4484780871904991, '23%'),
-      Text(0.2835874900014552, -0.5287514874822334, '38%'),
-      Text(-0.5632224112877612, 0.20683451216661095, '39%')])
-
 
 
 
@@ -881,21 +709,6 @@ ax.pie(pop, labels=estados, autopct='%1.f%%', counterclock=False)
 ```
 
 
-
-
-    ([<matplotlib.patches.Wedge at 0x22efa1fbbe0>,
-      <matplotlib.patches.Wedge at 0x22efa20a280>,
-      <matplotlib.patches.Wedge at 0x22efa20a9d0>],
-     [Text(0.8222098265159151, -0.7307331942512731, 'SC'),
-      Text(-0.9693777270507615, -0.5199103983360014, 'PR'),
-      Text(0.3791966056387867, 1.0325744206942291, 'RS')],
-     [Text(0.4484780871904991, -0.3985817423188762, '23%'),
-      Text(-0.5287514874822334, -0.2835874900014553, '38%'),
-      Text(0.20683451216661092, 0.5632224112877612, '39%')])
-
-
-
-
     
 ![png](output_57_1.png)
     
@@ -909,21 +722,6 @@ fig, ax = plt.subplots(1, 1, facecolor='w')
 
 ax.pie(pop, labels=estados, autopct='%1.f%%', counterclock=True)
 ```
-
-
-
-
-    ([<matplotlib.patches.Wedge at 0x22efa253730>,
-      <matplotlib.patches.Wedge at 0x22efa253ee0>,
-      <matplotlib.patches.Wedge at 0x22efa260640>],
-     [Text(0.8222098265159151, 0.7307331942512731, 'SC'),
-      Text(-0.9693777270507615, 0.5199103983360014, 'PR'),
-      Text(0.3791966056387867, -1.0325744206942291, 'RS')],
-     [Text(0.4484780871904991, 0.3985817423188762, '23%'),
-      Text(-0.5287514874822334, 0.2835874900014553, '38%'),
-      Text(0.20683451216661092, -0.5632224112877612, '39%')])
-
-
 
 
     
@@ -947,20 +745,6 @@ ax.pie(pop, labels=estados, autopct='%1.f%%', counterclock=True,explode=explodir
 
 
 
-
-    ([<matplotlib.patches.Wedge at 0x22efa2a02e0>,
-      <matplotlib.patches.Wedge at 0x22efa2a0cd0>,
-      <matplotlib.patches.Wedge at 0x22efa2ad6a0>],
-     [Text(0.8222098265159151, 0.7307331942512731, 'SC'),
-      Text(-1.1456282228781727, 0.6144395616698198, 'PR'),
-      Text(0.3791966056387867, -1.0325744206942291, 'RS')],
-     [Text(0.4484780871904991, 0.3985817423188762, '23%'),
-      Text(-0.7050019833096446, 0.3781166533352737, '38%'),
-      Text(0.20683451216661092, -0.5632224112877612, '39%')])
-
-
-
-
     
 ![png](output_61_1.png)
     
@@ -981,12 +765,6 @@ Y = [19, 17, 22, 18, 21, 23]
 ax.plot(X, Y, ':r')
 ax.bar(X, Y, 0.25, color='g')
 ```
-
-
-
-
-    <BarContainer object of 6 artists>
-
 
 
 
@@ -1015,11 +793,6 @@ ax.set_ylim(15, 25)
 
 
 
-    (15.0, 25.0)
-
-
-
-
     
 ![png](output_65_1.png)
     
@@ -1040,15 +813,6 @@ ax.bar(X, Y, 0.25, color='g')
 ax.set_ylim(15, 25)
 ax.set_yticks([15, 20, 22.5, 25])
 ```
-
-
-
-
-    [<matplotlib.axis.YTick at 0x22efb378be0>,
-     <matplotlib.axis.YTick at 0x22efb378520>,
-     <matplotlib.axis.YTick at 0x22efb36f490>,
-     <matplotlib.axis.YTick at 0x22efb3b54c0>]
-
 
 
 
@@ -1073,14 +837,6 @@ ax.set_ylim(15, 25)
 ax.set_yticks([15, 20, 22.5, 25])
 ax.set_yticklabels(["baixo", "médio", "alto", "crítico"])
 ```
-
-
-
-
-    [Text(0, 15.0, 'baixo'),
-     Text(0, 20.0, 'médio'),
-     Text(0, 22.5, 'alto'),
-     Text(0, 25.0, 'crítico')]
 
 
 
