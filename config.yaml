@@ -5,7 +5,7 @@ theme: gohugo-theme-ananke
 resourceDir: /resources
 DefaultContentLanguage: pt
 SectionPagesMenu: main
-Paginate: 10
+Paginate: 6
 googleAnalytics: ''
 enableRobotsTXT: yes
 publishDir: /docs/
