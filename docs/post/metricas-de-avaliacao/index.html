@@ -190,24 +190,24 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="métricas-de-avaliação-de-maquinas-preditivas">Métricas de avaliação de maquinas preditivas</h1>
-<h1 id="métricas-de-avaliação-para-problemas-de-classificação">Métricas de avaliação para problemas de <strong>Classificação</strong></h1>
-<h2 id="confusion-matrix">Confusion Matrix</h2>
+<h2 id="métricas-de-avaliação-para-problemas-de-classificação">Métricas de avaliação para problemas de <strong>Classificação</strong></h2>
+<h3 id="confusion-matrix"><strong>Confusion Matrix</strong></h3>
 <p>Confusion Matrix é uma tabela que permite a visualização do desempenho de um algoritmo de classificação.</p>
 <p>Essa tabela de contingência 2x2 especial. Cada linha da matriz representa instâncias de uma classe prevista enquanto cada coluna representa instâncias da classe atual (ou vice versa).</p>
 <p><img src="confusion_matrix.png" alt=""></p>
-<h2 id="acurácia">Acurácia</h2>
+<h3 id="acurácia"><strong>Acurácia</strong></h3>
 <p>Esta é métrica mais importante. É basicamente o número de acertos (positivos) dividido pelo número total de exemplos. Ela deve ser usada em datasets com a mesma proporção de exemplos para cada classe, e quando as penalidades de acerto e erro para cada classe forem as mesmas.</p>
 <p>Em problemas de classes desproporcionais, ela causa uma false impressão de bom desempenho. Por exemplo, em um datase em que 80% dos exemplos pertençam a uma classe, só de classificar todos os exemplos naquela classe já se atinge uma precisão de 80% mesmo que todos os exemplos de outra classe estejam classificados incorretamene.</p>
-<h2 id="precision">Precision</h2>
+<h3 id="precision"><strong>Precision</strong></h3>
 <p>Precision ou precisão, também conhecida como Valor Prediivo Positivo (VPP), é a mérica que traz a informação de quantidade de observações classificadas como positivas (1) que realmente são positivas. Ou seja, entre todas as observações identificadas como positivas (1), quantas foram identificadas correntamente.</p>
 <p>Por exemplo: entre os paciente classificadas como doentes, quantos foram identificados corretamente.</p>
-<h2 id="recall">Recall</h2>
+<h3 id="recall"><strong>Recall</strong></h3>
 <p>Recall ou sensibilidade é a proporção dos Verdadeiros Positivos entre todas as observações que realmente são positivas no seu conjunto dedados. Ou seja, entre todas as observações que são posiivas quantas o modelo conseguiu identificar como positiva. Representa a capacidade deum modelo em prever a classe positiva.</p>
 <p>Por exemplo: dentre todos os pacientes doentes, quantos pacientes o modelo conseguiu identificar corretamente.</p>
-<h2 id="f1---score">F1 - Score</h2>
+<h3 id="f1---score"><strong>F1 - Score</strong></h3>
 <p>F1-Score é a média harmônica entre o recall e a precision. Utilizada quando temos classes desbalanceadas.</p>
 <p><img src="accuracy.png" alt=""></p>
-<h2 id="curva-roc">Curva ROC</h2>
+<h3 id="curva-roc"><strong>Curva ROC</strong></h3>
 <p>Uma curva de característica de operação do receptor (ROC) exibe quão bem um modelo pode classificar os resultados binários. 
 Uma curva ROC é gerada traçando a taxa de falsos positivos de um modelo contra sua taxa de verdadeiros positivos, para cada valor de corte possível. 
 Freqüentemente, a área sob a curva (AUC) é calculada e usada como uma métrica que mostra quão bem um modelo pode classificar pontos de dados.</p>
@@ -217,23 +217,23 @@ Freqüentemente, a área sob a curva (AUC) é calculada e usada como uma métric
 <p>A forma de uma curva ROC muda quando um modelo muda a maneira como classifica os dois resultados.</p>
 <p>A animação abaixo começa com um modelo que não consegue diferenciar um resultado do outro, e as duas distribuições se completamente (essencialmente um classificador aleatório). À medida que as duas distribuições se separam, a curva ROC se aproxima do superior esquerdo e o valor AUC da curva aumenta. Quando o modelo consegue separar perfeitamente os dois resultados, a curva ROC forma ângulo reto e a AUC torna-se 1.</p>
 <p><img src="roc_curve_2.gif" alt=""></p>
-<h1 id="métricas-de-avaliação-para-problemas-de-regressão">Métricas de avaliação para problemas de <strong>Regressão</strong></h1>
-<h2 id="mean-squared-error---mse">Mean Squared Error - MSE</h2>
+<h2 id="métricas-de-avaliação-para-problemas-de-regressão">Métricas de avaliação para problemas de <strong>Regressão</strong></h2>
+<h3 id="mean-squared-error---mse"><strong>Mean Squared Error - MSE</strong></h3>
 <p>Talvez seja a mais utiliada, esta função calcula a média dos erros do modelo ao quadrado. Ou seja, diferenças menores têm menos importância, enquanto diferenças maiores recebem mais peso.</p>
-<h2 id="rmse">RMSE</h2>
+<h3 id="rmse"><strong>RMSE</strong></h3>
 <p>O Root Mean Squared Error. Ele é simplesmente a raiz quadrada do primeiro. Nesse caso, o erro vola a ter as unidades de medida originais da variável dependene. Quanto menor melhor.</p>
-<h2 id="mean-absolute-error---mae">Mean Absolute Error - MAE</h2>
+<h3 id="mean-absolute-error---mae"><strong>Mean Absolute Error - MAE</strong></h3>
 <p>Bastante parecido com MSE, em vez de elevar a diferença entre a previsão do modelo, e o valor real, ao quadrado, ele <strong>toma o valor absoluto.</strong>.
 Neste caso, em vez de atribuir um peso de acordo com a magnitude da diferença, ele atribui o mesmo peso a todas as diferenças, de maneira linear.</p>
-<h1 id="métricas-de-avaliação-para-problemas-de-clusterização">Métricas de avaliação para problemas de <strong>Clusterização</strong></h1>
-<h2 id="silhouette_score">silhouette_score</h2>
+<h2 id="métricas-de-avaliação-para-problemas-de-clusterização">Métricas de avaliação para problemas de <strong>Clusterização</strong></h2>
+<h3 id="silhouette_score"><strong>silhouette_score</strong></h3>
 <p>O coeficiente Silhouette é calculado usando a distância média intra-cluster (a) e a distância média do cluster mais próximo (b) para cada amostra.
 O melhor valor é 1 e o pior valor é -1. Valores próximos a 0 indicam cluster sobrepostos. Valores negativos geralmente indicam que uma amostra foi atribuida ao cluster diferente é mais semelhante.</p>
-<h1 id="métricas-personalidas">Métricas personalidas</h1>
+<h3 id="métricas-personalidas"><strong>Métricas personalidas</strong></h3>
 <p>Em alguns casos, o ideal é usar uma métrica que tenha um significado específico para a tarefa em questão.
 Por exemplo, na segmentação de anúncios, <strong>a taxa de cliques</strong>
 Num sistema para comprar e vender ações, verificar o <strong>retorno médio.</strong></p>
-<h1 id="observação-importante">Observação importante</h1>
+<h3 id="observação-importante"><strong>Observação importante</strong></h3>
 <p>As métricas acima são impotantes e podem ser utilizadas de maneira geral, mas se houver uma alternativa melhor, mais adequada ao contexto, ela deve ser utilizada.</p>
 <ul class="pa0">
   
