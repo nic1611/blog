@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/orienta%C3%A7%C3%A3o-a-objetos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Orientação a Objetos com Python</title>
-      <link>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o-a-objetos-com-python/</link>
+      <link>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o_a_objetos_com_python/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o-a-objetos-com-python/</guid>
+      <guid>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o_a_objetos_com_python/</guid>
       <description>Orientação a Objetos Introdução A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação de forma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadas via objetos. Outro tipo de paradigma de programação muito conhecido é o funcional, utilizado para criar programas na linguagem de programação R; muitas das features do paradigma funcional também estão disponível no Python.
 Por exemplo, um aluno pode ser representado por uma classe Aluno que tem vários campos(atributos) como nome, código (id), data de nascimento, etc.</description>
     </item>

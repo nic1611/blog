@@ -12,7 +12,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/linguagem-mdx/</loc>
+    <loc>https://nic1611.github.io/blog/post/linguagem_mdx/</loc>
     <lastmod>2021-09-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -37,12 +37,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/metricas-de-avaliacao/</loc>
+    <loc>https://nic1611.github.io/blog/post/metricas_de_avaliacao/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/introducao-ao-matplotlib/</loc>
+    <loc>https://nic1611.github.io/blog/post/introducao_ao_matplotlib/</loc>
     <lastmod>2021-07-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -57,7 +57,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</loc>
+    <loc>https://nic1611.github.io/blog/post/normalizacao_e_padronizacao/</loc>
     <lastmod>2021-07-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -77,7 +77,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/banco-de-dados-com-python/</loc>
+    <loc>https://nic1611.github.io/blog/post/banco_de_dados_com_python/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -92,12 +92,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o-a-objetos-com-python/</loc>
+    <loc>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o_a_objetos_com_python/</loc>
     <lastmod>2021-06-06T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/variaveis-aleatorias/</loc>
+    <loc>https://nic1611.github.io/blog/post/variaveis_aleatorias/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -107,12 +107,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/</loc>
+    <loc>https://nic1611.github.io/blog/post/visualizacao_de_dados_com_o_r/</loc>
     <lastmod>2021-05-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/conex%C3%A3o-ao-postgresql-utilizando-o-r/</loc>
+    <loc>https://nic1611.github.io/blog/post/conexao_ao_postgresql_utilizando_o_r/</loc>
     <lastmod>2021-05-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -122,12 +122,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/introducao-visualizacao/</loc>
+    <loc>https://nic1611.github.io/blog/post/introducao_visualizacao/</loc>
     <lastmod>2021-04-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/teoria-probabilidade/</loc>
+    <loc>https://nic1611.github.io/blog/post/teoria_probabilidade/</loc>
     <lastmod>2021-03-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -142,7 +142,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://nic1611.github.io/blog/post/machine-learning-para-bancos/</loc>
+    <loc>https://nic1611.github.io/blog/post/machine_learning_para_bancos/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Linguagem de consulta MDX | Q.G do Tux</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Linguagem extensível, permitindo criação de funções para manipular dados multidimensionais">
+    <meta name="generator" content="Hugo 0.82.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/blog/images/favicon.svg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="Linguagem de consulta MDX" />
+<meta property="og:description" content="Linguagem extensível, permitindo criação de funções para manipular dados multidimensionais" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nic1611.github.io/blog/post/linguagem_mdx/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-09-04T00:00:00&#43;00:00" /><meta property="og:site_name" content="Q.G do Tux" />
+
+<meta itemprop="name" content="Linguagem de consulta MDX">
+<meta itemprop="description" content="Linguagem extensível, permitindo criação de funções para manipular dados multidimensionais"><meta itemprop="datePublished" content="2021-09-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-09-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="643">
+<meta itemprop="keywords" content="bando de dados,bussiness intelligence," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linguagem de consulta MDX"/>
+<meta name="twitter:description" content="Linguagem extensível, permitindo criação de funções para manipular dados multidimensionais"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfA%3D%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Q.G do Tux
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/post/" title="Artigos page">
+              Artigos
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/nicolas-soffi-565028198/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/nic1611" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Linguagem de consulta MDX</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Linguagem extensível, permitindo criação de funções para manipular dados multidimensionais
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        ARTIGOS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://nic1611.github.io/blog/post/linguagem_mdx/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://nic1611.github.io/blog/post/linguagem_mdx/&amp;text=Linguagem%20de%20consulta%20MDX" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://nic1611.github.io/blog/post/linguagem_mdx/&amp;title=Linguagem%20de%20consulta%20MDX" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Linguagem de consulta MDX</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-09-04T00:00:00Z">September 4, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="introdução">Introdução</h1>
+<ul>
+<li>
+<p>Linguagem de consulta à base de dados multidimensionais criada pela Microsoft® em 1998</p>
+</li>
+<li>
+<p>Parte de um padrão industrial, o OLE DB for OLAP</p>
+</li>
+<li>
+<p>Permite a especificação de até 128 eixos de consultas, sendo porém incomum a utilização de mais de 3 eixos</p>
+</li>
+<li>
+<p>Não é igual a linguagem SQL</p>
+</li>
+<li>
+<p>Apesar do nome, a linguagem SQL também possui comandos CREATE, INSERT e ALTER</p>
+</li>
+<li>
+<p>Tem sintaxe parecida com a linguagem SQL na forma SELECT-FROM-WHERE</p>
+</li>
+<li>
+<p>Linguagem extensível, permitindo criação de funções para manipular dados multidimensionais</p>
+</li>
+</ul>
+<h1 id="mdx--conceitos-da-linguagem">MDX – Conceitos da Linguagem</h1>
+<p>A MDX utiliza três conceitos principais em sua sintaxe de consulta</p>
+<ul>
+<li>
+<p>Cells- Células</p>
+</li>
+<li>
+<p>Tuples-Tuplas</p>
+</li>
+<li>
+<p>Sets - Conjuntos</p>
+</li>
+</ul>
+<h1 id="cells">Cells</h1>
+<p>Criadas a partir de intersecções de membros, onde se obtém os dados</p>
+<h1 id="tuples">Tuples</h1>
+<p>É um sistemade extraçãode célulasde um cubo, a partirde diferentes dimensões</p>
+<p>Sintaxe( [DIMENSAO_1].[MEMBRO], [DIMENSAO_2].[MEMBRO], &hellip;., [DIMENSAO_N].[MEMBRO] )</p>
+<p>Exemplo: ( [Supplier].[AMERICA].[BRAZIL], [Data].[1997] ) Ou ([Supplier].[Nation].[BRAZIL], [Date].[Year].[1997] )</p>
+<h1 id="tuples-1">Tuples</h1>
+<p>( [Supplier].[EUROPE] ) ou (Supplier].[Region].[EUROPE] )</p>
+<h1 id="sets">Sets</h1>
+<p>É umacoleçãode tuplas, ondeseuconjuntode membrospertencea uma únicadimensão</p>
+<p>Representado pelo{ &hellip; }</p>
+<p>{[DIMENSAO1].[MEMBRO1], [DIMENSAO1].[MEMBRO2], &hellip; , [DIMENSAO1].[MEMBRO_N] }</p>
+<p>Exemplo: { [Supplier].[ASIA].[JAPAN], [Supplier].[AMERICA].[BRAZIL] }</p>
+<h1 id="sets-1">Sets</h1>
+<p>{ [Date].[1994], [Date].[1995], [Date].[ 1996 ]}</p>
+<h1 id="sintaxe-consulta-mdx">Sintaxe Consulta MDX</h1>
+<p>SELECT 
+{&hellip; a set &hellip;} ON COLUMNS, 
+{&hellip; a set &hellip;} ON ROWS
+FROM [CUBO]
+WHERE [ slicer ]</p>
+<p>Na cláusulaWHERE nãopode repetirdimensões presentes anteriormente (em COLUMNS e ROWS)</p>
+<p>Referênciacompletaem:</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms145506.aspx">microsoft</a></p>
+<p><a href="http://mondrian.pentaho.org/">mondrian</a></p>
+<h1 id="expressões-mdx">Expressões MDX</h1>
+<ul>
+<li>
+<p>Operadores</p>
+</li>
+<li>
+<p>CALCULATED MEMBERS e NAMED SETS</p>
+</li>
+<li>
+<p>Expressões Condicionais</p>
+</li>
+<li>
+<p>Funções</p>
+</li>
+</ul>
+<h1 id="operadores">Operadores</h1>
+<ul>
+<li>
+<p>Aritméticos</p>
+<ul>
+<li>+, -, *, /, ^</li>
+</ul>
+</li>
+<li>
+<p>String</p>
+<ul>
+<li>+</li>
+</ul>
+</li>
+<li>
+<p>Condicionais</p>
+<ul>
+<li>=, &lt;&gt;, &gt;, &lt;, &gt;=, &lt;=</li>
+</ul>
+</li>
+<li>
+<p>Lógicos</p>
+<ul>
+<li>OR, AND, XOR, NOT</li>
+</ul>
+</li>
+<li>
+<p>Range</p>
+<ul>
+<li>Ex: {[Date].[1998] : [Date].[2010]}</li>
+</ul>
+</li>
+</ul>
+<h1 id="calculated-members-cm">CALCULATED MEMBERS (CM)</h1>
+<p>São membros calculados a partir de medidas. Eles não são armazenados no cubo de dados, sendo processados durante a consulta</p>
+<ul>
+<li>
+<p>Sintaxe:</p>
+<ul>
+<li>WITH MEMBER parent.name AS ‘expression’</li>
+</ul>
+</li>
+<li>
+<p>Criação do CM Profit:</p>
+<ul>
+<li>WITH MEMBER Measures.ProfitAS
+‘Measures.[Revenue] – [Measures].[SupplyCost]’</li>
+</ul>
+</li>
+</ul>
+<h1 id="named-sets">NAMED SETS</h1>
+<p>Definição de uma nova dimensão a partir de uma operação sobre outras dimensões</p>
+<ul>
+<li>
+<p>Sintaxe:</p>
+<ul>
+<li>WITH SET setNameAS ‘expression’</li>
+</ul>
+</li>
+<li>
+<p>Criação de um Named Set para os produtos que não são brancos</p>
+<ul>
+<li>WITH SET ColorRestriction AS
+‘EXCEPT({[Part].[Color].Children},{[Part].[Color].[White]})’</li>
+</ul>
+</li>
+</ul>
+<h1 id="expressões-condicionais">Expressões Condicionais</h1>
+<p>IIF para avaliar expressões de diferentes dimensões e retorna outras expressões caso seja true ou false</p>
+<ul>
+<li>
+<p>Sintaxe</p>
+<ul>
+<li>IIF(expressão_logica, expressão_true, expressão_false)</li>
+</ul>
+</li>
+<li>
+<p>Criação de um CM para valores de quantidade entre 50 e 100</p>
+<ul>
+<li>WITH MEMBER [Measures].[QuantityRestriction] as
+IFF([Measures].[Quantity] &gt;= 50 AND [Measures].[Quantity]
+&lt;= 100, [Measures].[Quantity], null)</li>
+</ul>
+</li>
+</ul>
+<h1 id="expressões-condicionais-1">Expressões Condicionais</h1>
+<p>FILTER retorna um conjunto de acordo com um filtro</p>
+<ul>
+<li>Sintaxe:
+<ul>
+<li>FILTER(Expressão de conjunto, expressão lógica)</li>
+</ul>
+</li>
+</ul>
+<p>Exemplo:</p>
+<ul>
+<li>Retornar os anos que tiveram receita maior que 10000
+<ul>
+<li>FILTER([Date].[All].[Year].Members,
+[Measures].[Revenue] &gt; 10000)</li>
+</ul>
+</li>
+</ul>
+<h1 id="funções">Funções</h1>
+<p>CHILDREN
+Retorna todos os filhos de um determinado membro</p>
+<ul>
+<li>Exemplo:
+<ul>
+<li>[Date].[1998].Children -&gt; Todos os meses do ano de 1998</li>
+</ul>
+</li>
+</ul>
+<p>DESCENDANTS
+Retorna todos os membros a partir de um determinando membro até um determinado nível de uma hierarquia</p>
+<ul>
+<li>
+<p>Sintaxe:</p>
+<ul>
+<li>DESCENDANTS(member, level [, f lags])</li>
+</ul>
+</li>
+<li>
+<p>Exemplo:</p>
+<ul>
+<li>Descendants([Supplier].[AMERICA].[BRAZIL],
+[Supplier].[ADDRESS], BEFORE)</li>
+</ul>
+</li>
+</ul>
+<h1 id="funções-1">Funções</h1>
+<ul>
+<li>
+<p>COALESCEEMPTY garante que uma expressão numérica tenha null formatado comozero</p>
+</li>
+<li>
+<p>ANCESTOR retornao ancestral de um determinado membro. O ancestral podeser informadopelo nome do nível</p>
+</li>
+<li>
+<p>CROSSJOIN combina em um único eixo, 2 sets (pode ser utilizado o operador *)</p>
+</li>
+</ul>
+<h1 id="funções-2">Funções</h1>
+<p>Outros funções utilizadas:</p>
+<ul>
+<li>
+<p>FIRSTCHILD, LASTCHILD para retornar o primeiro ou último membro de um nível, respectivamente</p>
+</li>
+<li>
+<p>CURRENTMEMBER para retornar o membro atual durante uma iteração (utilizado principalmente para cálculos que dependem de contexto)</p>
+</li>
+</ul>
+<h1 id="funções-3">Funções</h1>
+<p>WITH
+MEMBER [Measures].[Order Percent by Category] AS
+CoalesceEmpty
+(
+([Part].[Part Categories].CurrentMember,
+[Measures].[Quantity]) /
+(
+Ancestor
+( [Part].[Part Categories].CurrentMember,
+[Part].[Part Categories].[Category]
+), [Measures].[Order Quantity]
+), 0
+), FORMAT_STRING=&lsquo;Percent&rsquo;</p>
+<h1 id="consultas-mdx">Consultas MDX</h1>
+<p>Considere o seguinte esquema estrela</p>
+<p><img src="esquema_estrela.png" alt=""></p>
+<h1 id="consultas-mdx-1">Consultas MDX</h1>
+<p>Projete uma consulta MDX que retorna a soma da receita por ano e por marca da categoria MFGR#12 produzidos pelos fornecedores da região AMERICA</p>
+<p>select Crossjoin({[Measures].[revenue]},
+{[Date].[All].Children}) ON COLUMNS,
+{[Part].[category].[MFGR#12].Children} ON ROWS
+from [CubeSSB]
+where {[Supplier].[All].[AMERICA]}</p>
+<p>Consultas MDX – Resultado em Pivot/Cross Table</p>
+<p><img src="resultado_1.png" alt=""></p>
+<h1 id="consultas-mdx-2">Consultas MDX</h1>
+<p>Retorne a soma das receitas por ano e por marca, das marcas MFGR#2221 e MFGR#2228 e dos fornecedores da AMERICA</p>
+<p>SELECT Crossjoin({[Measures].[revenue]},
+{[Date].[All].Children}) ON COLUMNS,
+{[Part].[brand].[MFGR#2221], [Part].[brand].[MFGR#2228]}
+ON ROWS
+FROM [CubeSSB]
+WHERE {[Supplier].[All].[AMERICA]}</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/tags/bando-de-dados" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">bando de dados</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/tags/bussiness-intelligence" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">bussiness intelligence</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://qg-tux.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://nic1611.github.io/blog/" >
+    &copy;  Q.G do Tux 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/nicolas-soffi-565028198/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/nic1611" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

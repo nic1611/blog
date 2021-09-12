@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 04 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linguagem de consulta MDX</title>
-      <link>https://nic1611.github.io/blog/post/linguagem-mdx/</link>
+      <link>https://nic1611.github.io/blog/post/linguagem_mdx/</link>
       <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/linguagem-mdx/</guid>
+      <guid>https://nic1611.github.io/blog/post/linguagem_mdx/</guid>
       <description>Introdução   Linguagem de consulta à base de dados multidimensionais criada pela Microsoft® em 1998
   Parte de um padrão industrial, o OLE DB for OLAP
   Permite a especificação de até 128 eixos de consultas, sendo porém incomum a utilização de mais de 3 eixos
@@ -22,10 +22,10 @@
     
     <item>
       <title>Métricas de avaliação de maquinas preditivas</title>
-      <link>https://nic1611.github.io/blog/post/metricas-de-avaliacao/</link>
+      <link>https://nic1611.github.io/blog/post/metricas_de_avaliacao/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/metricas-de-avaliacao/</guid>
+      <guid>https://nic1611.github.io/blog/post/metricas_de_avaliacao/</guid>
       <description>Métricas de avaliação de maquinas preditivas Métricas de avaliação para problemas de Classificação Confusion Matrix Confusion Matrix é uma tabela que permite a visualização do desempenho de um algoritmo de classificação.
 Essa tabela de contingência 2x2 especial. Cada linha da matriz representa instâncias de uma classe prevista enquanto cada coluna representa instâncias da classe atual (ou vice versa).
 Acurácia Esta é métrica mais importante. É basicamente o número de acertos (positivos) dividido pelo número total de exemplos.</description>
@@ -33,20 +33,20 @@ Acurácia Esta é métrica mais importante. É basicamente o número de acertos 
     
     <item>
       <title>Introdução a visualização com Matplotlib</title>
-      <link>https://nic1611.github.io/blog/post/introducao-ao-matplotlib/</link>
+      <link>https://nic1611.github.io/blog/post/introducao_ao_matplotlib/</link>
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/introducao-ao-matplotlib/</guid>
+      <guid>https://nic1611.github.io/blog/post/introducao_ao_matplotlib/</guid>
       <description>Introdução O matplotlib é uma biblioteca para gerar gráficos ( plots ) em Python, inclusive em 3 dimensões. Abaixo um exemplo de como plotar um gráfico com matplotlib. Primeiramente importamos a interface baseada em estados ( pyplot ) do matplotlib. O padrão da comunidade é usar o alias plt :
 from matplotlib import pyplot as plt import math import numpy as np Então, definimos uma sequencia de valores (em uma lista) a serem impressos.</description>
     </item>
     
     <item>
       <title>Normalização e Padronização</title>
-      <link>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</link>
+      <link>https://nic1611.github.io/blog/post/normalizacao_e_padronizacao/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</guid>
+      <guid>https://nic1611.github.io/blog/post/normalizacao_e_padronizacao/</guid>
       <description>Normalização A normalização é boa para usar quando você sabe que a distribuição de seus dados não seguem uma distribuição Gaussiana. Isso pode ser útil em algoritmos que não assumem nenhuma distribuição de dados, como K-vizinhos mais próximos e redes neurais.
 Uma das primeiras tarefas dentro do pré-processamento, é colocar seus dados na mesma escala. Muitos algoritmos de Machine Learning vão se beneficiar disso e produzir resultados melhores. Esta etapa também é chamada de normalização e significa colocar os dados em uma escala com range entre 0 e 1.</description>
     </item>
@@ -66,70 +66,70 @@ Distribuição Binomial A Distribuição Binomial é uma distribuição que cham
     
     <item>
       <title>Banco de Dados com Python</title>
-      <link>https://nic1611.github.io/blog/post/banco-de-dados-com-python/</link>
+      <link>https://nic1611.github.io/blog/post/banco_de_dados_com_python/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/banco-de-dados-com-python/</guid>
+      <guid>https://nic1611.github.io/blog/post/banco_de_dados_com_python/</guid>
       <description>Banco de Dados com Python O Python providencia um padrão, conhecido como Python DB-API, para acesso aos mais variados Bancos de Dados (BDs). Os principais elementos do Python DB-API são:
  Função connect : uma função usada para conectar a um BD e que retorna um objeto de conexão ; Objeto de conexão : representa uma conexão com um BD. Este objeto de conexão provê acesso a um cursor de objetos ; Cursor de objetos : é usado para executar comandos ou consultas SQL, após a execução de uma consultas haverá o resultado de uma execução no próprio cursor; Resultado de uma execução : São os resultados de uma execução de um comando SQL.</description>
     </item>
     
     <item>
       <title>Orientação a Objetos com Python</title>
-      <link>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o-a-objetos-com-python/</link>
+      <link>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o_a_objetos_com_python/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o-a-objetos-com-python/</guid>
+      <guid>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o_a_objetos_com_python/</guid>
       <description>Orientação a Objetos Introdução A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação de forma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadas via objetos. Outro tipo de paradigma de programação muito conhecido é o funcional, utilizado para criar programas na linguagem de programação R; muitas das features do paradigma funcional também estão disponível no Python.
 Por exemplo, um aluno pode ser representado por uma classe Aluno que tem vários campos(atributos) como nome, código (id), data de nascimento, etc.</description>
     </item>
     
     <item>
       <title>Variáveis Aleatórias</title>
-      <link>https://nic1611.github.io/blog/post/variaveis-aleatorias/</link>
+      <link>https://nic1611.github.io/blog/post/variaveis_aleatorias/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/variaveis-aleatorias/</guid>
+      <guid>https://nic1611.github.io/blog/post/variaveis_aleatorias/</guid>
       <description>Variáveis Aleatórias O que é uma variável aleatória? Apesar do nome, variável aleatória, estamos mais interessados na função de probabilidade que será gerada. A variável aleatória associa cada resultado obtido de um experimento aleatório a um número. Veja o exemplo:
 Assim, se o espaço amostral relativo ao &amp;ldquo;lançamento simultâneo de duas moedas de caras&amp;rdquo; que aparecem, a cada ponto amostral podemos associar um número para X, de acordo com a Tabela 10.</description>
     </item>
     
     <item>
       <title>Visualização de dados com R</title>
-      <link>https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/</link>
+      <link>https://nic1611.github.io/blog/post/visualizacao_de_dados_com_o_r/</link>
       <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/visualizacao-de-dados-com-o-r/</guid>
+      <guid>https://nic1611.github.io/blog/post/visualizacao_de_dados_com_o_r/</guid>
       <description>Visualização de dados O objetivo aqui é apresentar vários exemplos práticos de construção de gráficos comuns e o ferramental necessáriopara criar boas visualizações.Para isso, a partir dessa seção iremos usar o arquivo .csv sobre a circulação das moedas, considerando a execução do seguinte código abaixo:
 library(tidyverse) circulacao_dinheiro &amp;lt;- read_csv2(&amp;#34;./MeioCirculante_DadosAbertos.csv&amp;#34;, col_names = c(&amp;#34;Data&amp;#34;, &amp;#34;Família&amp;#34;, &amp;#34;Denominação&amp;#34;, &amp;#34;Quantidade&amp;#34;)) #lembre-se o segredo é sempre preparar os dados de maneira que o subconjunto selecionado responda apergunta disposta #os grupos que queremos no final é por MÊS e DENOMINAÇÃO junto com a quantidade MÉDIA em circulação#seguindo a especificação, podemos definir o seguinte tibble resultante: moedas_2019 &amp;lt;- mutate(circulacao_dinheiro, Dia = as.</description>
     </item>
     
     <item>
       <title>Conexão ao PostgreSQL utilizando o R</title>
-      <link>https://nic1611.github.io/blog/post/conex%C3%A3o-ao-postgresql-utilizando-o-r/</link>
+      <link>https://nic1611.github.io/blog/post/conexao_ao_postgresql_utilizando_o_r/</link>
       <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/conex%C3%A3o-ao-postgresql-utilizando-o-r/</guid>
+      <guid>https://nic1611.github.io/blog/post/conexao_ao_postgresql_utilizando_o_r/</guid>
       <description>Instalação do Pacote: RPostgresO pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
 install.packages(&amp;quot;RPostgres&amp;quot;)Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install.Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.</description>
     </item>
     
     <item>
       <title>Introdução a visualização de dados</title>
-      <link>https://nic1611.github.io/blog/post/introducao-visualizacao/</link>
+      <link>https://nic1611.github.io/blog/post/introducao_visualizacao/</link>
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/introducao-visualizacao/</guid>
+      <guid>https://nic1611.github.io/blog/post/introducao_visualizacao/</guid>
       <description>Introdução a visualização de dados Iremos nos aventurar no mundo da visualização gráfica de dados usando o ggplot2 (já dentro do tidyverse). Este material temcomo objetivo introduzir alguns conceitos principais deste pacote e uma visão inicial de como gerar os principais tipos de gráficos,usando o nosso tibble chamado circulacao_dinheiro_detalhado que é formado a seguir
 # library(tidyverse) circulacao_dinheiro &amp;lt;- read_csv2(&amp;#34;./MeioCirculante_DadosAbertos.csv&amp;#34;, col_names = c(&amp;#34;Data&amp;#34;, &amp;#34;Família&amp;#34;, &amp;#34;Denominação&amp;#34;, &amp;#34;Quantidade&amp;#34;)) circulacao_dinheiro_detalhado &amp;lt;- mutate(circulacao_dinheiro, Dia = as.</description>
     </item>
     
     <item>
       <title>Teoria da probabilidade</title>
-      <link>https://nic1611.github.io/blog/post/teoria-probabilidade/</link>
+      <link>https://nic1611.github.io/blog/post/teoria_probabilidade/</link>
       <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/teoria-probabilidade/</guid>
+      <guid>https://nic1611.github.io/blog/post/teoria_probabilidade/</guid>
       <description>O que é e por que estudar probabilidades? O primeiro argumento vem do fato de que o mundo é muito mais “probabilístico” do que “determinístico”.
 Por exemplo: é muito mais plausível dizer que tem uma chance de 75% de chover hoje do que afirmar com toda a certeza que irá chover.
 Entender probabilidades é entender como o mundo funciona: isso nos ajuda nas tomadas de decisões!
@@ -147,10 +147,10 @@ Mais fácil falar do que fazer&amp;hellip; Existem situações simples de prever
     
     <item>
       <title>Machine learning para bancos</title>
-      <link>https://nic1611.github.io/blog/post/machine-learning-para-bancos/</link>
+      <link>https://nic1611.github.io/blog/post/machine_learning_para_bancos/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/machine-learning-para-bancos/</guid>
+      <guid>https://nic1611.github.io/blog/post/machine_learning_para_bancos/</guid>
       <description>Personalizando as Taxas de Acordo para cada Cliente Bancos e Cooperativas de Crédito Essas são 2 de uma infinidade de empresas que oferecem vários tipos de contas e fornecem empréstimos com base nos requisitos de seus clientes. Corretoras da Bolsa ofertam diversos produtos como investimentos em mercado e os mais variados fundos de investimento.
 Existem muitos bancos em todo o mundo que estão aproveitando o aprendizado de máquina e a IA em sua rotina diária e obtendo benefícios com isso.</description>
     </item>

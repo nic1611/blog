@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/pr%C3%A9-processamento-de-dados/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Normalização e Padronização</title>
-      <link>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</link>
+      <link>https://nic1611.github.io/blog/post/normalizacao_e_padronizacao/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</guid>
+      <guid>https://nic1611.github.io/blog/post/normalizacao_e_padronizacao/</guid>
       <description>Normalização A normalização é boa para usar quando você sabe que a distribuição de seus dados não seguem uma distribuição Gaussiana. Isso pode ser útil em algoritmos que não assumem nenhuma distribuição de dados, como K-vizinhos mais próximos e redes neurais.
 Uma das primeiras tarefas dentro do pré-processamento, é colocar seus dados na mesma escala. Muitos algoritmos de Machine Learning vão se beneficiar disso e produzir resultados melhores. Esta etapa também é chamada de normalização e significa colocar os dados em uma escala com range entre 0 e 1.</description>
     </item>

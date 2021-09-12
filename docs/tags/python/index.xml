@@ -9,40 +9,40 @@
     <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introdução a visualização com Matplotlib</title>
-      <link>https://nic1611.github.io/blog/post/introducao-ao-matplotlib/</link>
+      <link>https://nic1611.github.io/blog/post/introducao_ao_matplotlib/</link>
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/introducao-ao-matplotlib/</guid>
+      <guid>https://nic1611.github.io/blog/post/introducao_ao_matplotlib/</guid>
       <description>Introdução O matplotlib é uma biblioteca para gerar gráficos ( plots ) em Python, inclusive em 3 dimensões. Abaixo um exemplo de como plotar um gráfico com matplotlib. Primeiramente importamos a interface baseada em estados ( pyplot ) do matplotlib. O padrão da comunidade é usar o alias plt :
 from matplotlib import pyplot as plt import math import numpy as np Então, definimos uma sequencia de valores (em uma lista) a serem impressos.</description>
     </item>
     
     <item>
       <title>Normalização e Padronização</title>
-      <link>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</link>
+      <link>https://nic1611.github.io/blog/post/normalizacao_e_padronizacao/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/normalizacao-e-padronizacao/</guid>
+      <guid>https://nic1611.github.io/blog/post/normalizacao_e_padronizacao/</guid>
       <description>Normalização A normalização é boa para usar quando você sabe que a distribuição de seus dados não seguem uma distribuição Gaussiana. Isso pode ser útil em algoritmos que não assumem nenhuma distribuição de dados, como K-vizinhos mais próximos e redes neurais.
 Uma das primeiras tarefas dentro do pré-processamento, é colocar seus dados na mesma escala. Muitos algoritmos de Machine Learning vão se beneficiar disso e produzir resultados melhores. Esta etapa também é chamada de normalização e significa colocar os dados em uma escala com range entre 0 e 1.</description>
     </item>
     
     <item>
       <title>Banco de Dados com Python</title>
-      <link>https://nic1611.github.io/blog/post/banco-de-dados-com-python/</link>
+      <link>https://nic1611.github.io/blog/post/banco_de_dados_com_python/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/banco-de-dados-com-python/</guid>
+      <guid>https://nic1611.github.io/blog/post/banco_de_dados_com_python/</guid>
       <description>Banco de Dados com Python O Python providencia um padrão, conhecido como Python DB-API, para acesso aos mais variados Bancos de Dados (BDs). Os principais elementos do Python DB-API são:
  Função connect : uma função usada para conectar a um BD e que retorna um objeto de conexão ; Objeto de conexão : representa uma conexão com um BD. Este objeto de conexão provê acesso a um cursor de objetos ; Cursor de objetos : é usado para executar comandos ou consultas SQL, após a execução de uma consultas haverá o resultado de uma execução no próprio cursor; Resultado de uma execução : São os resultados de uma execução de um comando SQL.</description>
     </item>
     
     <item>
       <title>Orientação a Objetos com Python</title>
-      <link>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o-a-objetos-com-python/</link>
+      <link>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o_a_objetos_com_python/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o-a-objetos-com-python/</guid>
+      <guid>https://nic1611.github.io/blog/post/orienta%C3%A7%C3%A3o_a_objetos_com_python/</guid>
       <description>Orientação a Objetos Introdução A Orientação a Objetos (OO) é um paradigma de programação que estrutura uma aplicação de forma que os dados e as operações sobre estes dados são mantidas juntas em classes e acessadas via objetos. Outro tipo de paradigma de programação muito conhecido é o funcional, utilizado para criar programas na linguagem de programação R; muitas das features do paradigma funcional também estão disponível no Python.
 Por exemplo, um aluno pode ser representado por uma classe Aluno que tem vários campos(atributos) como nome, código (id), data de nascimento, etc.</description>
     </item>
