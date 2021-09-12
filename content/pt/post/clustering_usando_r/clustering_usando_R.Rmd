@@ -49,8 +49,7 @@ hc = hclust(distxy)
 plot(hc) 
 ```
  
-O resultado seria o seguinte: 
- 
+
 Para ilustrar estes métodos com um exemplo usando um conjunto de dados de 
 maior dimensão, tome-se como ponto de partida os dados do conjunto de dados iris ja usados em capítulos anteriores. No exemplo seguinte, os dados são inicialmente standardizados para que a métrica de distância pese de forma uniforme as várias variáveis, podendo visualizar-se o efeito com um gráfico do tipo boxplot. Note-se que o atributo Species (posição 5) não é utilizado neste processo, sendo usados apenas os atributos numéricos. 
  

@@ -63,8 +63,6 @@ ylab="SV1-dir")
 abline(0,1, col="red")
 ```
  
-O gráfico gerado pelas duas últimas linhas do exemplo anterior será o seguinte: 
- 
  
 No exemplo seguinte demonstra-se a aproximação de uma matriz de dados 
 usando um número diferentes de valores singulares. A primeira linha faz o download do ficheiro (podendo ser substituída por um download direto usando o seu browser) e a segunda linha carrega o ficheiro de dados. A linha seguinte executa o processo de SVD, enquanto a última permite visualizar a componente da variância explicada por cada valor singular. 
@@ -77,8 +75,7 @@ svd1 <- svd(scale(faceData))
 plot(svd1$d^2/sum(svd1$d^2),pch=19,xlab="SV",ylab="Variancia explicada")
 ```
  
-O gráfico seguinte mostra o resultado da última linha: 
- 
+
 Nos comandos seguintes mostra-se como podemos criar aproximações aos 
 dados originais usando 1, 5 e 10 valores singulares, respetivamente. Estas aproximações são mostradas em forma de gráfico em seguida, comparando-se com os dados originais (último gráfico). 
  

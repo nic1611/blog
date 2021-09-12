@@ -33,30 +33,30 @@ um exemplo com pontos gerados de forma aleatória formando três clusters natura
 y = rnorm(12,mean=rep(c(1,2,1),each=4),sd=0.2) 
 dataFrame &lt;- data.frame(x=x,y=y) 
 dist(dataFrame)</code></pre>
-<pre><code>##             1          2          3          4          5          6          7
-## 2  0.34613065                                                                  
-## 3  0.22512632 0.23272218                                                       
-## 4  0.68950805 0.34397088 0.53481759                                            
-## 5  1.96667443 1.65999484 1.75202717 1.35770388                                 
-## 6  1.42389024 1.09479634 1.22546130 0.76982608 0.60857175                      
-## 7  1.88796031 1.55332274 1.69314903 1.21835067 0.40344418 0.46892739           
-## 8  1.56804812 1.24130280 1.36668542 0.91787931 0.46994644 0.14812905 0.33825068
-## 9  2.32684329 2.12656498 2.10504157 1.94235201 1.02438549 1.42697925 1.42342714
-## 10 2.28348261 2.06886740 2.05994628 1.86952018 0.90251769 1.32417248 1.30292041
-## 11 2.33378790 2.14198270 2.11324732 1.96697826 1.08422826 1.47138062 1.48159378
-## 12 2.18521648 2.01777199 1.96896200 1.87267662 1.15772067 1.45770030 1.53814183
-##             8          9         10         11
-## 2                                             
-## 3                                             
-## 4                                             
-## 5                                             
-## 6                                             
-## 7                                             
-## 8                                             
-## 9  1.35116386                                 
-## 10 1.24221297 0.12455134                      
-## 11 1.39996746 0.06718595 0.18988605           
-## 12 1.40744773 0.27271600 0.35756912 0.22480128</code></pre>
+<pre><code>##            1         2         3         4         5         6         7
+## 2  0.3061599                                                            
+## 3  0.1469083 0.3201766                                                  
+## 4  0.1383756 0.1687959 0.1770948                                        
+## 5  1.2077874 1.5100614 1.2619053 1.3456734                              
+## 6  1.0256136 1.3300363 1.0391864 1.1612794 0.3791958                    
+## 7  1.3472882 1.6364254 1.4251974 1.4807370 0.2816261 0.6567212          
+## 8  1.3294948 1.6338760 1.3409712 1.4651332 0.3955472 0.3038886 0.6497432
+## 9  1.5014510 1.7431366 1.4264491 1.5999170 1.2074242 0.8740837 1.4849135
+## 10 1.9053285 2.1530746 1.8353165 2.0075797 1.4350510 1.1640773 1.6928778
+## 11 1.8884515 2.0434765 1.7696095 1.9431169 1.9358172 1.5757456 2.2169822
+## 12 2.4396267 2.6461934 2.3438955 2.5209549 2.1211827 1.8320655 2.3812753
+##            8         9        10        11
+## 2                                         
+## 3                                         
+## 4                                         
+## 5                                         
+## 6                                         
+## 7                                         
+## 8                                         
+## 9  0.8547389                              
+## 10 1.0439456 0.4117764                    
+## 11 1.6042672 0.7546840 0.8181655          
+## 12 1.7319415 0.9835182 0.6886322 0.7432030</code></pre>
 <p>Para executar o processo de clustering hierárquico usa-se a função hclust. Esta
 recebe como argumento a matriz com as distâncias. Como argumento opcional (method), a função permite escolher a forma como se calculam distâncias entre clusters com mais do que um ponto nos passos intermédios do algoritmo. Os valores possíveis para esta opção incluem “complete” (valor por omissão, indica que a distância entre 2 clusters é a maior distância entre qualquer par de elementos dos 2 clusters), “single” (indica que a distância entre 2 clusters é a menor distância entre qualquer par de elementos dos 2 clusters) e “average” (indica que a distância entre 2 clusters é a média das distância entre todos os pares de elementos dos 2 clusters).
 Veja-se um exemplo de aplicação da função hclust com os dados do exemplo
@@ -64,21 +64,20 @@ anterior:</p>
 <pre class="r"><code>distxy = dist(dataFrame, method = &quot;euclidean&quot;) 
 hc = hclust(distxy) 
 plot(hc) </code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>O resultado seria o seguinte:</p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Para ilustrar estes métodos com um exemplo usando um conjunto de dados de
 maior dimensão, tome-se como ponto de partida os dados do conjunto de dados iris ja usados em capítulos anteriores. No exemplo seguinte, os dados são inicialmente standardizados para que a métrica de distância pese de forma uniforme as várias variáveis, podendo visualizar-se o efeito com um gráfico do tipo boxplot. Note-se que o atributo Species (posição 5) não é utilizado neste processo, sendo usados apenas os atributos numéricos.</p>
 <pre class="r"><code>iris.sc = scale(iris[,1:4])
 boxplot(iris[,1:4]) </code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre class="r"><code>boxplot(iris.sc)</code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
 <p>Em seguida, procede-se ao cálculo da matriz de distâncias usando distâncias
 euclideanas e realiza-se o processo de clustering hierárquico usando a funçãoo hclust.</p>
 <pre class="r"><code>dist.iris = dist(iris.sc, method = &quot;euclidean&quot;) 
 hc.complete = hclust(dist.iris, method = &quot;complete&quot;) 
 plot(hc.complete, cex = 0.4)</code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>No gráfico gerado pelo código anterior, note-se que o número de pontos torna o
 resultado difícil de interpretar. Em muitos casos, faz sentido comparar a divisão dos dados em clusters com conhecimento próprio do problema. Neste caso, iremos usar o campo iris$Species como divisão natural dos dados (note-se que este campo não foi usado para realizar o clustering). O exemplo seguinte usa este campo para colocar as folhas da árvore e, assim, verificar os clusters gerados com os clusters naturais, usando dois valores distintos para o argumento method na função hclust.</p>
 <pre class="r"><code>my.plot.hc = function(hclust, lab = 1:length(hclust$order),  
@@ -100,10 +99,10 @@ resultado difícil de interpretar. Em muitos casos, faz sentido comparar a divis
 dist.iris = dist(iris.sc, method = &quot;euclidean&quot;) 
 hc.complete = hclust(dist.iris, method = &quot;complete&quot;) 
 my.plot.hc(hc.complete,lab.col=as.integer(iris$Species)+1, cex=0.4)</code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>hc.average = hclust(dist.iris, method = &quot;average&quot;) 
 my.plot.hc(hc.average,lab.col=as.integer(iris$Species)+1,cex=0.4)</code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
 <p>Uma representação gráfica dos dados relacionada com o clustering hierárquico
 são os heatmaps, que podem ser construídos em R com a função heatmap. Esta permite representar os dados como uma imagem onde cada valor da matriz de dados é representado com uma célula cuja cor varia consoante o valor respetivo, num gradiente de cores que pode ser configurado. Os heatmaps tipicamente incluem as árvores criadas por clustering hierárquico quer ao nível das linhas, quer ao nível das colunas de dados. Note o exemplo seguinte:</p>
 <pre class="r"><code>x1 &lt;- rnorm(12,mean=rep(1:3,each=4),sd=0.2) 
@@ -112,7 +111,7 @@ y1 &lt;- rnorm(12,mean=rep(c(1,2,1),each=4),sd=0.2)
 y2 &lt;- rnorm(12,mean=rep(c(1,2,1),each=4),sd=0.2) 
 df2 = data.frame(x1, x2, y1, y2) 
 heatmap(as.matrix(df2))</code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="clustering-k-means" class="section level2">
 <h2>Clustering k-means</h2>
@@ -122,10 +121,10 @@ conjunto de dados e o valor de k (parâmetro centers).<br />
 Veja um exemplo de seguida, usando os dados criados na secção anterior:</p>
 <pre class="r"><code>resKmeans &lt;- kmeans(dataFrame, centers=3) 
 resKmeans$cluster </code></pre>
-<pre><code>##  [1] 2 2 2 2 3 3 3 3 1 1 1 1</code></pre>
+<pre><code>##  [1] 1 1 1 1 2 2 2 2 3 3 3 3</code></pre>
 <pre class="r"><code>plot(dataFrame$x,dataFrame$y, col=resKmeans$cluster, pch=19, cex=2) 
 points(resKmeans$centers, col=1:3, pch=3, cex=3, lwd=3) </code></pre>
-<p><img src="/blog/pt/post/clustering-usando-r/clustering_usando_R_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/blog/pt/post/clustering_usando_r/clustering_usando_R_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Note-se que, em casos reais, dado que o método de otimização usado é heurístico
 há a necessidade de se correr o algoritmo por diversas vezes, de forma a aumentar a qualidade da solução final encontrada. Este número de repetições pode ser controlado pelo parâmetro nstart.
 De forma idêntica ao método anterior, ir-se-á demonstrar este método usando o
@@ -134,9 +133,9 @@ conjunto de dados iris.</p>
 table(kmeans.iris$cluster, iris$Species)</code></pre>
 <pre><code>##    
 ##     setosa versicolor virginica
-##   1     50          0         0
+##   1      0          2        36
 ##   2      0         48        14
-##   3      0          2        36</code></pre>
+##   3     50          0         0</code></pre>
 <p>Note-se que o segundo comando executado permite comparar o resultado da função kmeans com o agrupamento natural dos dados pelo campo Species. Esta comparação permite aferir da conformidade dos clusters gerados e dos clusters naturais.</p>
 </div>
 </div>

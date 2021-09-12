@@ -84,7 +84,6 @@ svdres$v</code></pre>
 ylab=&quot;SV1-dir&quot;)
 abline(0,1, col=&quot;red&quot;)</code></pre>
 <p><img src="/blog/pt/post/reducao_de_dimensionalidade/reducao_de_dimensionalidade_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>O gráfico gerado pelas duas últimas linhas do exemplo anterior será o seguinte:</p>
 <p>No exemplo seguinte demonstra-se a aproximação de uma matriz de dados
 usando um número diferentes de valores singulares. A primeira linha faz o download do ficheiro (podendo ser substituída por um download direto usando o seu browser) e a segunda linha carrega o ficheiro de dados. A linha seguinte executa o processo de SVD, enquanto a última permite visualizar a componente da variância explicada por cada valor singular.</p>
 <pre class="r"><code>download.file(&quot;https://spark-public.s3.amazonaws.com/dataanalysis/face.rda&quot;, destfile=&quot;face.rda&quot;) 
@@ -92,7 +91,6 @@ load(&quot;face.rda&quot;)
 svd1 &lt;- svd(scale(faceData)) 
 plot(svd1$d^2/sum(svd1$d^2),pch=19,xlab=&quot;SV&quot;,ylab=&quot;Variancia explicada&quot;)</code></pre>
 <p><img src="/blog/pt/post/reducao_de_dimensionalidade/reducao_de_dimensionalidade_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>O gráfico seguinte mostra o resultado da última linha:</p>
 <p>Nos comandos seguintes mostra-se como podemos criar aproximações aos
 dados originais usando 1, 5 e 10 valores singulares, respetivamente. Estas aproximações são mostradas em forma de gráfico em seguida, comparando-se com os dados originais (último gráfico).</p>
 <pre class="r"><code>aprox1 &lt;- svd1$u[,1] %*% t(svd1$v[,1]) * svd1$d[1] 
