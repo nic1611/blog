@@ -3,7 +3,7 @@ date: "2021-09-04"
 description: "Linguagem extensível, permitindo criação de funções para manipular dados multidimensionais"
 featured_image: https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 tags:
-- bando de dados
+- banco de dados
 - bussiness intelligence
 title: 'Linguagem de consulta MDX'
 ---
