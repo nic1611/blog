@@ -8,6 +8,24 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Mar 2021 12:00:00 -0500</lastBuildDate><atom:link href="https://nic1611.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Clustering usando R</title>
+      <link>https://nic1611.github.io/blog/post/clustering_usando_r/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/clustering_usando_r/</guid>
+      <description>Clustering Introdução O objetivo do clustering é o de realizar o agrupamento de entidades / exemplos de um conjunto de dados (as linhas de uma matriz ou dataframe) com base na similaridade entre estes. Uma tarefa similar passa pelo agrupamento das colunas (variáveis). Embora não se pretenda neste texto abordar em detalhe as variantes, as formulações e os algoritmos para realizar esta tarefa note-se que as abordagens para este problemas variam sobretudo nas métricas usadas com vista à definição de similaridade, nos algoritmos usados para realizar o agrupamento, na forma que assume a saída destes mesmos algoritmos e, finalmente, na forma de visualizar e interpretar os resultados.</description>
+    </item>
+    
+    <item>
+      <title>Redução de Dimensionalidade usando R</title>
+      <link>https://nic1611.github.io/blog/post/reducao_de_dimencionalidade/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/reducao_de_dimencionalidade/</guid>
+      <description>Redução de dimensionalidade Introdução Em muitos casos, os conjuntos de dados a analisar são de dimensões elevadas e as variáveis possuem dependências entre si. Neste capítulo, apresentam-se métodos para reduzir a dimensionalidade dos dados. Estes métodos funcionam identificando conjuntos de variáveis não correlacionadas entre si que explicam a maior parte da variabilidade dos dados. Em termos algébricos, estamos interessados em matrizes de rank menor que permitam explicar os dados originais e reconstrui-los de forma o mais aproximada possível.</description>
+    </item>
+    
+    <item>
       <title>Linguagem de consulta MDX</title>
       <link>https://nic1611.github.io/blog/post/linguagem_mdx/</link>
       <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>

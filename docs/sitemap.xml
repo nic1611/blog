@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nic1611.github.io/blog/tags/analise-de-dados/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://nic1611.github.io/blog/post/clustering_usando_r/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://nic1611.github.io/blog/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://nic1611.github.io/blog/tags/r/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://nic1611.github.io/blog/post/reducao_de_dimencionalidade/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://nic1611.github.io/blog/tags/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://nic1611.github.io/blog/tags/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://nic1611.github.io/blog/tags/bando-de-dados/</loc>
     <lastmod>2021-09-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -13,21 +48,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://nic1611.github.io/blog/post/linguagem_mdx/</loc>
-    <lastmod>2021-09-04T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://nic1611.github.io/blog/</loc>
-    <lastmod>2021-09-04T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://nic1611.github.io/blog/tags/</loc>
-    <lastmod>2021-09-04T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://nic1611.github.io/blog/tags/</loc>
     <lastmod>2021-09-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -99,11 +119,6 @@
   </url><url>
     <loc>https://nic1611.github.io/blog/post/variaveis_aleatorias/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://nic1611.github.io/blog/tags/r/</loc>
-    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

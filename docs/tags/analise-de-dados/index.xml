@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>analise de dados on Q.G do Tux</title>
+    <link>https://nic1611.github.io/blog/tags/analise-de-dados/</link>
+    <description>Recent content in analise de dados on Q.G do Tux</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/analise-de-dados/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clustering usando R</title>
+      <link>https://nic1611.github.io/blog/post/clustering_usando_r/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/clustering_usando_r/</guid>
+      <description>Clustering Introdução O objetivo do clustering é o de realizar o agrupamento de entidades / exemplos de um conjunto de dados (as linhas de uma matriz ou dataframe) com base na similaridade entre estes. Uma tarefa similar passa pelo agrupamento das colunas (variáveis). Embora não se pretenda neste texto abordar em detalhe as variantes, as formulações e os algoritmos para realizar esta tarefa note-se que as abordagens para este problemas variam sobretudo nas métricas usadas com vista à definição de similaridade, nos algoritmos usados para realizar o agrupamento, na forma que assume a saída destes mesmos algoritmos e, finalmente, na forma de visualizar e interpretar os resultados.</description>
+    </item>
+    
+    <item>
+      <title>Redução de Dimensionalidade usando R</title>
+      <link>https://nic1611.github.io/blog/post/reducao_de_dimencionalidade/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/reducao_de_dimencionalidade/</guid>
+      <description>Redução de dimensionalidade Introdução Em muitos casos, os conjuntos de dados a analisar são de dimensões elevadas e as variáveis possuem dependências entre si. Neste capítulo, apresentam-se métodos para reduzir a dimensionalidade dos dados. Estes métodos funcionam identificando conjuntos de variáveis não correlacionadas entre si que explicam a maior parte da variabilidade dos dados. Em termos algébricos, estamos interessados em matrizes de rank menor que permitam explicar os dados originais e reconstrui-los de forma o mais aproximada possível.</description>
+    </item>
+    
+  </channel>
+</rss>

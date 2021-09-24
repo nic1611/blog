@@ -1,11 +1,12 @@
 ---
-title: "Clustering usando R"
-date: '2021-12-09'
-featured_image: https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80
-tags:
-- R
-- analise de dados
-description: ''
+title: Clustering usando R
+author: 'Nicolas Soffi'
+date: '2021-09-12'
+slug: []
+categories: []
+tags: [r, analise de dados]
+featured_image: 'https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+description: 'O objetivo do clustering é o de realizar o agrupamento de entidades/exemplos de um conjunto de dados (as linhas de uma matriz ou dataframe) com base na similaridade entre estes'
 ---
 
 # Clustering 
