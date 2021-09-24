@@ -2,7 +2,7 @@ title: Notre-Dame de Paris
 baseURL: https://nic1611.github.io/blog/
 languageCode: en-us
 theme: gohugo-theme-ananke
-resourceDir: /resource
+resourceDir: /resources
 DefaultContentLanguage: pt
 SectionPagesMenu: main
 Paginate: 6
@@ -36,3 +36,8 @@ params:
   stackoverflow: ''
   twitter: ''
   youtube: ''
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
