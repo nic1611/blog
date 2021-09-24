@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Introdução a visualização de dados">
 <meta itemprop="description" content="Introdução a visualização de dados com R"><meta itemprop="datePublished" content="2021-04-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-04-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1858">
+<meta itemprop="wordCount" content="1925">
 <meta itemprop="keywords" content="R,Visualização de dados," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Introdução a visualização de dados"/>
 <meta name="twitter:description" content="Introdução a visualização de dados com R"/>
@@ -243,13 +243,13 @@ cols(
 </code></pre></div><p>Onde:</p>
 <ul>
 <li>
-<p>em <!-- raw HTML omitted --> nós informamos o nosso data.frame ou tibble</p>
+<p>em <DATA> nós informamos o nosso data.frame ou tibble</p>
 </li>
 <li>
 <p>em &lt;GEOM_FUNCTION&gt; nós de fato desenhamos uma nova camada no gráfico através de uma função</p>
 </li>
 <li>
-<p>em <!-- raw HTML omitted --> informamos as características visuais do gráfico, principalmente especificando qual é a coluna dos eixos x e y</p>
+<p>em <MAPPINGS> informamos as características visuais do gráfico, principalmente especificando qual é a coluna dos eixos x e y</p>
 </li>
 </ul>
 <p>Além disso, temos algumas funções para formatar de forma geral um gráfico:</p>
@@ -296,7 +296,70 @@ conjunto_de_analise <span style="color:#f92672">&lt;-</span> <span style="color:
 conjunto_de_analise
 </code></pre></div><pre><code>`summarise()` has grouped output by 'Ano'. You can override using the `.groups` argument.
 </code></pre>
-<!-- raw HTML omitted -->
+<table class="dataframe">
+<caption>A grouped_df: 55 × 3</caption>
+<thead>
+	<tr><th scope=col>Ano</th><th scope=col>Denominação</th><th scope=col>Quantidade Média</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>2010</td><td>0.01</td><td>1595390824</td></tr>
+	<tr><td>2010</td><td>0.05</td><td>1887855253</td></tr>
+	<tr><td>2010</td><td>0.10</td><td>2111540556</td></tr>
+	<tr><td>2010</td><td>0.25</td><td> 891228249</td></tr>
+	<tr><td>2010</td><td>0.50</td><td> 813160073</td></tr>
+	<tr><td>2011</td><td>0.01</td><td>1595410460</td></tr>
+	<tr><td>2011</td><td>0.05</td><td>2117552941</td></tr>
+	<tr><td>2011</td><td>0.10</td><td>2342271310</td></tr>
+	<tr><td>2011</td><td>0.25</td><td> 991671246</td></tr>
+	<tr><td>2011</td><td>0.50</td><td> 906274753</td></tr>
+	<tr><td>2012</td><td>0.01</td><td>1595439029</td></tr>
+	<tr><td>2012</td><td>0.05</td><td>2364452421</td></tr>
+	<tr><td>2012</td><td>0.10</td><td>2589195308</td></tr>
+	<tr><td>2012</td><td>0.25</td><td>1101182422</td></tr>
+	<tr><td>2012</td><td>0.50</td><td>1015294240</td></tr>
+	<tr><td>2013</td><td>0.01</td><td>1595485285</td></tr>
+	<tr><td>2013</td><td>0.05</td><td>2576165754</td></tr>
+	<tr><td>2013</td><td>0.10</td><td>2834982296</td></tr>
+	<tr><td>2013</td><td>0.25</td><td>1204942795</td></tr>
+	<tr><td>2013</td><td>0.50</td><td>1106022360</td></tr>
+	<tr><td>2014</td><td>0.01</td><td>1595490688</td></tr>
+	<tr><td>2014</td><td>0.05</td><td>2785852520</td></tr>
+	<tr><td>2014</td><td>0.10</td><td>3037555996</td></tr>
+	<tr><td>2014</td><td>0.25</td><td>1321290512</td></tr>
+	<tr><td>2014</td><td>0.50</td><td>1221525442</td></tr>
+	<tr><td>2015</td><td>0.01</td><td>1595502732</td></tr>
+	<tr><td>2015</td><td>0.05</td><td>2899055039</td></tr>
+	<tr><td>2015</td><td>0.10</td><td>3139405502</td></tr>
+	<tr><td>2015</td><td>0.25</td><td>1366785504</td></tr>
+	<tr><td>2015</td><td>0.50</td><td>1275599289</td></tr>
+	<tr><td>2016</td><td>0.01</td><td>1595518853</td></tr>
+	<tr><td>2016</td><td>0.05</td><td>2987903510</td></tr>
+	<tr><td>2016</td><td>0.10</td><td>3213660349</td></tr>
+	<tr><td>2016</td><td>0.25</td><td>1407888945</td></tr>
+	<tr><td>2016</td><td>0.50</td><td>1309411665</td></tr>
+	<tr><td>2017</td><td>0.01</td><td>1595551798</td></tr>
+	<tr><td>2017</td><td>0.05</td><td>3144932175</td></tr>
+	<tr><td>2017</td><td>0.10</td><td>3320943698</td></tr>
+	<tr><td>2017</td><td>0.25</td><td>1447217084</td></tr>
+	<tr><td>2017</td><td>0.50</td><td>1385520232</td></tr>
+	<tr><td>2018</td><td>0.01</td><td>1595592013</td></tr>
+	<tr><td>2018</td><td>0.05</td><td>3248885238</td></tr>
+	<tr><td>2018</td><td>0.10</td><td>3418146113</td></tr>
+	<tr><td>2018</td><td>0.25</td><td>1498396197</td></tr>
+	<tr><td>2018</td><td>0.50</td><td>1449591710</td></tr>
+	<tr><td>2019</td><td>0.01</td><td>1595591135</td></tr>
+	<tr><td>2019</td><td>0.05</td><td>3082089073</td></tr>
+	<tr><td>2019</td><td>0.10</td><td>3525064128</td></tr>
+	<tr><td>2019</td><td>0.25</td><td>1539618749</td></tr>
+	<tr><td>2019</td><td>0.50</td><td>1444233186</td></tr>
+	<tr><td>2020</td><td>0.01</td><td>1595590296</td></tr>
+	<tr><td>2020</td><td>0.05</td><td>2293675491</td></tr>
+	<tr><td>2020</td><td>0.10</td><td>3588364878</td></tr>
+	<tr><td>2020</td><td>0.25</td><td>1567869608</td></tr>
+	<tr><td>2020</td><td>0.50</td><td>1039664724</td></tr>
+</tbody>
+</table>
 <p>Agora vamos tentar utilizar o mesmo código anterior para gerar um novo gráfico de barras, mas com o conjunto de dados que realmente responde a questão feita:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">grafico_moedas <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(data <span style="color:#f92672">=</span> conjunto_de_analise) <span style="color:#f92672">+</span> <span style="color:#75715e">#note aqui que mudamos a base de dados  </span>
     <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Ano, y <span style="color:#f92672">=</span> `Quantidade Média`)) <span style="color:#75715e">#quando o nome da coluna tiver espaço, use `` para atributo a coluna à uma característica estética (nesse caso o eixo y)</span>

@@ -12,3 +12,13 @@ HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.82.0"
+
+
+[caches]
+  [caches.assets]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
+
+  [caches.images]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
