@@ -4,6 +4,7 @@ description: "Personalizando as Taxas de Acordo para cada Cliente"
 featured_image: https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 tags:
 - machine learning
+- python
 title: 'Machine learning para bancos'
 ---
 

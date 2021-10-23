@@ -8,6 +8,17 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Mar 2021 12:00:00 -0500</lastBuildDate><atom:link href="https://nic1611.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>classificação com KNN da base de dados breast_cancer</title>
+      <link>https://nic1611.github.io/blog/post/cancer_de_mama/</link>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/cancer_de_mama/</guid>
+      <description>0 - Carregando bibliotecas Nessa etapa, costuma-se dedicar a importação das bibliotecas que serão utilizadas no desenvolvimento do algoritmo de predição
+from sklearn.datasets import load_breast_cancer from sklearn.neighbors import KNeighborsClassifier from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler import matplotlib.pylab as plt 1 - Abertura do dados Aqui, é feito o carregamento dos dados que serão utlizados para treino e teste do algoritmo
+cancer = load_breast_cancer() cancer.DESCR &#39;.. _breast_cancer_dataset:\n\nBreast cancer wisconsin (diagnostic) dataset\n--------------------------------------------\n\n**Data Set Characteristics:**\n\n :Number of Instances: 569\n\n :Number of Attributes: 30 numeric, predictive attributes and the class\n\n :Attribute Information:\n - radius (mean of distances from center to points on the perimeter)\n - texture (standard deviation of gray-scale values)\n - perimeter\n - area\n - smoothness (local variation in radius lengths)\n - compactness (perimeter^2 / area - 1.</description>
+    </item>
+    
+    <item>
       <title>Clustering usando R</title>
       <link>https://nic1611.github.io/blog/post/clustering_usando_r/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
