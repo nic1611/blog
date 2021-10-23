@@ -15,7 +15,7 @@
       <guid>https://nic1611.github.io/blog/post/cancer_de_mama/</guid>
       <description>0 - Carregando bibliotecas Nessa etapa, costuma-se dedicar a importação das bibliotecas que serão utilizadas no desenvolvimento do algoritmo de predição
 from sklearn.datasets import load_breast_cancer from sklearn.neighbors import KNeighborsClassifier from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler import matplotlib.pylab as plt 1 - Abertura do dados Aqui, é feito o carregamento dos dados que serão utlizados para treino e teste do algoritmo
-cancer = load_breast_cancer() cancer.DESCR &#39;.. _breast_cancer_dataset:\n\nBreast cancer wisconsin (diagnostic) dataset\n--------------------------------------------\n\n**Data Set Characteristics:**\n\n :Number of Instances: 569\n\n :Number of Attributes: 30 numeric, predictive attributes and the class\n\n :Attribute Information:\n - radius (mean of distances from center to points on the perimeter)\n - texture (standard deviation of gray-scale values)\n - perimeter\n - area\n - smoothness (local variation in radius lengths)\n - compactness (perimeter^2 / area - 1.</description>
+cancer = load_breast_cancer() cancer.DESCR 2 - Divisão em treinamento e teste Uma alternativa para separar os dados de treino e teste, é a utilização da função train_test_split presente na biblioteca sklearn.</description>
     </item>
     
     <item>
