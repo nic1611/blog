@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Mar 2021 12:00:00 -0500</lastBuildDate><atom:link href="https://nic1611.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Implementando um classificador NearestCentroid</title>
+      <link>https://nic1611.github.io/blog/post/classificador-nearestcentroid/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/classificador-nearestcentroid/</guid>
+      <description>Implementando um classificador NearestCentroid Importação das Bibliotecas import numpy as np import matplotlib.pyplot as plt from math import sqrt Esses são os dados de treino que vamos utilizar Usando a biblioteca matplotlib, construimos um gráfico para melhor visualizar os dados
+X_train = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]]) y_train = np.array([1, 1, 1, 2, 2, 2]) plt.scatter(X_train[y_train==1, 0], X_train[y_train==1, 1], c=&amp;#39;r&amp;#39;) plt.scatter(X_train[y_train==2, 0], X_train[y_train==2, 1], c=&amp;#39;g&amp;#39;) &amp;lt;matplotlib.</description>
+    </item>
+    
+    <item>
       <title>classificação com KNN da base de dados breast_cancer</title>
       <link>https://nic1611.github.io/blog/post/cancer_de_mama/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
