@@ -6,7 +6,16 @@
     <description>Recent content in machine learning on Q.G do Tux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pipeline de um modelo Decision Tree Classifier</title>
+      <link>https://nic1611.github.io/blog/post/decision_trees_pipeline/</link>
+      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/decision_trees_pipeline/</guid>
+      <description>Criando um pipeline de um modelo Decision Tree Classifier para prever tipos de cancer de mama from sklearn.datasets import load_breast_cancer from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler from sklearn.decomposition import PCA from sklearn.model_selection import GridSearchCV from sklearn.pipeline import Pipeline import matplotlib.pyplot as plt from sklearn.tree import DecisionTreeClassifier from sklearn.metrics import accuracy_score import numpy as np cancer = load_breast_cancer() X = cancer.data Y = cancer.target X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.</description>
+    </item>
+    
     <item>
       <title>Criando um pipeline de Machine Learning utilizando o Scikit-learn</title>
       <link>https://nic1611.github.io/blog/post/pipeline_breast_cancer/</link>
