@@ -36,45 +36,23 @@ plt.scatter(X_train[y_train==2, 0], X_train[y_train==2, 1], c='g')
 
 
 
-    <matplotlib.collections.PathCollection at 0x2b7adbb0550>
-
-
-
-
     
 ![png](output_4_1.png)
     
 
 
-## Aqui vamos encontrar os centroids por categorias
-
-O método unique serve para agrupar as categorias, assim calculamos os centroid dos dados de cada categoria. Para cada linha, nós encontramos a média de x e y, armazendo o resultado em uma lista 
+## Metodo utilizado para encontrar os centroids
 
 
 ```python
-def unique(list1):
- 
-    unique_list = []
-     
-    for x in list1:
-        if x not in unique_list:
-            unique_list.append(x)
-    
-    return unique_list
+classes = np.unique(y_train)
+centroids = np.empty((0, X_train.shape[1]))
 
-centroids_ = np.array([])
-
-for y in unique(y_train):
-    x = np.mean(X_train[y_train==y, 0], axis=0)
-    y = np.mean(X_train[y_train==y, 1], axis=0)
+for i in classes:
+  c = np.mean(X_train[y_train == i], axis=0)
+  centroids = np.vstack((centroids, c))
   
-    if centroids_.size == 0:
-        centroids_ = np.array([x, y])
-    else:
-        centroids_ = np.vstack((centroids_, [x, y]))
-
-
-centroids_
+centroids
 ```
 
 
@@ -107,96 +85,40 @@ plt.scatter(centroids_[:,0], centroids_[:,1], s=200, marker='*', c='k')
     
 
 
-## O método euclidean_distance serve para calcular a distância euclidiâna entre dois vetores
-
-
-```python
-def euclidean_distance(row1, row2):
-    distance = 0.0
-    for i in range(len(row1)):
-        distance += (row1[i] - row2[i])**2
-    return sqrt(distance)
-
-euclidean_distance([-2, -1.33333333], [3,-1.33333333])
-```
-
-
-
-
-    5.0
-
-
-
-## O método get_neighbor captura o vizinho mais próximo a um vetor
-
-
-```python
-def get_neighbor(X):
-    distances = list()
-    for x_train in [[-2,-1.33333333],[2,1.33333333]]:
-        dist = euclidean_distance(X, x_train)
-        distances.append((x_train, dist))
-    distances.sort(key=lambda tup: tup[1])
-    return distances[0][0]
-
-
-get_neighbor([0, -1])
-```
-
-
-
-
-    [-2, -1.33333333]
-
-
-
 ## Aqui nós criamos nossa implementação do NearestCentroid, com os métodos fit e predict
 
 
 ```python
 class NearestCentroidScratch():
-    
-    def __init__(self, metric='eucledian'):
-        self.metric = metric
-        self.centroids_ = np.array([])
+  def __init__(self, metric='eucledian'):
+    self.metric = metric
+    self.centroids_ = np.array([])
+    self.classes_ = np.array([])
   
-    def fit(self, X_train, y_train):
+  def fit(self, X, y):
+    self.classes_ = np.unique(y)
+    self.centroids_ = np.empty((0, X.shape[1]))
 
-        for label in unique(y_train):
-            x = np.mean(X_train[y_train==label, 0], axis=0)
-            y = np.mean(X_train[y_train==label, 1], axis=0)
-
-            if self.centroids_.size == 0:
-                self.centroids_ = np.array([x, y, label])
-            else:
-                self.centroids_ = np.vstack((self.centroids_, [x, y, label]))
-
-    def predict(self, X):
-        labels_predic = list()
-        for x_rox in X:
-            distances = list()
-            for centroid in self.centroids_:
-                dist = euclidean_distance(x_rox, centroid[:2])
-                distances.append((centroid[2], dist))
-            distances.sort(key=lambda tup: tup[1])
-            labels_predic.append(distances[0][0])
-        return labels_predic
-
-    def unique(cls, list1):
- 
-        unique_list = []
-     
-        for x in list1:
-            if x not in unique_list:
-                unique_list.append(x)
+    for i in self.classes_:
+      c = np.mean(X[y == i], axis=0)
+      self.centroids_ = np.vstack((self.centroids_, c))
     
-        return unique_list
+    print(self.centroids_)
 
-    def euclidean_distance(row1, row2):
-        distance = 0.0
-        for i in range(len(row1)):
-            distance += (row1[i] - row2[i])**2
-        return sqrt(distance)
+  def predict(self, X):
+    res = []
+
+    for t in X:
+      label = np.sqrt(np.sum((t - self.centroids_)**2, axis=1))
+      pred = self.classes_[np.where(label == np.min(label))[0][0]]
+      res = np.append(res, pred)
+
+    res = np.array(res)
+
+    return res
+
+  def score(self, y, pred):
+    return np.sum(y == pred) / len(y)
 ```
 
 ## Utilizando a classe criada anteriomente, faremos o treinamento do modelo. Basicamente vai armazenar os centroids de cada categoria. O método predict vai prever a categoria de cada vetor da lista, buscando por seu vizinho mais próximo baseado na menor distância euclidiâna.
@@ -207,17 +129,17 @@ model = NearestCentroidScratch()
 
 model.fit(X_train, y_train)
 
-model.centroids_
-
 X_test = np.array([[-1, -2], [0, -1], [-3, -3], [2, 2],  [1, 2]])
 y_test = np.array([1, 1, 1, 2, 2])
 
-model.predict(X_test)
+res = model.predict(X_test)
+
+model.score(y_test, res)
 ```
 
+[[-2.         -1.33333333]
+ [ 2.          1.33333333]]
 
-
-
-    [1.0, 1.0, 1.0, 2.0, 2.0]
+1.0
 
 

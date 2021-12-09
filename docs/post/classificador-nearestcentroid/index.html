@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Implementando um classificador NearestCentroid">
 <meta itemprop="description" content="No aprendizado de máquina, um classificador centróide é um modelo de classificação que atribui às observações o rótulo da classe de amostras de treinamento cuja média está mais próxima da observação"><meta itemprop="datePublished" content="2021-10-31T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-10-31T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="463">
+<meta itemprop="wordCount" content="305">
 <meta itemprop="keywords" content="python,machine learning," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Implementando um classificador NearestCentroid"/>
 <meta name="twitter:description" content="No aprendizado de máquina, um classificador centróide é um modelo de classificação que atribui às observações o rótulo da classe de amostras de treinamento cuja média está mais próxima da observação"/>
@@ -202,34 +202,16 @@ y_train <span style="color:#f92672">=</span> np<span style="color:#f92672">.</sp
 
 plt<span style="color:#f92672">.</span>scatter(X_train[y_train<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>], X_train[y_train<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
 plt<span style="color:#f92672">.</span>scatter(X_train[y_train<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>], X_train[y_train<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>], c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
-</code></pre></div><pre><code>&lt;matplotlib.collections.PathCollection at 0x2b7adbb0550&gt;
-</code></pre>
-<p><img src="output_4_1.png" alt="png"></p>
-<h2 id="aqui-vamos-encontrar-os-centroids-por-categorias">Aqui vamos encontrar os centroids por categorias</h2>
-<p>O método unique serve para agrupar as categorias, assim calculamos os centroid dos dados de cada categoria. Para cada linha, nós encontramos a média de x e y, armazendo o resultado em uma lista</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">unique</span>(list1):
- 
-    unique_list <span style="color:#f92672">=</span> []
-     
-    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list1:
-        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> unique_list:
-            unique_list<span style="color:#f92672">.</span>append(x)
-    
-    <span style="color:#66d9ef">return</span> unique_list
+</code></pre></div><p><img src="output_4_1.png" alt="png"></p>
+<h2 id="metodo-utilizado-para-encontrar-os-centroids">Metodo utilizado para encontrar os centroids</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">classes <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>unique(y_train)
+centroids <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>empty((<span style="color:#ae81ff">0</span>, X_train<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]))
 
-centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([])
-
-<span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> unique(y_train):
-    x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(X_train[y_train<span style="color:#f92672">==</span>y, <span style="color:#ae81ff">0</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-    y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(X_train[y_train<span style="color:#f92672">==</span>y, <span style="color:#ae81ff">1</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> classes:
+  c <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(X_train[y_train <span style="color:#f92672">==</span> i], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+  centroids <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>vstack((centroids, c))
   
-    <span style="color:#66d9ef">if</span> centroids_<span style="color:#f92672">.</span>size <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-        centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([x, y])
-    <span style="color:#66d9ef">else</span>:
-        centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>vstack((centroids_, [x, y]))
-
-
-centroids_
+centroids
 </code></pre></div><pre><code>array([[-2.        , -1.33333333],
        [ 2.        ,  1.33333333]])
 </code></pre>
@@ -240,86 +222,51 @@ plt<span style="color:#f92672">.</span>scatter(centroids_[:,<span style="color:#
 </code></pre></div><pre><code>&lt;matplotlib.collections.PathCollection at 0x2b7adcc79d0&gt;
 </code></pre>
 <p><img src="output_8_1.png" alt="png"></p>
-<h2 id="o-método-euclidean_distance-serve-para-calcular-a-distância-euclidiâna-entre-dois-vetores">O método euclidean_distance serve para calcular a distância euclidiâna entre dois vetores</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">euclidean_distance</span>(row1, row2):
-    distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(row1)):
-        distance <span style="color:#f92672">+=</span> (row1[i] <span style="color:#f92672">-</span> row2[i])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
-    <span style="color:#66d9ef">return</span> sqrt(distance)
-
-euclidean_distance([<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.33333333</span>], [<span style="color:#ae81ff">3</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1.33333333</span>])
-</code></pre></div><pre><code>5.0
-</code></pre>
-<h2 id="o-método-get_neighbor-captura-o-vizinho-mais-próximo-a-um-vetor">O método get_neighbor captura o vizinho mais próximo a um vetor</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_neighbor</span>(X):
-    distances <span style="color:#f92672">=</span> list()
-    <span style="color:#66d9ef">for</span> x_train <span style="color:#f92672">in</span> [[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1.33333333</span>],[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1.33333333</span>]]:
-        dist <span style="color:#f92672">=</span> euclidean_distance(X, x_train)
-        distances<span style="color:#f92672">.</span>append((x_train, dist))
-    distances<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> tup: tup[<span style="color:#ae81ff">1</span>])
-    <span style="color:#66d9ef">return</span> distances[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
-
-
-get_neighbor([<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
-</code></pre></div><pre><code>[-2, -1.33333333]
-</code></pre>
 <h2 id="aqui-nós-criamos-nossa-implementação-do-nearestcentroid-com-os-métodos-fit-e-predict">Aqui nós criamos nossa implementação do NearestCentroid, com os métodos fit e predict</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NearestCentroidScratch</span>():
-    
-    <span style="color:#66d9ef">def</span> __init__(self, metric<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;eucledian&#39;</span>):
-        self<span style="color:#f92672">.</span>metric <span style="color:#f92672">=</span> metric
-        self<span style="color:#f92672">.</span>centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([])
+  <span style="color:#66d9ef">def</span> __init__(self, metric<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;eucledian&#39;</span>):
+    self<span style="color:#f92672">.</span>metric <span style="color:#f92672">=</span> metric
+    self<span style="color:#f92672">.</span>centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([])
+    self<span style="color:#f92672">.</span>classes_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([])
   
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fit</span>(self, X_train, y_train):
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fit</span>(self, X, y):
+    self<span style="color:#f92672">.</span>classes_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>unique(y)
+    self<span style="color:#f92672">.</span>centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>empty((<span style="color:#ae81ff">0</span>, X<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]))
 
-        <span style="color:#66d9ef">for</span> label <span style="color:#f92672">in</span> unique(y_train):
-            x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(X_train[y_train<span style="color:#f92672">==</span>label, <span style="color:#ae81ff">0</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-            y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(X_train[y_train<span style="color:#f92672">==</span>label, <span style="color:#ae81ff">1</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-
-            <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>centroids_<span style="color:#f92672">.</span>size <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-                self<span style="color:#f92672">.</span>centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([x, y, label])
-            <span style="color:#66d9ef">else</span>:
-                self<span style="color:#f92672">.</span>centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>vstack((self<span style="color:#f92672">.</span>centroids_, [x, y, label]))
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">predict</span>(self, X):
-        labels_predic <span style="color:#f92672">=</span> list()
-        <span style="color:#66d9ef">for</span> x_rox <span style="color:#f92672">in</span> X:
-            distances <span style="color:#f92672">=</span> list()
-            <span style="color:#66d9ef">for</span> centroid <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>centroids_:
-                dist <span style="color:#f92672">=</span> euclidean_distance(x_rox, centroid[:<span style="color:#ae81ff">2</span>])
-                distances<span style="color:#f92672">.</span>append((centroid[<span style="color:#ae81ff">2</span>], dist))
-            distances<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> tup: tup[<span style="color:#ae81ff">1</span>])
-            labels_predic<span style="color:#f92672">.</span>append(distances[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>])
-        <span style="color:#66d9ef">return</span> labels_predic
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">unique</span>(cls, list1):
- 
-        unique_list <span style="color:#f92672">=</span> []
-     
-        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list1:
-            <span style="color:#66d9ef">if</span> x <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> unique_list:
-                unique_list<span style="color:#f92672">.</span>append(x)
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>classes_:
+      c <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(X[y <span style="color:#f92672">==</span> i], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+      self<span style="color:#f92672">.</span>centroids_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>vstack((self<span style="color:#f92672">.</span>centroids_, c))
     
-        <span style="color:#66d9ef">return</span> unique_list
+    <span style="color:#66d9ef">print</span>(self<span style="color:#f92672">.</span>centroids_)
 
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">euclidean_distance</span>(row1, row2):
-        distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
-        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(row1)):
-            distance <span style="color:#f92672">+=</span> (row1[i] <span style="color:#f92672">-</span> row2[i])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
-        <span style="color:#66d9ef">return</span> sqrt(distance)
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">predict</span>(self, X):
+    res <span style="color:#f92672">=</span> []
+
+    <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> X:
+      label <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(np<span style="color:#f92672">.</span>sum((t <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>centroids_)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+      pred <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>classes_[np<span style="color:#f92672">.</span>where(label <span style="color:#f92672">==</span> np<span style="color:#f92672">.</span>min(label))[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]]
+      res <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>append(res, pred)
+
+    res <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(res)
+
+    <span style="color:#66d9ef">return</span> res
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">score</span>(self, y, pred):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>sum(y <span style="color:#f92672">==</span> pred) <span style="color:#f92672">/</span> len(y)
 </code></pre></div><h2 id="utilizando-a-classe-criada-anteriomente-faremos-o-treinamento-do-modelo-basicamente-vai-armazenar-os-centroids-de-cada-categoria-o-método-predict-vai-prever-a-categoria-de-cada-vetor-da-lista-buscando-por-seu-vizinho-mais-próximo-baseado-na-menor-distância-euclidiâna">Utilizando a classe criada anteriomente, faremos o treinamento do modelo. Basicamente vai armazenar os centroids de cada categoria. O método predict vai prever a categoria de cada vetor da lista, buscando por seu vizinho mais próximo baseado na menor distância euclidiâna.</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> NearestCentroidScratch()
 
 model<span style="color:#f92672">.</span>fit(X_train, y_train)
 
-model<span style="color:#f92672">.</span>centroids_
-
 X_test <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], [<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>],  [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]])
 y_test <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>])
 
-model<span style="color:#f92672">.</span>predict(X_test)
-</code></pre></div><pre><code>[1.0, 1.0, 1.0, 2.0, 2.0]
-</code></pre>
+res <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(X_test)
+
+model<span style="color:#f92672">.</span>score(y_test, res)
+</code></pre></div><p>[[-2.         -1.33333333]
+[ 2.          1.33333333]]</p>
+<p>1.0</p>
 <ul class="pa0">
   
    <li class="list">
