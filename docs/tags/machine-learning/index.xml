@@ -6,7 +6,17 @@
     <description>Recent content in machine learning on Q.G do Tux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nic1611.github.io/blog/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Métodos de amostragem</title>
+      <link>https://nic1611.github.io/blog/post/metodos_de_amostragem/</link>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://nic1611.github.io/blog/post/metodos_de_amostragem/</guid>
+      <description>Métodos de amostragem para treinar os algoritmos de classificação/regressão. A abordagem mais simples é o holdout: separar os dados uma única vez entre conjuntos de treino e teste. Por exemplo: 80% dos exemplos para treinamento do algoritmo, e 20% para teste. Essa alternativa é comumente utilizada quando trabalha-se com uma grande quantidade de dados e a distribuição dos padrões não se diferencia entre possíveis amostras de treino e teste.
+Entretanto, quando temos conjuntos de dados de tamanho médio e pequeno, pode ocorrer uma grande variância nos resultados dos algoritmos.</description>
+    </item>
+    
     <item>
       <title>Pipeline de um modelo Decision Tree Classifier</title>
       <link>https://nic1611.github.io/blog/post/decision_trees_pipeline/</link>
