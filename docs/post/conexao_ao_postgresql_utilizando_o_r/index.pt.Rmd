@@ -6,6 +6,7 @@ tags:
 - R
 - postgreSQL
 description: ""
+authors: ["Nicolas Soffi"]
 ---
 
 # Instalação do Pacote: RPostgres

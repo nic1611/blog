@@ -13,8 +13,8 @@
       <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://nic1611.github.io/blog/post/conexao_ao_postgresql_utilizando_o_r/</guid>
-      <description>Instalação do Pacote: RPostgresO pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
-install.packages(&amp;quot;RPostgres&amp;quot;)Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install.Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.</description>
+      <description>Instalação do Pacote: RPostgres O pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
+install.packages(&amp;#34;RPostgres&amp;#34;) Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install. Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.r-dbi.org/).</description>
     </item>
     
   </channel>

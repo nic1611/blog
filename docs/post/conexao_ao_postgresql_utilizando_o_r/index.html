@@ -6,8 +6,8 @@
     
     <title>Conexão ao PostgreSQL utilizando o R | Q.G do Tux</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Instalação do Pacote: RPostgresO pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
-install.packages(&quot;RPostgres&quot;)Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install.Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.">
+    <meta name="description" content="Instalação do Pacote: RPostgres O pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
+install.packages(&#34;RPostgres&#34;) Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install. Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.r-dbi.org/).">
     <meta name="generator" content="Hugo 0.82.0" />
     
     
@@ -34,22 +34,22 @@ install.packages(&quot;RPostgres&quot;)Ou ainda, ele pode ser instalado via int
     
     
     <meta property="og:title" content="Conexão ao PostgreSQL utilizando o R" />
-<meta property="og:description" content="Instalação do Pacote: RPostgresO pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
-install.packages(&quot;RPostgres&quot;)Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install.Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres." />
+<meta property="og:description" content="Instalação do Pacote: RPostgres O pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
+install.packages(&#34;RPostgres&#34;) Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install. Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.r-dbi.org/)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nic1611.github.io/blog/post/conexao_ao_postgresql_utilizando_o_r/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-05-03T00:00:00&#43;00:00" />
 <meta property="article:modified_time" content="2021-05-03T00:00:00&#43;00:00" /><meta property="og:site_name" content="Q.G do Tux" />
 
 <meta itemprop="name" content="Conexão ao PostgreSQL utilizando o R">
-<meta itemprop="description" content="Instalação do Pacote: RPostgresO pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
-install.packages(&quot;RPostgres&quot;)Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install.Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres."><meta itemprop="datePublished" content="2021-05-03T00:00:00&#43;00:00" />
+<meta itemprop="description" content="Instalação do Pacote: RPostgres O pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
+install.packages(&#34;RPostgres&#34;) Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install. Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.r-dbi.org/)."><meta itemprop="datePublished" content="2021-05-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-05-03T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="2044">
 <meta itemprop="keywords" content="R,postgreSQL," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Conexão ao PostgreSQL utilizando o R"/>
-<meta name="twitter:description" content="Instalação do Pacote: RPostgresO pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
-install.packages(&quot;RPostgres&quot;)Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install.Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres."/>
+<meta name="twitter:description" content="Instalação do Pacote: RPostgres O pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:
+install.packages(&#34;RPostgres&#34;) Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba Packages e depois Install. Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (https://rpostgres.r-dbi.org/)."/>
 
 	
   </head>
@@ -189,18 +189,12 @@ install.packages(&quot;RPostgres&quot;)Ou ainda, ele pode ser instalado via int
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-
-<div id="instalação-do-pacote-rpostgres" class="section level1">
-<h1>Instalação do Pacote: RPostgres</h1>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="instalação-do-pacote-rpostgres">Instalação do Pacote: RPostgres</h1>
 <p>O pacote RPostgres nos fornece uma interface simples para conectar à base de dados mantidas no PostgreSQL, utilizando o DBI. Ele é umpacote como outro qualquer e portanto, pode ser instalado com o seguinte comando:</p>
-<pre class="r"><code>install.packages(&quot;RPostgres&quot;)</code></pre>
-<p>Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba <strong>Packages</strong> e depois <strong>Install</strong>.
-Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (<a href="https://rpostgres.r-dbi.org/" class="uri">https://rpostgres.r-dbi.org/</a>).</p>
-</div>
-<div id="gerenciando-uma-conexão" class="section level1">
-<h1>Gerenciando uma Conexão</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;RPostgres&#34;</span>)
+</code></pre></div><p>Ou ainda, ele pode ser instalado via interface gráfica do RStudio, utilizando a aba <strong>Packages</strong> e depois <strong>Install</strong>.
+Para maiores informações sobre este pacote, consulte sua documentação disponível aqui (<a href="https://rpostgres.r-dbi.org/)">https://rpostgres.r-dbi.org/)</a>.</p>
+<h1 id="gerenciando-uma-conexão">Gerenciando uma Conexão</h1>
 <p>Para executar comandos SQL no PostgreSQL, o primeiro passo é abrir uma conexão com o um banco de dados desejado. A função paraisso é a dbConnect() e ela possui alguns parâmetros que são requeridos para efetuar a conexão ao PostgreSQL, a saber:</p>
 <ul>
 <li><strong>user</strong> - nome do usuário do PostgreSQL</li>
@@ -211,213 +205,194 @@ Para maiores informações sobre este pacote, consulte sua documentação dispon
 <p>A função dbConnect() irá retornar uma variável que contém todas as informações sobre sua conexão e ela será usada por todas asoutras funções do pacote RPostgres para que seja possível submeter consultas.</p>
 <p>Para efetuar a conexão, usa-se a função dbDisconnect() passando como parâmetro a variável de conexão. Essa função deve serchamada somente após executar todos os comandos SQL de interesse. Caso você se disconecte da base de dados e tente submetercomandos SQL, ocorrerá um erro. Assim, sendo necessário estabelecer uma nova conexão.</p>
 <p>Dessa forma (e seguindo os passos da seção de Introdução), podemos escrever o seguinte formato geral de programa em R queestabelece a conexão com o banco de dados usado na disciplina para executar diversos comandos SQL:</p>
-<pre class="r"><code>library(RPostgres)
-#aqui estamos definindo nossa conexão e atribuindo essa conexão à variável con
-con &lt;- dbConnect(Postgres(),                
-                user = &quot;postgres&quot;,                 
-                password = &quot;123&quot;,                 
-                host = &quot;localhost&quot;,                 
-                port = 5432,                 
-                dbname = &quot;departamento&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(RPostgres)
+<span style="color:#75715e">#aqui estamos definindo nossa conexão e atribuindo essa conexão à variável con</span>
+con <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dbConnect</span>(<span style="color:#a6e22e">Postgres</span>(),                
+                user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;postgres&#34;</span>,                 
+                password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123&#34;</span>,                 
+                host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>,                 
+                port <span style="color:#f92672">=</span> <span style="color:#ae81ff">5432</span>,                 
+                dbname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;departamento&#34;</span>)
                 
-#visualizando alguns dados sobre a conexão estabelecida
+<span style="color:#75715e">#visualizando alguns dados sobre a conexão estabelecida</span>
 con
-## &lt;PqConnection&gt; departamento@localhost:5432#depois de estabelecida a conexão, podemos executar aqui vários comandos SQL sobre a nossa base de dados!
-#assim que terminarmos de executar todos os comandos SQL que nos interessad, devemos fechar a conexão:
-dbDisconnect(con)</code></pre>
-</div>
-<div id="nota-importante" class="section level1">
-<h1>Nota Importante</h1>
+<span style="color:#75715e">## &lt;PqConnection&gt; departamento@localhost:5432#depois de estabelecida a conexão, podemos executar aqui vários comandos SQL sobre a nossa base de dados!</span>
+<span style="color:#75715e">#assim que terminarmos de executar todos os comandos SQL que nos interessad, devemos fechar a conexão:</span>
+<span style="color:#a6e22e">dbDisconnect</span>(con)
+</code></pre></div><h1 id="nota-importante">Nota Importante</h1>
 <p>É importante enfatizar que no programa R anteriormente mostrado (e os que serão apresentados nesse material) utilizará uma formainsegura de estabelecer a conexão com um banco de dados no sentido de expor a senha de um usuário em um script. Este materialexpõe a senha somente para fins acadêmicos. Existem algumas formas de melhorar essa segurança em programas R:</p>
-<ol style="list-style-type: decimal">
-<li>Se sua aplicação executa no RStudio, você pode usar o comando rstudioapi::askForPassword(“Informe sua senha”)(atribua essa função ao parâmetro <strong>password</strong>) para que uma caixa de diálogo no RStudio abra e o usuário consiga informar asenha.</li>
-<li>Manter a senha criptografada em um arquivo e fazer essa leitura pelo R, atribuindo o resultado no parâmetro (existe um pacotepara realizar tais criptografias: cyphr (<a href="https://www.rdocumentation.org/packages/cyphr/versions/1.1.0" class="uri">https://www.rdocumentation.org/packages/cyphr/versions/1.1.0</a>)).</li>
+<ol>
+<li>Se sua aplicação executa no RStudio, você pode usar o comando rstudioapi::askForPassword(&ldquo;Informe sua senha&rdquo;)(atribua essa função ao parâmetro <strong>password</strong>) para que uma caixa de diálogo no RStudio abra e o usuário consiga informar asenha.</li>
+<li>Manter a senha criptografada em um arquivo e fazer essa leitura pelo R, atribuindo o resultado no parâmetro (existe um pacotepara realizar tais criptografias: cyphr (<a href="https://www.rdocumentation.org/packages/cyphr/versions/1.1.0))">https://www.rdocumentation.org/packages/cyphr/versions/1.1.0))</a>.</li>
 </ol>
 <p>Tais tópicos fogem do escopo da disciplina, porém são dadas essas opções de soluções como forma de complementar o assunto.</p>
-</div>
-<div id="comandos-básicos-do-pacote-rpostgres" class="section level1">
-<h1>Comandos básicos do Pacote RPostgres</h1>
+<h1 id="comandos-básicos-do-pacote-rpostgres">Comandos básicos do Pacote RPostgres</h1>
 <p>O pacote RPostgres possui diversas funções que podem nos ajudar a relembrar a estrutura de nosso banco de dados e até mesmorecuperar dados de forma mais fácil (sem precisar submeter comandos em SQL).</p>
 <p>De uma forma prática, o código abaixo demonstra vários desses comandos:</p>
-<pre class="r"><code>library(RPostgres)
-con &lt;- dbConnect(Postgres(),                 
-                  user = &quot;postgres&quot;,                 
-                  password = &quot;123&quot;,                 
-                  host = &quot;localhost&quot;,                 
-                  port = 5432,                 
-                  dbname = &quot;departamento&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(RPostgres)
+con <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dbConnect</span>(<span style="color:#a6e22e">Postgres</span>(),                 
+                  user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;postgres&#34;</span>,                 
+                  password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123&#34;</span>,                 
+                  host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>,                 
+                  port <span style="color:#f92672">=</span> <span style="color:#ae81ff">5432</span>,                 
+                  dbname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;departamento&#34;</span>)
 
-#a função abaixo lista todas as tabelas do banco de dados conectado
-dbListTables(con)
-## [1] &quot;empregado&quot;         &quot;departamento&quot;      &quot;localizacao_depto&quot;
-## [4] &quot;projeto&quot;           &quot;trabalha&quot;          &quot;dependente&quot;
+<span style="color:#75715e">#a função abaixo lista todas as tabelas do banco de dados conectado</span>
+<span style="color:#a6e22e">dbListTables</span>(con)
+<span style="color:#75715e">## [1] &#34;empregado&#34;         &#34;departamento&#34;      &#34;localizacao_depto&#34;</span>
+<span style="color:#75715e">## [4] &#34;projeto&#34;           &#34;trabalha&#34;          &#34;dependente&#34;</span>
 
-#a função abaixo lista todas os atributos de uma tabela específica
-dbListFields(con, &quot;empregado&quot;)
-##  [1] &quot;primeironome&quot;   &quot;inicialmeio&quot;    &quot;ultimonome&quot;     &quot;numempregado&quot;  
-##  [5] &quot;datanascimento&quot; &quot;endereco&quot;       &quot;sexo&quot;           &quot;salario&quot;       
-##  [9] &quot;numsupervisor&quot;  &quot;numdepto&quot;
+<span style="color:#75715e">#a função abaixo lista todas os atributos de uma tabela específica</span>
+<span style="color:#a6e22e">dbListFields</span>(con, <span style="color:#e6db74">&#34;empregado&#34;</span>)
+<span style="color:#75715e">##  [1] &#34;primeironome&#34;   &#34;inicialmeio&#34;    &#34;ultimonome&#34;     &#34;numempregado&#34;  </span>
+<span style="color:#75715e">##  [5] &#34;datanascimento&#34; &#34;endereco&#34;       &#34;sexo&#34;           &#34;salario&#34;       </span>
+<span style="color:#75715e">##  [9] &#34;numsupervisor&#34;  &#34;numdepto&#34;</span>
 
-#a função abaixo retorna todos valores de uma tabela específica como um data.frame
-dbReadTable(con, &quot;empregado&quot;)
+<span style="color:#75715e">#a função abaixo retorna todos valores de uma tabela específica como um data.frame</span>
+<span style="color:#a6e22e">dbReadTable</span>(con, <span style="color:#e6db74">&#34;empregado&#34;</span>)
 
-dbDisconnect(con)</code></pre>
-<p>Existe também a função dbWriteTable() que escreve um data.frame diretamente no banco de dados conectado. Assim, ela recebetrês parâmetros: a conexão, nome da tabela como string e o data.frame. Há também a função dbRemoveTable() que removeuma tabela do banco de dados (informando como parâmetro a conexão e o nome da tabela como string).</p>
-</div>
-<div id="execução-de-instruções-sql" class="section level1">
-<h1>Execução de Instruções SQL</h1>
+<span style="color:#a6e22e">dbDisconnect</span>(con)
+</code></pre></div><p>Existe também a função dbWriteTable() que escreve um data.frame diretamente no banco de dados conectado. Assim, ela recebetrês parâmetros: a conexão, nome da tabela como string e o data.frame. Há também a função dbRemoveTable() que removeuma tabela do banco de dados (informando como parâmetro a conexão e o nome da tabela como string).</p>
+<h1 id="execução-de-instruções-sql">Execução de Instruções SQL</h1>
 <p>A seguir, este material mostra como executar comandos que não recuperam dados (ou seja, comandos de inserção, alteração e remoção)bem como comandos que recuperam dados como data.frame (que podem ser convertidos como tibble).</p>
-</div>
-<div id="inserção-alteração-e-remoção" class="section level1">
-<h1>Inserção, Alteração e Remoção</h1>
+<h1 id="inserção-alteração-e-remoção">Inserção, Alteração e Remoção</h1>
 <p>Para executar um comando SQL que não recupera dados, usa-se a função dbExecute(). Essa função retorna o número de registros(tuplas) que foram afetadas pelo comando SQL executado (ou ainda, o valor do RETURNING - ver exemplo). Usualmente, essa função éusada para executar uma instrução SQL (que pode ser parametrizada).</p>
 <p>A seguir, são apresentados alguns exemplos de execução de comandos de inserção (inclusive inserção em lote), alteração e remoção de dados:</p>
-<pre class="r"><code>library(RPostgres)
-con &lt;- dbConnect(Postgres(),                 
-                  user = &quot;postgres&quot;,                 
-                  password = &quot;123&quot;,                 
-                  host = &quot;localhost&quot;,                 
-                  port = 5432,                 
-                  dbname = &quot;departamento&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(RPostgres)
+con <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dbConnect</span>(<span style="color:#a6e22e">Postgres</span>(),                 
+                  user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;postgres&#34;</span>,                 
+                  password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123&#34;</span>,                 
+                  host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>,                 
+                  port <span style="color:#f92672">=</span> <span style="color:#ae81ff">5432</span>,                 
+                  dbname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;departamento&#34;</span>)
                   
-#verificando os dados atuais da tabela dependente
-dbReadTable(con, &quot;dependente&quot;)</code></pre>
-<pre class="r"><code>#inserindo um novo filho para o empregado com código 3
-dbExecute(con, &quot;INSERT INTO dependente(numempregado, nomedependente, sexo, dataaniversario, parentesco) VALUES           (3, &#39;Julio&#39;, &#39;M&#39;, &#39;2020-05-10&#39;, &#39;filho&#39;)&quot;)
-## [1] 1
+<span style="color:#75715e">#verificando os dados atuais da tabela dependente</span>
+<span style="color:#a6e22e">dbReadTable</span>(con, <span style="color:#e6db74">&#34;dependente&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#inserindo um novo filho para o empregado com código 3</span>
+<span style="color:#a6e22e">dbExecute</span>(con, <span style="color:#e6db74">&#34;INSERT INTO dependente(numempregado, nomedependente, sexo, dataaniversario, parentesco) VALUES           (3, &#39;Julio&#39;, &#39;M&#39;, &#39;2020-05-10&#39;, &#39;filho&#39;)&#34;</span>)
+<span style="color:#75715e">## [1] 1</span>
 
-#Lembre-se que vários registros podem ser inseridos com uma mesma instrução INSERT INTO (separando os parênteses depois do VALUES usando vírgula). Por exemplo, inserindo 2 filhos para o empregado 4
-dbExecute(con, &quot;INSERT INTO dependente(numempregado, nomedependente, sexo, dataaniversario, parentesco) VALUES           (4, &#39;Kevin&#39;, &#39;M&#39;, &#39;2019-06-10&#39;, &#39;filho&#39;),          
-          (4, &#39;Kate&#39;, &#39;F&#39;, &#39;2019-06-10&#39;, &#39;filho&#39;)&quot;)
-## [1] 2
+<span style="color:#75715e">#Lembre-se que vários registros podem ser inseridos com uma mesma instrução INSERT INTO (separando os parênteses depois do VALUES usando vírgula). Por exemplo, inserindo 2 filhos para o empregado 4</span>
+<span style="color:#a6e22e">dbExecute</span>(con, <span style="color:#e6db74">&#34;INSERT INTO dependente(numempregado, nomedependente, sexo, dataaniversario, parentesco) VALUES           (4, &#39;Kevin&#39;, &#39;M&#39;, &#39;2019-06-10&#39;, &#39;filho&#39;),          
+</span><span style="color:#e6db74">          (4, &#39;Kate&#39;, &#39;F&#39;, &#39;2019-06-10&#39;, &#39;filho&#39;)&#34;</span>)
+<span style="color:#75715e">## [1] 2</span>
 
-#Ainda, podemos realizar inserção em lote usando listas da linguagem R. 
-#Por exemplo, seja a seguinte lista de valores a serem inseridos como dependentes do empregado 6 e 3. Se fossémos fazer do jeito tradicional, precisaríamos de 2 instruções INSERT INTO. Entretanto, vamos fazer por meio de parametrização.
-#Primeiro, definimos uma lista, que deve possuir o mesmo número de colunas da tabela dependente, seguindo a mesma ordem das colunas a serem definidas na parte do INSERT INTO e cada elemento dessa lista é prirmeiro um vetor com mesmo número de valores
-deps &lt;- list(c(6, 6, 3, 3),                
-              c(&quot;André&quot;, &quot;Marca&quot;, &quot;Fabiacino&quot;, &quot;Andrea&quot;),               
-              c(&quot;M&quot;, &quot;F&quot;, &quot;M&quot;, &quot;F&quot;),                
-              c(&quot;2019-05-02&quot;, &quot;2017-06-03&quot;, &quot;2018-07-10&quot;, &quot;2018-07-10&quot;),                
-              c(&quot;conjuge&quot;, &quot;filho&quot;, &quot;filho&quot;, &quot;filho&quot;))
+<span style="color:#75715e">#Ainda, podemos realizar inserção em lote usando listas da linguagem R. </span>
+<span style="color:#75715e">#Por exemplo, seja a seguinte lista de valores a serem inseridos como dependentes do empregado 6 e 3. Se fossémos fazer do jeito tradicional, precisaríamos de 2 instruções INSERT INTO. Entretanto, vamos fazer por meio de parametrização.</span>
+<span style="color:#75715e">#Primeiro, definimos uma lista, que deve possuir o mesmo número de colunas da tabela dependente, seguindo a mesma ordem das colunas a serem definidas na parte do INSERT INTO e cada elemento dessa lista é prirmeiro um vetor com mesmo número de valores</span>
+deps <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>),                
+              <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;André&#34;</span>, <span style="color:#e6db74">&#34;Marca&#34;</span>, <span style="color:#e6db74">&#34;Fabiacino&#34;</span>, <span style="color:#e6db74">&#34;Andrea&#34;</span>),               
+              <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;M&#34;</span>, <span style="color:#e6db74">&#34;F&#34;</span>, <span style="color:#e6db74">&#34;M&#34;</span>, <span style="color:#e6db74">&#34;F&#34;</span>),                
+              <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;2019-05-02&#34;</span>, <span style="color:#e6db74">&#34;2017-06-03&#34;</span>, <span style="color:#e6db74">&#34;2018-07-10&#34;</span>, <span style="color:#e6db74">&#34;2018-07-10&#34;</span>),                
+              <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;conjuge&#34;</span>, <span style="color:#e6db74">&#34;filho&#34;</span>, <span style="color:#e6db74">&#34;filho&#34;</span>, <span style="color:#e6db74">&#34;filho&#34;</span>))
 
-#perceba o formato da lista criada (que reflete a estrutura da tabela em que seus valores serão inseridos em lote):
+<span style="color:#75715e">#perceba o formato da lista criada (que reflete a estrutura da tabela em que seus valores serão inseridos em lote):</span>
 deps
-## [[1]]
-## [1] 6 6 3 3
-## 
-## [[2]]
-## [1] &quot;André&quot;     &quot;Marca&quot;     &quot;Fabiacino&quot; &quot;Andrea&quot;   
-## 
-## [[3]]
-## [1] &quot;M&quot; &quot;F&quot; &quot;M&quot; &quot;F&quot;
-## 
-## [[4]]
-## [1] &quot;2019-05-02&quot; &quot;2017-06-03&quot; &quot;2018-07-10&quot; &quot;2018-07-10&quot;
-## 
-## [[5]]
-## [1] &quot;conjuge&quot; &quot;filho&quot;   &quot;filho&quot;   &quot;filho&quot;
+<span style="color:#75715e">## [[1]]</span>
+<span style="color:#75715e">## [1] 6 6 3 3</span>
+<span style="color:#75715e">## </span>
+<span style="color:#75715e">## [[2]]</span>
+<span style="color:#75715e">## [1] &#34;André&#34;     &#34;Marca&#34;     &#34;Fabiacino&#34; &#34;Andrea&#34;   </span>
+<span style="color:#75715e">## </span>
+<span style="color:#75715e">## [[3]]</span>
+<span style="color:#75715e">## [1] &#34;M&#34; &#34;F&#34; &#34;M&#34; &#34;F&#34;</span>
+<span style="color:#75715e">## </span>
+<span style="color:#75715e">## [[4]]</span>
+<span style="color:#75715e">## [1] &#34;2019-05-02&#34; &#34;2017-06-03&#34; &#34;2018-07-10&#34; &#34;2018-07-10&#34;</span>
+<span style="color:#75715e">## </span>
+<span style="color:#75715e">## [[5]]</span>
+<span style="color:#75715e">## [1] &#34;conjuge&#34; &#34;filho&#34;   &#34;filho&#34;   &#34;filho&#34;</span>
 
-#inserção em lote (os $x, onde x vai de 1 até 5, serão trocados por cada valor correspondente da lista definida)
-dbExecute(con, &quot;INSERT INTO dependente(numempregado, nomedependente, sexo, dataaniversario, parentesco) VALUES ($1, $2, $3, $4, $5)&quot;, params = deps)
-## [1] 4
-#checando as inserçõesdbReadTable(con, &quot;dependente&quot;)</code></pre>
-<pre class="r"><code>#vamos excluir os dependentes do funcionário chamada Ana Silva
-dbExecute(con, &quot;DELETE FROM dependente WHERE numempregado IN (SELECT numempregado FROM empregado WHERE primeironome = &#39;Ana&#39; AND ultimonome = &#39;Silva&#39;)&quot;)
-## [1] 3
+<span style="color:#75715e">#inserção em lote (os $x, onde x vai de 1 até 5, serão trocados por cada valor correspondente da lista definida)</span>
+<span style="color:#a6e22e">dbExecute</span>(con, <span style="color:#e6db74">&#34;INSERT INTO dependente(numempregado, nomedependente, sexo, dataaniversario, parentesco) VALUES ($1, $2, $3, $4, $5)&#34;</span>, params <span style="color:#f92672">=</span> deps)
+<span style="color:#75715e">## [1] 4</span>
+<span style="color:#75715e">#checando as inserçõesdbReadTable(con, &#34;dependente&#34;)</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#vamos excluir os dependentes do funcionário chamada Ana Silva</span>
+<span style="color:#a6e22e">dbExecute</span>(con, <span style="color:#e6db74">&#34;DELETE FROM dependente WHERE numempregado IN (SELECT numempregado FROM empregado WHERE primeironome = &#39;Ana&#39; AND ultimonome = &#39;Silva&#39;)&#34;</span>)
+<span style="color:#75715e">## [1] 3</span>
 
-#vamos alterar o sexo do dependente chamado Vicente do numempregado 4
-dbExecute(con, &quot;UPDATE dependente SET sexo = &#39;M&#39; WHERE numempregado = 4 AND nomedependente = &#39;Vicente&#39;&quot;)
-## [1] 1
+<span style="color:#75715e">#vamos alterar o sexo do dependente chamado Vicente do numempregado 4</span>
+<span style="color:#a6e22e">dbExecute</span>(con, <span style="color:#e6db74">&#34;UPDATE dependente SET sexo = &#39;M&#39; WHERE numempregado = 4 AND nomedependente = &#39;Vicente&#39;&#34;</span>)
+<span style="color:#75715e">## [1] 1</span>
 
-#checando as remoções e alteração
-dbReadTable(con, &quot;dependente&quot;)</code></pre>
-<pre class="r"><code>dbDisconnect(con)</code></pre>
-<p><strong>IMPORTANTE: Se você executar o trecho de código acima mais de uma vez, você encontrará um erro nas inserções. Isso se deve aofato de que você estará tentando incluir dados repetidos em colunas que são únicas (chaves primárias). Então, cuidado.</strong></p>
+<span style="color:#75715e">#checando as remoções e alteração</span>
+<span style="color:#a6e22e">dbReadTable</span>(con, <span style="color:#e6db74">&#34;dependente&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">dbDisconnect</span>(con)
+</code></pre></div><p><strong>IMPORTANTE: Se você executar o trecho de código acima mais de uma vez, você encontrará um erro nas inserções. Isso se deve aofato de que você estará tentando incluir dados repetidos em colunas que são únicas (chaves primárias). Então, cuidado.</strong></p>
 <p>Por debaixo dos panos, a função dbExecute() realiza as seguintes tratativas: (i) envia o comando SQL ao PostgreSQL, (ii) captura onúmero de linhas afetadas pelo comando, e (iii) libera o resultado em memória (deixando apenas a cópia para o R). Isso poupa otrabalho de chamar três funções de forma consecutiva ao RPostgres (ou seja, dbSendStatement(), dbGetRowsAffected() edbClearResult()). Então, recomenda-se, para fins comuns, a utilização da função dbExecute() para execução de comandosvariados que não resultam na recuperação de dados.</p>
-<div id="nota-importante-1" class="section level3">
-<h3>Nota Importante</h3>
-<p>O uso de parâmetrização (ou seja, $x no comando SQL e então a especificação do valor como parâmetro usando o params) é umaprática para evitar SQL Injection (<a href="https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_SQL" class="uri">https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_SQL</a>). Esse tipo de tópico vai também além doescopo da disciplina, porém é importante saber sobre seu risco e como evitar. Para a disciplina, não é necessário usar comandosparametrizados.</p>
-</div>
-</div>
-<div id="execução-de-comandos-que-retorna-dados" class="section level1">
-<h1>Execução de Comandos que Retorna Dados</h1>
+<h3 id="nota-importante-1">Nota Importante</h3>
+<p>O uso de parâmetrização (ou seja, $x no comando SQL e então a especificação do valor como parâmetro usando o params) é umaprática para evitar SQL Injection (<a href="https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_SQL)">https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_SQL)</a>. Esse tipo de tópico vai também além doescopo da disciplina, porém é importante saber sobre seu risco e como evitar. Para a disciplina, não é necessário usar comandosparametrizados.</p>
+<h1 id="execução-de-comandos-que-retorna-dados">Execução de Comandos que Retorna Dados</h1>
 <p>Várias instruções SQL podem recuperar dados de um banco de dados. Dessa forma, devemos usar a função dbGetQuery(), a qualretorna um data.frame. A execução de consultas SQL é o clássico exemplo de recuperação de dados de um banco de dados.Entretanto, outros comandos podem recuperar dados, tal como a instrução INSERT INTO como será visto em seguida.</p>
-</div>
-<div id="consultas" class="section level1">
-<h1>Consultas</h1>
+<h1 id="consultas">Consultas</h1>
 <p>A seguir, são apresentados alguns exemplos de execução de consultas SQL (SELECT). O data.frame resultante pode ser convertidopara um tibble que pode ser usado por outros pacotes do R (como tidyverse) visando sua manipulação e visualização.</p>
-<pre class="r"><code>library(RPostgres)
-library(tidyverse) 
-#pois iremos usar tibble
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(RPostgres)
+<span style="color:#a6e22e">library</span>(tidyverse) 
+<span style="color:#75715e">#pois iremos usar tibble</span>
 
-on &lt;-dbConnect(Postgres(),                 
-                user = &quot;postgres&quot;,                 
-                password = &quot;123&quot;,                 
-                host = &quot;localhost&quot;,                 
-                port = 5432,                 
-                dbname = &quot;departamento&quot;)
+on <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">dbConnect</span>(<span style="color:#a6e22e">Postgres</span>(),                 
+                user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;postgres&#34;</span>,                 
+                password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123&#34;</span>,                 
+                host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>,                 
+                port <span style="color:#f92672">=</span> <span style="color:#ae81ff">5432</span>,                 
+                dbname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;departamento&#34;</span>)
                 
-#executando a seguinte consulta:
-# Recupere todos os departamentos e suas localizações#a função as_tibble converte o resultado da função dbGetQuery para um tibble
+<span style="color:#75715e">#executando a seguinte consulta:</span>
+<span style="color:#75715e"># Recupere todos os departamentos e suas localizações#a função as_tibble converte o resultado da função dbGetQuery para um tibble</span>
 
-projetos &lt;- as_tibble(dbGetQuery(con, &quot;SELECT nomedepto, localizacao                        
-                                        FROM departamento d, localizacao_depto l                       
-                                        WHERE d.numdepto = l.numdepto&quot;))
+projetos <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as_tibble</span>(<span style="color:#a6e22e">dbGetQuery</span>(con, <span style="color:#e6db74">&#34;SELECT nomedepto, localizacao                        
+</span><span style="color:#e6db74">                                        FROM departamento d, localizacao_depto l                       
+</span><span style="color:#e6db74">                                        WHERE d.numdepto = l.numdepto&#34;</span>))
 
-projetos</code></pre>
-<pre class="r"><code>#executando a seguinte consulta:
-# Retorne o nome do departamento, a média salárial, bem como o salário mínimo e máximo, de todos osempregados que trabalham em um departamento com mais de 3 empregados, agrupando por departamento. Ordene, em ordem descendente, pela média:
+projetos
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#executando a seguinte consulta:</span>
+<span style="color:#75715e"># Retorne o nome do departamento, a média salárial, bem como o salário mínimo e máximo, de todos osempregados que trabalham em um departamento com mais de 3 empregados, agrupando por departamento. Ordene, em ordem descendente, pela média:</span>
 
-media_salarial &lt;- as_tibble(dbGetQuery(con,&quot;SELECT nomedepto, AVG(salario) media, MIN(salario) min, MAX(salario) maxFROM empregado e, departamento dWHERE e.numdepto = d.numdeptoGROUP BY nomedeptoHAVING COUNT(nomedepto) &gt; 3ORDER BY media desc&quot;))
+media_salarial <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as_tibble</span>(<span style="color:#a6e22e">dbGetQuery</span>(con,<span style="color:#e6db74">&#34;SELECT nomedepto, AVG(salario) media, MIN(salario) min, MAX(salario) maxFROM empregado e, departamento dWHERE e.numdepto = d.numdeptoGROUP BY nomedeptoHAVING COUNT(nomedepto) &gt; 3ORDER BY media desc&#34;</span>))
 
 media_salarial
 
-dbDisconnect(con)</code></pre>
-<p><strong>IMPORTANTE: Se você modificou sua base de dados, os resultados aqui poderão ser diferentes.</strong></p>
+<span style="color:#a6e22e">dbDisconnect</span>(con)
+</code></pre></div><p><strong>IMPORTANTE: Se você modificou sua base de dados, os resultados aqui poderão ser diferentes.</strong></p>
 <p>Por debaixo dos panos, a função dbGetQuery() realiza as seguintes tratativas: (i) envia o comando SQL ao PostgreSQL, (ii) captura oresultado para uma variável, e (iii) libera o resultado em memória (deixando apenas a cópia para o R). Isso poupa o trabalho de chamartrês funções de forma consecutiva ao RPostgres (ou seja, dbSendQuery(), dbFetch() e dbClearResult()). Então, recomenda-se,para fins comuns, a utilização da função dbGetQuery() para execução de comandos variados que resultam na recuperação de dados.</p>
-</div>
-<div id="recuperação-de-dados-a-partir-de-inserção" class="section level1">
-<h1>Recuperação de Dados a partir de Inserção</h1>
+<h1 id="recuperação-de-dados-a-partir-de-inserção">Recuperação de Dados a partir de Inserção</h1>
 <p>A seguir, veremos que o comando INSERT INTO pode também recuperar dados. Isso ocorre quando temos uma coluna que usasequência para definir seus valores, tal como quando definimos a chave primária de uma tabela usando o tipo SERIAL. Vimos quepodemos usar funções do PostgreSQL para capturar valores da sequência.</p>
 <p>Aqui iremos ver como capturar o valor gerado por uma coluna que usou o tipo SERIAL em sua definição (que no fundo é umasequência) logo após UMA inserção. Isso é útil para inserção de um registro em uma tabela e a utilização de seu identificador único parainserir um segundo registro.</p>
 <p>Isso é mostrado no exemplo abaixo:</p>
-<pre class="r"><code>library(RPostgres)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(RPostgres)
 
-con &lt;- dbConnect(Postgres(),                 
-                  user = &quot;postgres&quot;,                 
-                  password = &quot;123&quot;,                 
-                  host = &quot;localhost&quot;,                 
-                  port = 5432,                 
-                  dbname = &quot;departamento&quot;)
+con <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dbConnect</span>(<span style="color:#a6e22e">Postgres</span>(),                 
+                  user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;postgres&#34;</span>,                 
+                  password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123&#34;</span>,                 
+                  host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>,                 
+                  port <span style="color:#f92672">=</span> <span style="color:#ae81ff">5432</span>,                 
+                  dbname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;departamento&#34;</span>)
                   
-#verificando os dados atuais da tabela departamento
-dbReadTable(con, &quot;departamento&quot;)</code></pre>
-<pre class="r"><code>#verificando os dados atuais da tabela localizacao_Depto
-dbReadTable(con, &quot;localizacao_depto&quot;)</code></pre>
-<pre class="r"><code>#inserindo um departamento e retornando o numdepto gerado pela sequência usada (lembre-se que o numdepto foi definido como SERIAL; com isso, uma sequência é associada a coluna numdepto, gerando números sequenciais. Podemos capturar o valor gerado para essa inserção usando o RETURNING no final do comando INSERT INTO.)
+<span style="color:#75715e">#verificando os dados atuais da tabela departamento</span>
+<span style="color:#a6e22e">dbReadTable</span>(con, <span style="color:#e6db74">&#34;departamento&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#verificando os dados atuais da tabela localizacao_Depto</span>
+<span style="color:#a6e22e">dbReadTable</span>(con, <span style="color:#e6db74">&#34;localizacao_depto&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#inserindo um departamento e retornando o numdepto gerado pela sequência usada (lembre-se que o numdepto foi definido como SERIAL; com isso, uma sequência é associada a coluna numdepto, gerando números sequenciais. Podemos capturar o valor gerado para essa inserção usando o RETURNING no final do comando INSERT INTO.)</span>
 
-id &lt;- dbGetQuery(con, &quot;INSERT INTO departamento(nomedepto, numgerente) VALUES (&#39;TI&#39;, 2) RETURNING numdepto&quot;)
+id <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dbGetQuery</span>(con, <span style="color:#e6db74">&#34;INSERT INTO departamento(nomedepto, numgerente) VALUES (&#39;TI&#39;, 2) RETURNING numdepto&#34;</span>)
 id 
 
-#repare que ele é um data.frame e podemos capturar seu valor (único) por meio do operador $
+<span style="color:#75715e">#repare que ele é um data.frame e podemos capturar seu valor (único) por meio do operador $</span>
 
-#agora vamos inserir a localização desse departamento inserido. Repare no uso da parametrização para associar um valor. Poderíamos também montar a string com o comando, por exemplo, usando a função de concatenação paste0()
-dbExecute(con, &quot;INSERT INTO localizacao_depto(numdepto, localizacao) VALUES ($1, &#39;DV&#39;)&quot;, params = id$numdepto)
-## [1] 1
+<span style="color:#75715e">#agora vamos inserir a localização desse departamento inserido. Repare no uso da parametrização para associar um valor. Poderíamos também montar a string com o comando, por exemplo, usando a função de concatenação paste0()</span>
+<span style="color:#a6e22e">dbExecute</span>(con, <span style="color:#e6db74">&#34;INSERT INTO localizacao_depto(numdepto, localizacao) VALUES ($1, &#39;DV&#39;)&#34;</span>, params <span style="color:#f92672">=</span> id<span style="color:#f92672">$</span>numdepto)
+<span style="color:#75715e">## [1] 1</span>
 
-#verificando os dados após a inserção
-dbReadTable(con, &quot;departamento&quot;)
+<span style="color:#75715e">#verificando os dados após a inserção</span>
+<span style="color:#a6e22e">dbReadTable</span>(con, <span style="color:#e6db74">&#34;departamento&#34;</span>)
 
-#verificando os dados após a inserção
-dbReadTable(con, &quot;localizacao_depto&quot;)
+<span style="color:#75715e">#verificando os dados após a inserção</span>
+<span style="color:#a6e22e">dbReadTable</span>(con, <span style="color:#e6db74">&#34;localizacao_depto&#34;</span>)
 
-dbDisconnect(con)</code></pre>
-</div>
-<div id="conclusão" class="section level1">
-<h1>Conclusão</h1>
+<span style="color:#a6e22e">dbDisconnect</span>(con)
+</code></pre></div><h1 id="conclusão">Conclusão</h1>
 <p>Este material integra os conceitos do projeto físico de banco de dados em uma aplicação implementada em R. Em geral, os conceitosvistos aqui se aplicam à outras linguagens de programação, porém, claro, mudando a sintaxe e nome de funções.</p>
 <p>Uma dica geral é deixar o Sistema Gerenciador de Banco de Dados fazer todo o trabalho “sujo” e somente tratar e visualizar os dados nolado da aplicação.</p>
-</div>
 <ul class="pa0">
   
    <li class="list">
